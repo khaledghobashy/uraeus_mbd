@@ -1,0 +1,923 @@
+{
+    "information": {
+        "topology_name": "engine_4c",
+        "configuration_name": "engine_4c_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "Kt_fas_bush_1": 70000000.0,
+        "Ct_fas_bush_1": 300000.0,
+        "Kr_fas_bush_1": 1.0,
+        "Cr_fas_bush_1": 1.0,
+        "Kt_fas_bush_2": 70000000.0,
+        "Ct_fas_bush_2": 300000.0,
+        "Kr_fas_bush_2": 1.0,
+        "Cr_fas_bush_2": 1.0,
+        "Kt_fas_bush_3": 70000000.0,
+        "Ct_fas_bush_3": 300000.0,
+        "Kr_fas_bush_3": 1.0,
+        "Cr_fas_bush_3": 1.0,
+        "Kt_fas_bush_4": 70000000.0,
+        "Ct_fas_bush_4": 300000.0,
+        "Kr_fas_bush_4": 1.0,
+        "Cr_fas_bush_4": 1.0,
+        "UF_fas_drive": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "Rd_rbs_piston_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_piston_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_piston_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_piston_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_piston_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_piston_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_piston_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_piston_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_piston_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_piston_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_piston_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_piston_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_piston_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_piston_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_piston_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_piston_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_connect_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_connect_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_connect_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_connect_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_connect_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_connect_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_connect_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_connect_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_connect_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_connect_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_connect_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_connect_3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_connect_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_connect_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_connect_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_connect_4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_crank_shaft": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_crank_shaft": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_crank_shaft": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_crank_shaft": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "R_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                100.0
+            ]
+        },
+        "P_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "m_rbs_engine_block": 30000.0,
+        "Jbar_rbs_engine_block": {
+            "constructor": "array",
+            "args": [
+                10000000.0,
+                0.0,
+                0.0,
+                0.0,
+                10000000.0,
+                0.0,
+                0.0,
+                0.0,
+                10000000.0
+            ]
+        },
+        "hps_front": {
+            "constructor": "array",
+            "args": [
+                100.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_rear": {
+            "constructor": "array",
+            "args": [
+                -100.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_a1": {
+            "constructor": "array",
+            "args": [
+                75.0,
+                0.0,
+                130.0
+            ]
+        },
+        "hps_a2": {
+            "constructor": "array",
+            "args": [
+                25.0,
+                0.0,
+                70.0
+            ]
+        },
+        "hps_a3": {
+            "constructor": "array",
+            "args": [
+                -25.0,
+                0.0,
+                130.0
+            ]
+        },
+        "hps_a4": {
+            "constructor": "array",
+            "args": [
+                -75.0,
+                0.0,
+                70.0
+            ]
+        },
+        "hps_b1": {
+            "constructor": "array",
+            "args": [
+                75.0,
+                0.0,
+                30.0
+            ]
+        },
+        "hps_b2": {
+            "constructor": "array",
+            "args": [
+                25.0,
+                0.0,
+                -30.0
+            ]
+        },
+        "hps_b3": {
+            "constructor": "array",
+            "args": [
+                -25.0,
+                0.0,
+                30.0
+            ]
+        },
+        "hps_b4": {
+            "constructor": "array",
+            "args": [
+                -75.0,
+                0.0,
+                -30.0
+            ]
+        },
+        "hps_center": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p1": {
+            "constructor": "array",
+            "args": [
+                100.0,
+                100.0,
+                0.0
+            ]
+        },
+        "hps_p2": {
+            "constructor": "array",
+            "args": [
+                100.0,
+                -100.0,
+                0.0
+            ]
+        },
+        "hps_p3": {
+            "constructor": "array",
+            "args": [
+                -100.0,
+                100.0,
+                0.0
+            ]
+        },
+        "hps_p4": {
+            "constructor": "array",
+            "args": [
+                -100.0,
+                -100.0,
+                0.0
+            ]
+        },
+        "vcs_x": {
+            "constructor": "array",
+            "args": [
+                1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_y": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                1.0,
+                0.0
+            ]
+        },
+        "vcs_z": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "s_piston_radius": 30,
+        "s_connect_radius": 10,
+        "s_crank_radius": 20
+    },
+    "evaluations": {
+        "gms_piston_1": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_a1",
+                "s_piston_radius"
+            ]
+        },
+        "gms_piston_2": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_a2",
+                "s_piston_radius"
+            ]
+        },
+        "gms_piston_3": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_a3",
+                "s_piston_radius"
+            ]
+        },
+        "gms_piston_4": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_a4",
+                "s_piston_radius"
+            ]
+        },
+        "gms_connect_1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_a1",
+                "hps_b1",
+                "s_connect_radius"
+            ]
+        },
+        "gms_connect_2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_a2",
+                "hps_b2",
+                "s_connect_radius"
+            ]
+        },
+        "gms_connect_3": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_a3",
+                "hps_b3",
+                "s_connect_radius"
+            ]
+        },
+        "gms_connect_4": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_a4",
+                "hps_b4",
+                "s_connect_radius"
+            ]
+        },
+        "gms_crank_shaft": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_front",
+                "hps_rear",
+                "s_crank_radius"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_fas_bush_1": "vcs_z",
+        "pt1_fas_bush_1": "hps_p1",
+        "ax1_fas_bush_2": "vcs_z",
+        "pt1_fas_bush_2": "hps_p2",
+        "ax1_fas_bush_3": "vcs_z",
+        "pt1_fas_bush_3": "hps_p3",
+        "ax1_fas_bush_4": "vcs_z",
+        "pt1_fas_bush_4": "hps_p4",
+        "ax1_jcs_cyl_1": "vcs_z",
+        "pt1_jcs_cyl_1": "hps_a1",
+        "ax1_jcs_sph_1": "vcs_z",
+        "pt1_jcs_sph_1": "hps_a1",
+        "ax1_jcs_cyl_2": "vcs_z",
+        "pt1_jcs_cyl_2": "hps_a2",
+        "ax1_jcs_sph_2": "vcs_z",
+        "pt1_jcs_sph_2": "hps_a2",
+        "ax1_jcs_cyl_3": "vcs_z",
+        "pt1_jcs_cyl_3": "hps_a3",
+        "ax1_jcs_sph_3": "vcs_z",
+        "pt1_jcs_sph_3": "hps_a3",
+        "ax1_jcs_cyl_4": "vcs_z",
+        "pt1_jcs_cyl_4": "hps_a4",
+        "ax1_jcs_sph_4": "vcs_z",
+        "pt1_jcs_sph_4": "hps_a4",
+        "ax1_fas_drive": "vcs_x",
+        "ax1_jcs_bsph_1": "vcs_z",
+        "pt1_jcs_bsph_1": "hps_b1",
+        "ax1_jcs_bsph_2": "vcs_z",
+        "pt1_jcs_bsph_2": "hps_b2",
+        "ax1_jcs_bsph_3": "vcs_z",
+        "pt1_jcs_bsph_3": "hps_b3",
+        "ax1_jcs_bsph_4": "vcs_z",
+        "pt1_jcs_bsph_4": "hps_b4",
+        "ax1_jcs_crank_joint": "vcs_x",
+        "pt1_jcs_crank_joint": "hps_center",
+        "R_rbs_piston_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_1",
+                "R"
+            ]
+        },
+        "P_rbs_piston_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_1",
+                "P"
+            ]
+        },
+        "m_rbs_piston_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_piston_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_1",
+                "J"
+            ]
+        },
+        "R_rbs_piston_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_2",
+                "R"
+            ]
+        },
+        "P_rbs_piston_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_2",
+                "P"
+            ]
+        },
+        "m_rbs_piston_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_piston_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_2",
+                "J"
+            ]
+        },
+        "R_rbs_piston_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_3",
+                "R"
+            ]
+        },
+        "P_rbs_piston_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_3",
+                "P"
+            ]
+        },
+        "m_rbs_piston_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_3",
+                "m"
+            ]
+        },
+        "Jbar_rbs_piston_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_3",
+                "J"
+            ]
+        },
+        "R_rbs_piston_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_4",
+                "R"
+            ]
+        },
+        "P_rbs_piston_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_4",
+                "P"
+            ]
+        },
+        "m_rbs_piston_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_4",
+                "m"
+            ]
+        },
+        "Jbar_rbs_piston_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_piston_4",
+                "J"
+            ]
+        },
+        "R_rbs_connect_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_1",
+                "R"
+            ]
+        },
+        "P_rbs_connect_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_1",
+                "P"
+            ]
+        },
+        "m_rbs_connect_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_connect_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_1",
+                "J"
+            ]
+        },
+        "R_rbs_connect_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_2",
+                "R"
+            ]
+        },
+        "P_rbs_connect_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_2",
+                "P"
+            ]
+        },
+        "m_rbs_connect_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_connect_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_2",
+                "J"
+            ]
+        },
+        "R_rbs_connect_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_3",
+                "R"
+            ]
+        },
+        "P_rbs_connect_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_3",
+                "P"
+            ]
+        },
+        "m_rbs_connect_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_3",
+                "m"
+            ]
+        },
+        "Jbar_rbs_connect_3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_3",
+                "J"
+            ]
+        },
+        "R_rbs_connect_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_4",
+                "R"
+            ]
+        },
+        "P_rbs_connect_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_4",
+                "P"
+            ]
+        },
+        "m_rbs_connect_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_4",
+                "m"
+            ]
+        },
+        "Jbar_rbs_connect_4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_connect_4",
+                "J"
+            ]
+        },
+        "R_rbs_crank_shaft": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_crank_shaft",
+                "R"
+            ]
+        },
+        "P_rbs_crank_shaft": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_crank_shaft",
+                "P"
+            ]
+        },
+        "m_rbs_crank_shaft": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_crank_shaft",
+                "m"
+            ]
+        },
+        "Jbar_rbs_crank_shaft": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_crank_shaft",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_piston_1": "rbs_piston_1",
+        "gms_piston_2": "rbs_piston_2",
+        "gms_piston_3": "rbs_piston_3",
+        "gms_piston_4": "rbs_piston_4",
+        "gms_connect_1": "rbs_connect_1",
+        "gms_connect_2": "rbs_connect_2",
+        "gms_connect_3": "rbs_connect_3",
+        "gms_connect_4": "rbs_connect_4",
+        "gms_crank_shaft": "rbs_crank_shaft"
+    }
+}

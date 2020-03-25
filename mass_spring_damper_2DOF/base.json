@@ -1,0 +1,234 @@
+{
+    "information": {
+        "topology_name": "mass_spring_damper_2DOF",
+        "configuration_name": "mass_spring_damper_2DOF_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "UF_fas_TSDA_1_Fs": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "UF_fas_TSDA_1_Fd": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "fas_TSDA_1_FL": 200,
+        "UF_fas_TSDA_2_Fs": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "UF_fas_TSDA_2_Fd": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "fas_TSDA_2_FL": 200,
+        "Rd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                400.0
+            ]
+        },
+        "hps_p3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_v": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "s_radius": 60
+    },
+    "evaluations": {
+        "gms_body_1": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_p2",
+                "s_radius"
+            ]
+        },
+        "gms_body_2": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_p3",
+                "s_radius"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcs_trans_1": "vcs_v",
+        "pt1_jcs_trans_1": "hps_p1",
+        "pt1_fas_TSDA_1": "hps_p1",
+        "pt2_fas_TSDA_1": "hps_p2",
+        "ax1_jcs_trans_2": "vcs_v",
+        "pt1_jcs_trans_2": "hps_p2",
+        "pt1_fas_TSDA_2": "hps_p2",
+        "pt2_fas_TSDA_2": "hps_p3",
+        "R_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "R"
+            ]
+        },
+        "P_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "P"
+            ]
+        },
+        "m_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "J"
+            ]
+        },
+        "R_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "R"
+            ]
+        },
+        "P_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "P"
+            ]
+        },
+        "m_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_body_1": "rbs_body_1",
+        "gms_body_2": "rbs_body_2"
+    }
+}

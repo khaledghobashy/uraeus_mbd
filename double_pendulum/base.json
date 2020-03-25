@@ -1,0 +1,192 @@
+{
+    "information": {
+        "topology_name": "double_pendulum",
+        "configuration_name": "double_pendulum_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "Rd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_body_1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_body_2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                200.0,
+                0.0
+            ]
+        },
+        "hps_p3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                400.0,
+                0.0
+            ]
+        },
+        "vcs_v": {
+            "constructor": "array",
+            "args": [
+                1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "s_radius": 20
+    },
+    "evaluations": {
+        "gms_body_1": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_p2",
+                "s_radius"
+            ]
+        },
+        "gms_body_2": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_p3",
+                "s_radius"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcs_a": "vcs_v",
+        "pt1_jcs_a": "hps_p1",
+        "ax1_jcs_b": "vcs_v",
+        "pt1_jcs_b": "hps_p2",
+        "R_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "R"
+            ]
+        },
+        "P_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "P"
+            ]
+        },
+        "m_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_body_1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_1",
+                "J"
+            ]
+        },
+        "R_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "R"
+            ]
+        },
+        "P_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "P"
+            ]
+        },
+        "m_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_body_2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body_2",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_body_1": "rbs_body_1",
+        "gms_body_2": "rbs_body_2"
+    }
+}

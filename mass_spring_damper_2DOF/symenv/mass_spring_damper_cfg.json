@@ -1,0 +1,133 @@
+{
+    "information": {
+        "topology_name": "mass_spring_damper",
+        "configuration_name": "mass_spring_damper_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "UF_fas_TSDA_Fs": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "UF_fas_TSDA_Fd": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "fas_TSDA_FL": 1.0,
+        "Rd_rbs_body": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_body": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_body": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_body": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_v": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "s_radius": 1.0
+    },
+    "evaluations": {
+        "gms_body": {
+            "constructor": "Sphere_Geometry",
+            "args": [
+                "hps_p2",
+                "s_radius"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcs_trans": "vcs_v",
+        "pt1_jcs_trans": "hps_p1",
+        "pt1_fas_TSDA": "hps_p1",
+        "pt2_fas_TSDA": "hps_p2",
+        "R_rbs_body": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body",
+                "R"
+            ]
+        },
+        "P_rbs_body": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body",
+                "P"
+            ]
+        },
+        "m_rbs_body": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body",
+                "m"
+            ]
+        },
+        "Jbar_rbs_body": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_body",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_body": "rbs_body"
+    }
+}

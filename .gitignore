@@ -1,0 +1,14 @@
+**/.spyproject
+**/.ipynb_checkpoints
+**/__pycache__
+**/*.cmd
+**/*.o
+**/*.stpl
+**/*.vscode
+**/*.blend
+**/*.blend1
+**/*.blmbs
+**/*.lprof
+**/visualization
+**/results/*.csv
+**/results/*.npz
