@@ -1,0 +1,785 @@
+{
+    "information": {
+        "topology_name": "N_fourbar",
+        "configuration_name": "N_fourbar_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "Rd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p4": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_x": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_y": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_z": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_p10": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "s_radius": 1.0
+    },
+    "evaluations": {
+        "gms_l1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p1",
+                "hps_p2",
+                "s_radius"
+            ]
+        },
+        "gms_l2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p2",
+                "hps_p3",
+                "s_radius"
+            ]
+        },
+        "gms_l3": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p3",
+                "hps_p4",
+                "s_radius"
+            ]
+        },
+        "gms_l4": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p3",
+                "hps_p5",
+                "s_radius"
+            ]
+        },
+        "gms_l5": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p5",
+                "hps_p6",
+                "s_radius"
+            ]
+        },
+        "gms_l6": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p5",
+                "hps_p7",
+                "s_radius"
+            ]
+        },
+        "gms_l7": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p7",
+                "hps_p8",
+                "s_radius"
+            ]
+        },
+        "gms_l8": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p7",
+                "hps_p9",
+                "s_radius"
+            ]
+        },
+        "gms_l9": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p9",
+                "hps_p10",
+                "s_radius"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcs_j1": "vcs_x",
+        "pt1_jcs_j1": "hps_p1",
+        "ax1_jcs_j2": "vcs_x",
+        "pt1_jcs_j2": "hps_p2",
+        "ax1_jcs_j3": "vcs_x",
+        "pt1_jcs_j3": "hps_p3",
+        "ax1_jcs_j4": "vcs_x",
+        "pt1_jcs_j4": "hps_p4",
+        "ax1_jcs_j5": "vcs_x",
+        "pt1_jcs_j5": "hps_p3",
+        "ax1_jcs_j6": "vcs_x",
+        "pt1_jcs_j6": "hps_p5",
+        "ax1_jcs_j7": "vcs_x",
+        "pt1_jcs_j7": "hps_p6",
+        "ax1_jcs_j8": "vcs_x",
+        "pt1_jcs_j8": "hps_p5",
+        "ax1_jcs_j9": "vcs_x",
+        "pt1_jcs_j9": "hps_p7",
+        "ax1_jcs_j10": "vcs_x",
+        "pt1_jcs_j10": "hps_p8",
+        "ax1_jcs_j11": "vcs_x",
+        "pt1_jcs_j11": "hps_p7",
+        "ax1_jcs_j12": "vcs_x",
+        "pt1_jcs_j12": "hps_p9",
+        "ax1_jcs_j13": "vcs_x",
+        "pt1_jcs_j13": "hps_p10",
+        "R_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "R"
+            ]
+        },
+        "P_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "P"
+            ]
+        },
+        "m_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "J"
+            ]
+        },
+        "R_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "R"
+            ]
+        },
+        "P_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "P"
+            ]
+        },
+        "m_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "J"
+            ]
+        },
+        "R_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "R"
+            ]
+        },
+        "P_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "P"
+            ]
+        },
+        "m_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "J"
+            ]
+        },
+        "R_rbs_l4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l4",
+                "R"
+            ]
+        },
+        "P_rbs_l4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l4",
+                "P"
+            ]
+        },
+        "m_rbs_l4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l4",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l4": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l4",
+                "J"
+            ]
+        },
+        "R_rbs_l5": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l5",
+                "R"
+            ]
+        },
+        "P_rbs_l5": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l5",
+                "P"
+            ]
+        },
+        "m_rbs_l5": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l5",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l5": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l5",
+                "J"
+            ]
+        },
+        "R_rbs_l6": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l6",
+                "R"
+            ]
+        },
+        "P_rbs_l6": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l6",
+                "P"
+            ]
+        },
+        "m_rbs_l6": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l6",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l6": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l6",
+                "J"
+            ]
+        },
+        "R_rbs_l7": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l7",
+                "R"
+            ]
+        },
+        "P_rbs_l7": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l7",
+                "P"
+            ]
+        },
+        "m_rbs_l7": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l7",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l7": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l7",
+                "J"
+            ]
+        },
+        "R_rbs_l8": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l8",
+                "R"
+            ]
+        },
+        "P_rbs_l8": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l8",
+                "P"
+            ]
+        },
+        "m_rbs_l8": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l8",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l8": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l8",
+                "J"
+            ]
+        },
+        "R_rbs_l9": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l9",
+                "R"
+            ]
+        },
+        "P_rbs_l9": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l9",
+                "P"
+            ]
+        },
+        "m_rbs_l9": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l9",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l9": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l9",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_l1": "rbs_l1",
+        "gms_l2": "rbs_l2",
+        "gms_l3": "rbs_l3",
+        "gms_l4": "rbs_l4",
+        "gms_l5": "rbs_l5",
+        "gms_l6": "rbs_l6",
+        "gms_l7": "rbs_l7",
+        "gms_l8": "rbs_l8",
+        "gms_l9": "rbs_l9"
+    }
+}
