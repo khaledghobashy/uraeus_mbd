@@ -1,36 +1,11 @@
 {
     "information": {
-        "topology_name": "engine_4c",
-        "configuration_name": "engine_4c_cfg",
+        "topology_name": "N_fourbar",
+        "configuration_name": "N_fourbar_cfg",
         "subsystem_name": ""
     },
     "user_inputs": {
-        "Kt_fas_bush_1": 200000000.0,
-        "Ct_fas_bush_1": 300000.0,
-        "Kr_fas_bush_1": 1.0,
-        "Cr_fas_bush_1": 1.0,
-        "Kt_fas_bush_2": 200000000.0,
-        "Ct_fas_bush_2": 300000.0,
-        "Kr_fas_bush_2": 1.0,
-        "Cr_fas_bush_2": 1.0,
-        "Kt_fas_bush_3": 200000000.0,
-        "Ct_fas_bush_3": 300000.0,
-        "Kr_fas_bush_3": 1.0,
-        "Cr_fas_bush_3": 1.0,
-        "Kt_fas_bush_4": 200000000.0,
-        "Ct_fas_bush_4": 300000.0,
-        "Kr_fas_bush_4": 1.0,
-        "Cr_fas_bush_4": 1.0,
-        "UF_fas_drive": {
-            "constructor": "Lambda",
-            "args": [
-                [
-                    "t"
-                ],
-                0.0
-            ]
-        },
-        "Rd_rbs_piston_1": {
+        "Rd_rbs_l1": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -38,7 +13,7 @@
                 0.0
             ]
         },
-        "Pd_rbs_piston_1": {
+        "Pd_rbs_l1": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -47,7 +22,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_piston_1": {
+        "Rdd_rbs_l1": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -55,24 +30,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_piston_1": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_piston_2": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_piston_2": {
+        "Pdd_rbs_l1": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -81,7 +39,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_piston_2": {
+        "Rd_rbs_l2": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -89,24 +47,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_piston_2": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_piston_3": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_piston_3": {
+        "Pd_rbs_l2": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -115,7 +56,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_piston_3": {
+        "Rdd_rbs_l2": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -123,24 +64,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_piston_3": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_piston_4": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_piston_4": {
+        "Pdd_rbs_l2": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -149,7 +73,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_piston_4": {
+        "Rd_rbs_l3": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -157,24 +81,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_piston_4": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_connect_1": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_connect_1": {
+        "Pd_rbs_l3": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -183,7 +90,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_connect_1": {
+        "Rdd_rbs_l3": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -191,24 +98,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_connect_1": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_connect_2": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_connect_2": {
+        "Pdd_rbs_l3": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -217,7 +107,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_connect_2": {
+        "Rd_rbs_l4": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -225,24 +115,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_connect_2": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_connect_3": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_connect_3": {
+        "Pd_rbs_l4": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -251,7 +124,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_connect_3": {
+        "Rdd_rbs_l4": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -259,24 +132,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_connect_3": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_connect_4": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_connect_4": {
+        "Pdd_rbs_l4": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -285,7 +141,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_connect_4": {
+        "Rd_rbs_l5": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -293,24 +149,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_connect_4": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_crank_shaft": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_crank_shaft": {
+        "Pd_rbs_l5": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -319,7 +158,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_crank_shaft": {
+        "Rdd_rbs_l5": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -327,41 +166,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_crank_shaft": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "R_rbs_engine_block": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                100.0
-            ]
-        },
-        "P_rbs_engine_block": {
-            "constructor": "array",
-            "args": [
-                1.0,
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Rd_rbs_engine_block": {
-            "constructor": "array",
-            "args": [
-                0.0,
-                0.0,
-                0.0
-            ]
-        },
-        "Pd_rbs_engine_block": {
+        "Pdd_rbs_l5": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -370,7 +175,7 @@
                 0.0
             ]
         },
-        "Rdd_rbs_engine_block": {
+        "Rd_rbs_l6": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -378,7 +183,7 @@
                 0.0
             ]
         },
-        "Pdd_rbs_engine_block": {
+        "Pd_rbs_l6": {
             "constructor": "array",
             "args": [
                 0.0,
@@ -387,104 +192,120 @@
                 0.0
             ]
         },
-        "m_rbs_engine_block": 30000.0,
-        "Jbar_rbs_engine_block": {
+        "Rdd_rbs_l6": {
             "constructor": "array",
             "args": [
-                10000000.0,
                 0.0,
-                0.0,
-                0.0,
-                10000000.0,
-                0.0,
-                0.0,
-                0.0,
-                10000000.0
-            ]
-        },
-        "hps_front": {
-            "constructor": "array",
-            "args": [
-                100.0,
                 0.0,
                 0.0
             ]
         },
-        "hps_rear": {
+        "Pdd_rbs_l6": {
             "constructor": "array",
             "args": [
-                -100.0,
+                0.0,
+                0.0,
                 0.0,
                 0.0
             ]
         },
-        "hps_a1": {
+        "Rd_rbs_l7": {
             "constructor": "array",
             "args": [
-                75.0,
                 0.0,
-                130.0
+                0.0,
+                0.0
             ]
         },
-        "hps_a2": {
+        "Pd_rbs_l7": {
             "constructor": "array",
             "args": [
-                25.0,
                 0.0,
-                70.0
+                0.0,
+                0.0,
+                0.0
             ]
         },
-        "hps_a3": {
+        "Rdd_rbs_l7": {
             "constructor": "array",
             "args": [
-                -25.0,
                 0.0,
-                130.0
+                0.0,
+                0.0
             ]
         },
-        "hps_a4": {
+        "Pdd_rbs_l7": {
             "constructor": "array",
             "args": [
-                -75.0,
                 0.0,
-                70.0
+                0.0,
+                0.0,
+                0.0
             ]
         },
-        "hps_b1": {
+        "Rd_rbs_l8": {
             "constructor": "array",
             "args": [
-                75.0,
                 0.0,
-                30.0
+                0.0,
+                0.0
             ]
         },
-        "hps_b2": {
+        "Pd_rbs_l8": {
             "constructor": "array",
             "args": [
-                25.0,
                 0.0,
-                -30.0
+                0.0,
+                0.0,
+                0.0
             ]
         },
-        "hps_b3": {
+        "Rdd_rbs_l8": {
             "constructor": "array",
             "args": [
-                -25.0,
                 0.0,
-                30.0
+                0.0,
+                0.0
             ]
         },
-        "hps_b4": {
+        "Pdd_rbs_l8": {
             "constructor": "array",
             "args": [
-                -75.0,
                 0.0,
-                -30.0
+                0.0,
+                0.0,
+                0.0
             ]
         },
-        "hps_center": {
+        "Rd_rbs_l9": {
             "constructor": "array",
             "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l9": {
+            "constructor": "array",
+            "args": [
+                0.0,
                 0.0,
                 0.0,
                 0.0
@@ -493,32 +314,32 @@
         "hps_p1": {
             "constructor": "array",
             "args": [
-                100.0,
-                100.0,
+                0.0,
+                0.0,
                 0.0
             ]
         },
         "hps_p2": {
             "constructor": "array",
             "args": [
-                100.0,
-                -100.0,
-                0.0
+                0.0,
+                149.99999999999997,
+                259.8076211353316
             ]
         },
         "hps_p3": {
             "constructor": "array",
             "args": [
-                -100.0,
-                100.0,
-                0.0
+                0.0,
+                450.0,
+                259.8076211353316
             ]
         },
         "hps_p4": {
             "constructor": "array",
             "args": [
-                -100.0,
-                -100.0,
+                0.0,
+                300.0,
                 0.0
             ]
         },
@@ -534,7 +355,7 @@
             "constructor": "array",
             "args": [
                 0.0,
-                1.0,
+                0.0,
                 0.0
             ]
         },
@@ -543,381 +364,422 @@
             "args": [
                 0.0,
                 0.0,
-                1.0
+                0.0
             ]
         },
-        "s_piston_radius": 30,
-        "s_connect_radius": 10,
-        "s_crank_radius": 20
+        "hps_p5": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                750.0,
+                259.8076211353316
+            ]
+        },
+        "hps_p6": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                600.0,
+                0.0
+            ]
+        },
+        "hps_p7": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                1050.0,
+                259.8076211353316
+            ]
+        },
+        "hps_p8": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                900.0,
+                0.0
+            ]
+        },
+        "hps_p9": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                1350.0,
+                259.8076211353316
+            ]
+        },
+        "hps_p10": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                1200.0,
+                0.0
+            ]
+        },
+        "s_radius": 10
     },
     "evaluations": {
-        "gms_piston_1": {
-            "constructor": "Sphere_Geometry",
-            "args": [
-                "hps_a1",
-                "s_piston_radius"
-            ]
-        },
-        "gms_piston_2": {
-            "constructor": "Sphere_Geometry",
-            "args": [
-                "hps_a2",
-                "s_piston_radius"
-            ]
-        },
-        "gms_piston_3": {
-            "constructor": "Sphere_Geometry",
-            "args": [
-                "hps_a3",
-                "s_piston_radius"
-            ]
-        },
-        "gms_piston_4": {
-            "constructor": "Sphere_Geometry",
-            "args": [
-                "hps_a4",
-                "s_piston_radius"
-            ]
-        },
-        "gms_connect_1": {
+        "gms_l1": {
             "constructor": "Cylinder_Geometry",
             "args": [
-                "hps_a1",
-                "hps_b1",
-                "s_connect_radius"
+                "hps_p1",
+                "hps_p2",
+                "s_radius"
             ]
         },
-        "gms_connect_2": {
+        "gms_l2": {
             "constructor": "Cylinder_Geometry",
             "args": [
-                "hps_a2",
-                "hps_b2",
-                "s_connect_radius"
+                "hps_p2",
+                "hps_p3",
+                "s_radius"
             ]
         },
-        "gms_connect_3": {
+        "gms_l3": {
             "constructor": "Cylinder_Geometry",
             "args": [
-                "hps_a3",
-                "hps_b3",
-                "s_connect_radius"
+                "hps_p3",
+                "hps_p4",
+                "s_radius"
             ]
         },
-        "gms_connect_4": {
+        "gms_l4": {
             "constructor": "Cylinder_Geometry",
             "args": [
-                "hps_a4",
-                "hps_b4",
-                "s_connect_radius"
+                "hps_p3",
+                "hps_p5",
+                "s_radius"
             ]
         },
-        "gms_crank_shaft": {
+        "gms_l5": {
             "constructor": "Cylinder_Geometry",
             "args": [
-                "hps_front",
-                "hps_rear",
-                "s_crank_radius"
+                "hps_p5",
+                "hps_p6",
+                "s_radius"
+            ]
+        },
+        "gms_l6": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p5",
+                "hps_p7",
+                "s_radius"
+            ]
+        },
+        "gms_l7": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p7",
+                "hps_p8",
+                "s_radius"
+            ]
+        },
+        "gms_l8": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p7",
+                "hps_p9",
+                "s_radius"
+            ]
+        },
+        "gms_l9": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_p9",
+                "hps_p10",
+                "s_radius"
             ]
         }
     },
     "outputs": {
-        "ax1_fas_bush_1": "vcs_z",
-        "pt1_fas_bush_1": "hps_p1",
-        "ax1_fas_bush_2": "vcs_z",
-        "pt1_fas_bush_2": "hps_p2",
-        "ax1_fas_bush_3": "vcs_z",
-        "pt1_fas_bush_3": "hps_p3",
-        "ax1_fas_bush_4": "vcs_z",
-        "pt1_fas_bush_4": "hps_p4",
-        "ax1_jcs_cyl_1": "vcs_z",
-        "pt1_jcs_cyl_1": "hps_a1",
-        "ax1_jcs_sph_1": "vcs_z",
-        "pt1_jcs_sph_1": "hps_a1",
-        "ax1_jcs_cyl_2": "vcs_z",
-        "pt1_jcs_cyl_2": "hps_a2",
-        "ax1_jcs_sph_2": "vcs_z",
-        "pt1_jcs_sph_2": "hps_a2",
-        "ax1_jcs_cyl_3": "vcs_z",
-        "pt1_jcs_cyl_3": "hps_a3",
-        "ax1_jcs_sph_3": "vcs_z",
-        "pt1_jcs_sph_3": "hps_a3",
-        "ax1_jcs_cyl_4": "vcs_z",
-        "pt1_jcs_cyl_4": "hps_a4",
-        "ax1_jcs_sph_4": "vcs_z",
-        "pt1_jcs_sph_4": "hps_a4",
-        "ax1_fas_drive": "vcs_x",
-        "ax1_jcs_bsph_1": "vcs_z",
-        "pt1_jcs_bsph_1": "hps_b1",
-        "ax1_jcs_bsph_2": "vcs_z",
-        "pt1_jcs_bsph_2": "hps_b2",
-        "ax1_jcs_bsph_3": "vcs_z",
-        "pt1_jcs_bsph_3": "hps_b3",
-        "ax1_jcs_bsph_4": "vcs_z",
-        "pt1_jcs_bsph_4": "hps_b4",
-        "ax1_jcs_crank_joint": "vcs_x",
-        "pt1_jcs_crank_joint": "hps_center",
-        "R_rbs_piston_1": {
+        "ax1_jcs_j1": "vcs_x",
+        "pt1_jcs_j1": "hps_p1",
+        "ax1_jcs_j2": "vcs_x",
+        "pt1_jcs_j2": "hps_p2",
+        "ax1_jcs_j3": "vcs_x",
+        "pt1_jcs_j3": "hps_p3",
+        "ax1_jcs_j4": "vcs_x",
+        "pt1_jcs_j4": "hps_p4",
+        "ax1_jcs_j5": "vcs_x",
+        "pt1_jcs_j5": "hps_p3",
+        "ax1_jcs_j6": "vcs_x",
+        "pt1_jcs_j6": "hps_p5",
+        "ax1_jcs_j7": "vcs_x",
+        "pt1_jcs_j7": "hps_p6",
+        "ax1_jcs_j8": "vcs_x",
+        "pt1_jcs_j8": "hps_p5",
+        "ax1_jcs_j9": "vcs_x",
+        "pt1_jcs_j9": "hps_p7",
+        "ax1_jcs_j10": "vcs_x",
+        "pt1_jcs_j10": "hps_p8",
+        "ax1_jcs_j11": "vcs_x",
+        "pt1_jcs_j11": "hps_p7",
+        "ax1_jcs_j12": "vcs_x",
+        "pt1_jcs_j12": "hps_p9",
+        "ax1_jcs_j13": "vcs_x",
+        "pt1_jcs_j13": "hps_p10",
+        "R_rbs_l1": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_1",
+                "gms_l1",
                 "R"
             ]
         },
-        "P_rbs_piston_1": {
+        "P_rbs_l1": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_1",
+                "gms_l1",
                 "P"
             ]
         },
-        "m_rbs_piston_1": {
+        "m_rbs_l1": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_1",
+                "gms_l1",
                 "m"
             ]
         },
-        "Jbar_rbs_piston_1": {
+        "Jbar_rbs_l1": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_1",
+                "gms_l1",
                 "J"
             ]
         },
-        "R_rbs_piston_2": {
+        "R_rbs_l2": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_2",
+                "gms_l2",
                 "R"
             ]
         },
-        "P_rbs_piston_2": {
+        "P_rbs_l2": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_2",
+                "gms_l2",
                 "P"
             ]
         },
-        "m_rbs_piston_2": {
+        "m_rbs_l2": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_2",
+                "gms_l2",
                 "m"
             ]
         },
-        "Jbar_rbs_piston_2": {
+        "Jbar_rbs_l2": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_2",
+                "gms_l2",
                 "J"
             ]
         },
-        "R_rbs_piston_3": {
+        "R_rbs_l3": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_3",
+                "gms_l3",
                 "R"
             ]
         },
-        "P_rbs_piston_3": {
+        "P_rbs_l3": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_3",
+                "gms_l3",
                 "P"
             ]
         },
-        "m_rbs_piston_3": {
+        "m_rbs_l3": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_3",
+                "gms_l3",
                 "m"
             ]
         },
-        "Jbar_rbs_piston_3": {
+        "Jbar_rbs_l3": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_3",
+                "gms_l3",
                 "J"
             ]
         },
-        "R_rbs_piston_4": {
+        "R_rbs_l4": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_4",
+                "gms_l4",
                 "R"
             ]
         },
-        "P_rbs_piston_4": {
+        "P_rbs_l4": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_4",
+                "gms_l4",
                 "P"
             ]
         },
-        "m_rbs_piston_4": {
+        "m_rbs_l4": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_4",
+                "gms_l4",
                 "m"
             ]
         },
-        "Jbar_rbs_piston_4": {
+        "Jbar_rbs_l4": {
             "constructor": "getattribute",
             "args": [
-                "gms_piston_4",
+                "gms_l4",
                 "J"
             ]
         },
-        "R_rbs_connect_1": {
+        "R_rbs_l5": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_1",
+                "gms_l5",
                 "R"
             ]
         },
-        "P_rbs_connect_1": {
+        "P_rbs_l5": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_1",
+                "gms_l5",
                 "P"
             ]
         },
-        "m_rbs_connect_1": {
+        "m_rbs_l5": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_1",
+                "gms_l5",
                 "m"
             ]
         },
-        "Jbar_rbs_connect_1": {
+        "Jbar_rbs_l5": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_1",
+                "gms_l5",
                 "J"
             ]
         },
-        "R_rbs_connect_2": {
+        "R_rbs_l6": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_2",
+                "gms_l6",
                 "R"
             ]
         },
-        "P_rbs_connect_2": {
+        "P_rbs_l6": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_2",
+                "gms_l6",
                 "P"
             ]
         },
-        "m_rbs_connect_2": {
+        "m_rbs_l6": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_2",
+                "gms_l6",
                 "m"
             ]
         },
-        "Jbar_rbs_connect_2": {
+        "Jbar_rbs_l6": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_2",
+                "gms_l6",
                 "J"
             ]
         },
-        "R_rbs_connect_3": {
+        "R_rbs_l7": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_3",
+                "gms_l7",
                 "R"
             ]
         },
-        "P_rbs_connect_3": {
+        "P_rbs_l7": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_3",
+                "gms_l7",
                 "P"
             ]
         },
-        "m_rbs_connect_3": {
+        "m_rbs_l7": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_3",
+                "gms_l7",
                 "m"
             ]
         },
-        "Jbar_rbs_connect_3": {
+        "Jbar_rbs_l7": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_3",
+                "gms_l7",
                 "J"
             ]
         },
-        "R_rbs_connect_4": {
+        "R_rbs_l8": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_4",
+                "gms_l8",
                 "R"
             ]
         },
-        "P_rbs_connect_4": {
+        "P_rbs_l8": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_4",
+                "gms_l8",
                 "P"
             ]
         },
-        "m_rbs_connect_4": {
+        "m_rbs_l8": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_4",
+                "gms_l8",
                 "m"
             ]
         },
-        "Jbar_rbs_connect_4": {
+        "Jbar_rbs_l8": {
             "constructor": "getattribute",
             "args": [
-                "gms_connect_4",
+                "gms_l8",
                 "J"
             ]
         },
-        "R_rbs_crank_shaft": {
+        "R_rbs_l9": {
             "constructor": "getattribute",
             "args": [
-                "gms_crank_shaft",
+                "gms_l9",
                 "R"
             ]
         },
-        "P_rbs_crank_shaft": {
+        "P_rbs_l9": {
             "constructor": "getattribute",
             "args": [
-                "gms_crank_shaft",
+                "gms_l9",
                 "P"
             ]
         },
-        "m_rbs_crank_shaft": {
+        "m_rbs_l9": {
             "constructor": "getattribute",
             "args": [
-                "gms_crank_shaft",
+                "gms_l9",
                 "m"
             ]
         },
-        "Jbar_rbs_crank_shaft": {
+        "Jbar_rbs_l9": {
             "constructor": "getattribute",
             "args": [
-                "gms_crank_shaft",
+                "gms_l9",
                 "J"
             ]
         }
     },
     "geometries_map": {
-        "gms_piston_1": "rbs_piston_1",
-        "gms_piston_2": "rbs_piston_2",
-        "gms_piston_3": "rbs_piston_3",
-        "gms_piston_4": "rbs_piston_4",
-        "gms_connect_1": "rbs_connect_1",
-        "gms_connect_2": "rbs_connect_2",
-        "gms_connect_3": "rbs_connect_3",
-        "gms_connect_4": "rbs_connect_4",
-        "gms_crank_shaft": "rbs_crank_shaft"
+        "gms_l1": "rbs_l1",
+        "gms_l2": "rbs_l2",
+        "gms_l3": "rbs_l3",
+        "gms_l4": "rbs_l4",
+        "gms_l5": "rbs_l5",
+        "gms_l6": "rbs_l6",
+        "gms_l7": "rbs_l7",
+        "gms_l8": "rbs_l8",
+        "gms_l9": "rbs_l9"
     }
 }

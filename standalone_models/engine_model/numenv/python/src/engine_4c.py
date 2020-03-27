@@ -475,98 +475,98 @@ class topology(object):
         config = self.config
         t = self.t
 
-        a0 = self.Mbar_rbs_engine_block_jcs_cyl_1[:,2:3]
+        a0 = self.Mbar_rbs_piston_1_jcs_cyl_1[:,0:1]
         a1 = a0.T
-        a2 = self.P_rbs_engine_block
+        a2 = self.P_rbs_piston_1
         a3 = A(a2).T
-        a4 = self.Pd_rbs_piston_1
-        a5 = self.Mbar_rbs_piston_1_jcs_cyl_1[:,0:1]
+        a4 = self.Pd_rbs_engine_block
+        a5 = self.Mbar_rbs_engine_block_jcs_cyl_1[:,2:3]
         a6 = B(a4,a5)
         a7 = a5.T
-        a8 = self.P_rbs_piston_1
+        a8 = self.P_rbs_engine_block
         a9 = A(a8).T
-        a10 = self.Pd_rbs_engine_block
+        a10 = self.Pd_rbs_piston_1
         a11 = B(a10,a0)
-        a12 = a4.T
-        a13 = B(a8,a5).T
-        a14 = B(a2,a0)
+        a12 = a10.T
+        a13 = B(a2,a0).T
+        a14 = B(a8,a5)
         a15 = self.Mbar_rbs_piston_1_jcs_cyl_1[:,1:2]
-        a16 = B(a4,a15)
-        a17 = a15.T
-        a18 = B(a8,a15).T
+        a16 = a15.T
+        a17 = B(a10,a15)
+        a18 = B(a2,a15).T
         a19 = self.ubar_rbs_piston_1_jcs_cyl_1
         a20 = self.ubar_rbs_engine_block_jcs_cyl_1
-        a21 = (multi_dot([B(a4,a19),a4]) + (-1) * multi_dot([B(a10,a20),a10]))
+        a21 = (multi_dot([B(a10,a19),a10]) + (-1) * multi_dot([B(a4,a20),a4]))
         a22 = (-1) * self.Rd_rbs_engine_block
-        a23 = (self.Rd_rbs_piston_1 + a22 + multi_dot([B(a8,a19),a4]) + (-1) * multi_dot([B(a2,a20),a10]))
+        a23 = (self.Rd_rbs_piston_1 + a22 + multi_dot([B(a2,a19),a10]) + (-1) * multi_dot([B(a8,a20),a4]))
         a24 = (-1) * self.R_rbs_engine_block.T
-        a25 = (self.R_rbs_piston_1.T + a24 + multi_dot([a19.T,a9]) + (-1) * multi_dot([a20.T,a3]))
+        a25 = (self.R_rbs_piston_1.T + a24 + multi_dot([a19.T,a3]) + (-1) * multi_dot([a20.T,a9]))
         a26 = self.Pd_rbs_connect_1
-        a27 = self.Mbar_rbs_piston_2_jcs_cyl_2[:,0:1]
+        a27 = self.Mbar_rbs_engine_block_jcs_cyl_2[:,2:3]
         a28 = a27.T
-        a29 = self.P_rbs_piston_2
-        a30 = A(a29).T
-        a31 = self.Mbar_rbs_engine_block_jcs_cyl_2[:,2:3]
-        a32 = B(a10,a31)
-        a33 = a31.T
-        a34 = self.Pd_rbs_piston_2
-        a35 = B(a34,a27)
-        a36 = a34.T
-        a37 = B(a29,a27).T
-        a38 = B(a2,a31)
+        a29 = self.Pd_rbs_piston_2
+        a30 = self.Mbar_rbs_piston_2_jcs_cyl_2[:,0:1]
+        a31 = B(a29,a30)
+        a32 = a30.T
+        a33 = self.P_rbs_piston_2
+        a34 = A(a33).T
+        a35 = B(a4,a27)
+        a36 = a29.T
+        a37 = B(a33,a30).T
+        a38 = B(a8,a27)
         a39 = self.Mbar_rbs_piston_2_jcs_cyl_2[:,1:2]
-        a40 = a39.T
-        a41 = B(a34,a39)
-        a42 = B(a29,a39).T
+        a40 = B(a29,a39)
+        a41 = a39.T
+        a42 = B(a33,a39).T
         a43 = self.ubar_rbs_piston_2_jcs_cyl_2
         a44 = self.ubar_rbs_engine_block_jcs_cyl_2
-        a45 = (multi_dot([B(a34,a43),a34]) + (-1) * multi_dot([B(a10,a44),a10]))
-        a46 = (self.Rd_rbs_piston_2 + a22 + multi_dot([B(a29,a43),a34]) + (-1) * multi_dot([B(a2,a44),a10]))
-        a47 = (self.R_rbs_piston_2.T + a24 + multi_dot([a43.T,a30]) + (-1) * multi_dot([a44.T,a3]))
+        a45 = (multi_dot([B(a29,a43),a29]) + (-1) * multi_dot([B(a4,a44),a4]))
+        a46 = (self.Rd_rbs_piston_2 + a22 + multi_dot([B(a33,a43),a29]) + (-1) * multi_dot([B(a8,a44),a4]))
+        a47 = (self.R_rbs_piston_2.T + a24 + multi_dot([a43.T,a34]) + (-1) * multi_dot([a44.T,a9]))
         a48 = self.Pd_rbs_connect_2
         a49 = self.Mbar_rbs_piston_3_jcs_cyl_3[:,0:1]
         a50 = a49.T
         a51 = self.P_rbs_piston_3
         a52 = A(a51).T
         a53 = self.Mbar_rbs_engine_block_jcs_cyl_3[:,2:3]
-        a54 = B(a10,a53)
+        a54 = B(a4,a53)
         a55 = a53.T
         a56 = self.Pd_rbs_piston_3
         a57 = B(a56,a49)
         a58 = a56.T
         a59 = B(a51,a49).T
-        a60 = B(a2,a53)
+        a60 = B(a8,a53)
         a61 = self.Mbar_rbs_piston_3_jcs_cyl_3[:,1:2]
         a62 = a61.T
         a63 = B(a56,a61)
         a64 = B(a51,a61).T
         a65 = self.ubar_rbs_piston_3_jcs_cyl_3
         a66 = self.ubar_rbs_engine_block_jcs_cyl_3
-        a67 = (multi_dot([B(a56,a65),a56]) + (-1) * multi_dot([B(a10,a66),a10]))
-        a68 = (self.Rd_rbs_piston_3 + a22 + multi_dot([B(a51,a65),a56]) + (-1) * multi_dot([B(a2,a66),a10]))
-        a69 = (self.R_rbs_piston_3.T + a24 + multi_dot([a65.T,a52]) + (-1) * multi_dot([a66.T,a3]))
+        a67 = (multi_dot([B(a56,a65),a56]) + (-1) * multi_dot([B(a4,a66),a4]))
+        a68 = (self.Rd_rbs_piston_3 + a22 + multi_dot([B(a51,a65),a56]) + (-1) * multi_dot([B(a8,a66),a4]))
+        a69 = (self.R_rbs_piston_3.T + a24 + multi_dot([a65.T,a52]) + (-1) * multi_dot([a66.T,a9]))
         a70 = self.Pd_rbs_connect_3
         a71 = self.Mbar_rbs_piston_4_jcs_cyl_4[:,0:1]
         a72 = a71.T
         a73 = self.P_rbs_piston_4
         a74 = A(a73).T
         a75 = self.Mbar_rbs_engine_block_jcs_cyl_4[:,2:3]
-        a76 = B(a10,a75)
+        a76 = B(a4,a75)
         a77 = a75.T
         a78 = self.Pd_rbs_piston_4
         a79 = B(a78,a71)
         a80 = a78.T
         a81 = B(a73,a71).T
-        a82 = B(a2,a75)
+        a82 = B(a8,a75)
         a83 = self.Mbar_rbs_piston_4_jcs_cyl_4[:,1:2]
         a84 = a83.T
         a85 = B(a78,a83)
         a86 = B(a73,a83).T
         a87 = self.ubar_rbs_piston_4_jcs_cyl_4
         a88 = self.ubar_rbs_engine_block_jcs_cyl_4
-        a89 = (multi_dot([B(a78,a87),a78]) + (-1) * multi_dot([B(a10,a88),a10]))
-        a90 = (self.Rd_rbs_piston_4 + a22 + multi_dot([B(a73,a87),a78]) + (-1) * multi_dot([B(a2,a88),a10]))
-        a91 = (self.R_rbs_piston_4.T + a24 + multi_dot([a87.T,a74]) + (-1) * multi_dot([a88.T,a3]))
+        a89 = (multi_dot([B(a78,a87),a78]) + (-1) * multi_dot([B(a4,a88),a4]))
+        a90 = (self.Rd_rbs_piston_4 + a22 + multi_dot([B(a73,a87),a78]) + (-1) * multi_dot([B(a8,a88),a4]))
+        a91 = (self.R_rbs_piston_4.T + a24 + multi_dot([a87.T,a74]) + (-1) * multi_dot([a88.T,a9]))
         a92 = self.Pd_rbs_connect_4
         a93 = self.Pd_rbs_crank_shaft
         a94 = self.Mbar_rbs_engine_block_jcs_crank_joint[:,2:3]
@@ -574,28 +574,28 @@ class topology(object):
         a96 = self.Mbar_rbs_crank_shaft_jcs_crank_joint[:,0:1]
         a97 = self.P_rbs_crank_shaft
         a98 = A(a97).T
-        a99 = B(a10,a94)
+        a99 = B(a4,a94)
         a100 = a93.T
-        a101 = B(a2,a94)
+        a101 = B(a8,a94)
         a102 = self.Mbar_rbs_crank_shaft_jcs_crank_joint[:,1:2]
 
-        self.acc_eq_blocks = ((multi_dot([a1,a3,a6,a4]) + multi_dot([a7,a9,a11,a10]) + (2) * multi_dot([a12,a13,a14,a10])),
-        (multi_dot([a1,a3,a16,a4]) + multi_dot([a17,a9,a11,a10]) + (2) * multi_dot([a12,a18,a14,a10])),
-        (multi_dot([a7,a9,a21]) + (2) * multi_dot([a12,a13,a23]) + multi_dot([a25,a6,a4])),
-        (multi_dot([a17,a9,a21]) + (2) * multi_dot([a12,a18,a23]) + multi_dot([a25,a16,a4])),
-        (multi_dot([B(a4,self.ubar_rbs_piston_1_jcs_sph_1),a4]) + (-1) * multi_dot([B(a26,self.ubar_rbs_connect_1_jcs_sph_1),a26])),
-        (multi_dot([a28,a30,a32,a10]) + multi_dot([a33,a3,a35,a34]) + (2) * multi_dot([a36,a37,a38,a10])),
-        (multi_dot([a40,a30,a32,a10]) + multi_dot([a33,a3,a41,a34]) + (2) * multi_dot([a36,a42,a38,a10])),
-        (multi_dot([a28,a30,a45]) + (2) * multi_dot([a36,a37,a46]) + multi_dot([a47,a35,a34])),
-        (multi_dot([a40,a30,a45]) + (2) * multi_dot([a36,a42,a46]) + multi_dot([a47,a41,a34])),
-        (multi_dot([B(a34,self.ubar_rbs_piston_2_jcs_sph_2),a34]) + (-1) * multi_dot([B(a48,self.ubar_rbs_connect_2_jcs_sph_2),a48])),
-        (multi_dot([a50,a52,a54,a10]) + multi_dot([a55,a3,a57,a56]) + (2) * multi_dot([a58,a59,a60,a10])),
-        (multi_dot([a62,a52,a54,a10]) + multi_dot([a55,a3,a63,a56]) + (2) * multi_dot([a58,a64,a60,a10])),
+        self.acc_eq_blocks = ((multi_dot([a1,a3,a6,a4]) + multi_dot([a7,a9,a11,a10]) + (2) * multi_dot([a12,a13,a14,a4])),
+        (multi_dot([a16,a3,a6,a4]) + multi_dot([a7,a9,a17,a10]) + (2) * multi_dot([a12,a18,a14,a4])),
+        (multi_dot([a1,a3,a21]) + (2) * multi_dot([a12,a13,a23]) + multi_dot([a25,a11,a10])),
+        (multi_dot([a16,a3,a21]) + (2) * multi_dot([a12,a18,a23]) + multi_dot([a25,a17,a10])),
+        (multi_dot([B(a10,self.ubar_rbs_piston_1_jcs_sph_1),a10]) + (-1) * multi_dot([B(a26,self.ubar_rbs_connect_1_jcs_sph_1),a26])),
+        (multi_dot([a28,a9,a31,a29]) + multi_dot([a32,a34,a35,a4]) + (2) * multi_dot([a36,a37,a38,a4])),
+        (multi_dot([a28,a9,a40,a29]) + multi_dot([a41,a34,a35,a4]) + (2) * multi_dot([a36,a42,a38,a4])),
+        (multi_dot([a32,a34,a45]) + (2) * multi_dot([a36,a37,a46]) + multi_dot([a47,a31,a29])),
+        (multi_dot([a41,a34,a45]) + (2) * multi_dot([a36,a42,a46]) + multi_dot([a47,a40,a29])),
+        (multi_dot([B(a29,self.ubar_rbs_piston_2_jcs_sph_2),a29]) + (-1) * multi_dot([B(a48,self.ubar_rbs_connect_2_jcs_sph_2),a48])),
+        (multi_dot([a50,a52,a54,a4]) + multi_dot([a55,a9,a57,a56]) + (2) * multi_dot([a58,a59,a60,a4])),
+        (multi_dot([a62,a52,a54,a4]) + multi_dot([a55,a9,a63,a56]) + (2) * multi_dot([a58,a64,a60,a4])),
         (multi_dot([a50,a52,a67]) + (2) * multi_dot([a58,a59,a68]) + multi_dot([a69,a57,a56])),
         (multi_dot([a62,a52,a67]) + (2) * multi_dot([a58,a64,a68]) + multi_dot([a69,a63,a56])),
         (multi_dot([B(a56,self.ubar_rbs_piston_3_jcs_sph_3),a56]) + (-1) * multi_dot([B(a70,self.ubar_rbs_connect_3_jcs_sph_3),a70])),
-        (multi_dot([a72,a74,a76,a10]) + multi_dot([a77,a3,a79,a78]) + (2) * multi_dot([a80,a81,a82,a10])),
-        (multi_dot([a84,a74,a76,a10]) + multi_dot([a77,a3,a85,a78]) + (2) * multi_dot([a80,a86,a82,a10])),
+        (multi_dot([a72,a74,a76,a4]) + multi_dot([a77,a9,a79,a78]) + (2) * multi_dot([a80,a81,a82,a4])),
+        (multi_dot([a84,a74,a76,a4]) + multi_dot([a77,a9,a85,a78]) + (2) * multi_dot([a80,a86,a82,a4])),
         (multi_dot([a72,a74,a89]) + (2) * multi_dot([a80,a81,a90]) + multi_dot([a91,a79,a78])),
         (multi_dot([a84,a74,a89]) + (2) * multi_dot([a80,a86,a90]) + multi_dot([a91,a85,a78])),
         (multi_dot([B(a78,self.ubar_rbs_piston_4_jcs_sph_4),a78]) + (-1) * multi_dot([B(a92,self.ubar_rbs_connect_4_jcs_sph_4),a92])),
@@ -603,13 +603,13 @@ class topology(object):
         (multi_dot([B(a93,self.ubar_rbs_crank_shaft_jcs_bsph_2),a93]) + (-1) * multi_dot([B(a48,self.ubar_rbs_connect_2_jcs_bsph_2),a48])),
         (multi_dot([B(a93,self.ubar_rbs_crank_shaft_jcs_bsph_3),a93]) + (-1) * multi_dot([B(a70,self.ubar_rbs_connect_3_jcs_bsph_3),a70])),
         (multi_dot([B(a93,self.ubar_rbs_crank_shaft_jcs_bsph_4),a93]) + (-1) * multi_dot([B(a92,self.ubar_rbs_connect_4_jcs_bsph_4),a92])),
-        (multi_dot([B(a93,self.ubar_rbs_crank_shaft_jcs_crank_joint),a93]) + (-1) * multi_dot([B(a10,self.ubar_rbs_engine_block_jcs_crank_joint),a10])),
-        (multi_dot([a95,a3,B(a93,a96),a93]) + multi_dot([a96.T,a98,a99,a10]) + (2) * multi_dot([a100,B(a97,a96).T,a101,a10])),
-        (multi_dot([a95,a3,B(a93,a102),a93]) + multi_dot([a102.T,a98,a99,a10]) + (2) * multi_dot([a100,B(a97,a102).T,a101,a10])),
+        (multi_dot([B(a93,self.ubar_rbs_crank_shaft_jcs_crank_joint),a93]) + (-1) * multi_dot([B(a4,self.ubar_rbs_engine_block_jcs_crank_joint),a4])),
+        (multi_dot([a95,a9,B(a93,a96),a93]) + multi_dot([a96.T,a98,a99,a4]) + (2) * multi_dot([a100,B(a97,a96).T,a101,a4])),
+        (multi_dot([a95,a9,B(a93,a102),a93]) + multi_dot([a102.T,a98,a99,a4]) + (2) * multi_dot([a100,B(a97,a102).T,a101,a4])),
         Z3x1,
         Z4x1,
-        (2) * multi_dot([a12,a4]),
-        (2) * multi_dot([a36,a34]),
+        (2) * multi_dot([a12,a10]),
+        (2) * multi_dot([a36,a29]),
         (2) * multi_dot([a58,a56]),
         (2) * multi_dot([a80,a78]),
         (2) * multi_dot([a26.T,a26]),
@@ -617,7 +617,7 @@ class topology(object):
         (2) * multi_dot([a70.T,a70]),
         (2) * multi_dot([a92.T,a92]),
         (2) * multi_dot([a100,a93]),
-        (2) * multi_dot([a10.T,a10]),)
+        (2) * multi_dot([a4.T,a4]),)
 
     
     def eval_jac_eq(self):
