@@ -1,17 +1,8 @@
 # URAEUS MBD
 
-An open-source framework for the modeling, simulation and visualization of constrained multi-body systems.
-
----
-
-## Description
-
-The **uraeus.mbd** is an open-source framework for modeling, simulation and visualization of constrained multi-body systems.
+**An open-source framework for the modeling, simulation and visualization of constrained multi-body systems.**
 
 A multi-body system is hereby defined as *a finite number of material bodies connected in an arbitrary fashion by mechanical joints that limit the relative motion between pairs of bodies*. Practitioners of multi-body dynamics study the generation and solution of the equations governing the motion of such systems [1].
-
-This repository aims to provide a continuously updated database of multi-body systems' models, that are developed using the **uraeus.mbd** open-source framework.
-The goal is to provide various modeling examples that walks through the typical modeling process that the tool adopts in order to make things familiar.
 
 ---
 
@@ -31,6 +22,70 @@ Fields of application include any domain that deals with the study of interconne
 - .. etc.
 
 ----
+
+### Approach
+
+The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, which will be used in the numerical simulation process. This is done through the ideas of **symbolic computing** and **code-generation** as well be shown below.
+
+#### Framework Structure
+
+To achieve this goal of some-what decoupled features, the framework is structured as a "Layered Application" that contains three main categories of sub-packages, where each category focuses on a specific aspect of the problem and can be developed independently, with minimum dependency on the other packages. 
+
+These are:
+
+1. **Symbolic Environment**
+2. **Numerical Simulation Environments**
+3. **3D Visualization Environments**
+
+The high-level structure of the framework is represented below as a Model Diagram, that illustrates these categories and their corresponding sub-packages.
+
+![structure](_readme_materials/high_level_structure.png)
+
+
+
+---
+
+
+
+#### Model Creation
+
+Using [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd), the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. This serves mainly two aspects:
+
+1. A natural way to create and represent the topology of a given multi-body system.
+2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
+
+This is achieved by making heavy use the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
+
+The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
+
+#### Code Generation and Numerical Simulation
+
+The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the developed model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
+
+Each numerical environment is responsible for the translation of the developed symbolic models into valid numerical code, and for the features it aims to provide for the users.
+
+The development of such environments in different languages requires a good grasp of several aspects such as :
+
+- Good knowledge of the **uraeus.smbd** symbolic models' interfaces and structure.
+- Good knowledge of the target language.
+- Appropriate environment architecture/structure that serves the intended usage requirements.
+- Good knowledge of the available linear algebra and math libraries for that language.
+- Design for minimal dependencies on 3rd parties libraries.
+- Simple API for usage and simple build process for compiled languages.
+
+_**Note**: The development of such environments will be discussed in a separate documentation for those interested in developing their own._
+
+#### Conclusion
+
+Several benefits of the adopted approach can be stated here, but the major theme here is the flexibility and modularity, in both software usage and software development. These can be summarized as follows:
+
+- The distinction between the topology design phase and the configuration assignment phase, which gives proper focus for each at its' own.
+- Natural adoption of the template-based modeling theme that emerges from the use of network-graphs to represent the system, which allows convenient assemblage of several graphs to form a new system. 
+- Uncoupled simulation environment, where the symbolic equations generated form the designed topology is free to be written in any programming language with any desired numerical libraries.
+
+
+
+---
 
 ### Features 
 
@@ -90,51 +145,7 @@ The way we achieve a solution for the system is dependent on the type of study w
 - **Dynamic Analysis**</br>
   *"Now we gave it a force, how does it behave ?"*
 
-Each analysis type -or question- can be modelled by a set of algebraic and/or differential equations that can be solved for the system generalized states (positions, velocities and accelerations). A more detailed discussion of each analysis type will be provided in another documentation.
-
-### Approach
-
-The philosophy of the tool is to isolate the model creation process form the actual numerical and computational representation of the system that will be used in the simulation process. This is done through the ideas of **symbolic computing** and **code-generation** as well be shown below.
-
-
-
-#### Model Creation
-
-Using [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd), the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. This serves mainly two aspects:
-
-1. A natural way to create and represent the topology of a given multi-body system.
-2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
-
-This is achieved by making heavy use the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
-
-The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
-
-#### Code Generation and Numerical Simulation
-
-The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the developed model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
-
-Each numerical environment is responsible for the translation of the developed symbolic models into valid numerical code, and for the features it aims to provide for the users.
-
-The development of such environments in different languages requires a good grasp of several aspects such as :
-
-- Good knowledge of the **uraeus.smbd** symbolic models' interfaces and structure.
-- Good knowledge of the target language.
-- Appropriate environment architecture/structure that serves the intended usage requirements.
-- Good knowledge of the available linear algebra and math libraries for that language.
-- Design for minimal dependencies on 3rd parties libraries.
-- Simple API for usage and simple build process for compiled languages.
-
-_**Note**: The development of such environments will be discussed in a separate documentation for those interested in developing their own._
-
-#### Conclusion
-
-Several benefits of the adopted approach can be stated here, but the major theme here is the flexibility and modularity, in both software usage and software development. These can be summarized as follows:
-
-- The distinction between the topology design phase and the configuration assignment phase, which gives proper focus for each at its' own.
-- Natural adoption of the template-based modeling theme that emerges from the use of network-graphs to represent the system, which allows convenient assemblage of several graphs to form a new system. 
-- Uncoupled simulation environment, where the symbolic equations generated form the designed topology is free to be written in any programming language with any desired numerical libraries.
-
-
+Each analysis type -or question- can be modeled by a set of algebraic and/or differential equations that can be solved for the system generalized states (positions, velocities and accelerations). A more detailed discussion of each analysis type will be provided in another documentation.
 
 ---
 
