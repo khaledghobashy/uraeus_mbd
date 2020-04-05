@@ -1,6 +1,6 @@
 # URAEUS MBD
 
-**An open-source framework for the modeling, simulation and visualization of constrained multi-body systems.**
+***An open-source framework for the modeling, simulation and visualization of constrained multi-body systems.***
 
 A multi-body system is hereby defined as *a finite number of material bodies connected in an arbitrary fashion by mechanical joints that limit the relative motion between pairs of bodies*. Practitioners of multi-body dynamics study the generation and solution of the equations governing the motion of such systems [1].
 
@@ -8,7 +8,7 @@ A multi-body system is hereby defined as *a finite number of material bodies con
 
 ### Audience and Fields of Application
 
-Initially, the main targeted audience was the **Formula Student** community. The motive was *encouraging a deeper understanding of the modeling processes and the underlying theories used in other commercial software packages*, which is a way of giving back to the community, and supporting the concept of *"knowledge share"* adopted there by exposing it to the open-source community as well.
+Initially, the main targeted audience was the **Formula Student** community. The motive was to *encourage a deeper understanding of the modeling processes and the underlying theories used in other commercial software packages*, which is a way of giving back to the community, and supporting the concept of *"knowledge share"* adopted there by exposing it to the open-source community as well.
 
 Currently, the tool aims to serve a wider domain of users with different usage goals and different backgrounds, such as students, academic researchers and industry professionals.
 
@@ -23,21 +23,48 @@ Fields of application include any domain that deals with the study of interconne
 
 ----
 
-### Approach
+## Background and Approach
+
+### The Problem
+
+#### What is the problem to be solved?
+
+The primary interest in multi-body dynamics is to analyze the system behavior for given inputs. In analogy with control systems; a multi-body system can be thought as a **_system_** subjected to some **_inputs_** producing some **_outputs_**. These three parts of the problem are dependent on the analyst end goal of the analysis and simulation. 
+
+#### How is the system physics abstracted mathematically?
+
+An unconstrained body in space is normally defined using 6 generalized coordinates defining its location and orientation. For example, a system of 10 bodies requires 60 generalized coordinates to be fully defined, which in turn requires 60 *independent equations* to be solved for these  _unknown_ generalized coordinates.
+
+The way we achieve a solution for the system is dependent on the type of study we are performing. Mainly we have **four types** of analysis that are of interest for a given multi-body system. These are:
+
+- **Kinematic Analysis**</br>
+  *"How does the whole system move if we moved this particular body ?"*
+- **Inverse Dynamic Analysis**</br>
+  *"What are the forces needed to achieve this motion we just did ?"*
+- **Equilibrium Analysis**</br>
+  *"How does the system look if we did nothing ?"*
+- **Dynamic Analysis**</br>
+  *"Now we gave it a force, how does it behave ?"*
+
+Each analysis type -or question- can be modeled by a set of algebraic and/or differential equations that can be solved for the system generalized states (positions, velocities and accelerations). A more detailed discussion of each analysis type will be provided in another documentation.
+
+---
+
+### The Approach
 
 The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, which will be used in the numerical simulation process. This is done through the ideas of **symbolic computing** and **code-generation** as well be shown below.
 
 #### Framework Structure
 
-To achieve this goal of some-what decoupled features, the framework is structured as a "Layered Application" that contains three main categories of sub-packages, where each category focuses on a specific aspect of the problem and can be developed independently, with minimum dependency on the other packages. 
+To achieve this goal, the framework is structured as a "Layered Application", containing three main categories of sub-packages. Each category focuses on a specific aspect of the problem, and can be developed independently, with minimum dependency on the other packages.
 
-These are:
+These framework layers are as follows:
 
-1. **Symbolic Environment**
-2. **Numerical Simulation Environments**
-3. **3D Visualization Environments**
+1. **Symbolic Environment Layer**
+2. **Numerical Simulation Environments Layer**
+3. **3D Visualization Environments Layer**
 
-The high-level structure of the framework is represented below as a Model Diagram, that illustrates these categories and their corresponding sub-packages.
+The high-level structure of the framework is represented below as a **Model Diagram**, that illustrates these categories and their corresponding sub-packages.
 
 ![structure](_readme_materials/high_level_structure.png)
 
@@ -47,9 +74,9 @@ The high-level structure of the framework is represented below as a Model Diagra
 
 
 
-#### Model Creation
+#### Symbolic Environment Layer
 
-Using [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd), the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. This serves mainly two aspects:
+Using the [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) python package, the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. This serves mainly two aspects:
 
 1. A natural way to create and represent the topology of a given multi-body system.
 2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
@@ -58,7 +85,9 @@ This is achieved by making heavy use the [**NetworkX**](https://networkx.github.
 
 The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
 
-#### Code Generation and Numerical Simulation
+---
+
+#### Numerical Simulation Environments Layer
 
 The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the developed model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
 
@@ -75,6 +104,12 @@ The development of such environments in different languages requires a good gras
 
 _**Note**: The development of such environments will be discussed in a separate documentation for those interested in developing their own._
 
+---
+
+#### Visualization Environments Layer
+
+---
+
 #### Conclusion
 
 Several benefits of the adopted approach can be stated here, but the major theme here is the flexibility and modularity, in both software usage and software development. These can be summarized as follows:
@@ -83,11 +118,13 @@ Several benefits of the adopted approach can be stated here, but the major theme
 - Natural adoption of the template-based modeling theme that emerges from the use of network-graphs to represent the system, which allows convenient assemblage of several graphs to form a new system. 
 - Uncoupled simulation environment, where the symbolic equations generated form the designed topology is free to be written in any programming language with any desired numerical libraries.
 
+The figure below shows a high-level activity diagram of the usage of the framework, where we have three swim-lanes representing the main three layers of the framework .... *t.b.c*
 
+![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
 
 ---
 
-### Features 
+### Current Features 
 
 #### Symbolic Model Creation
 
@@ -122,36 +159,7 @@ The [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) is a python
 
 *under development ...*
 
-----
-
-## Background
-
-#### What is the problem to be solved?
-
-The primary interest in multi-body dynamics is to analyze the system behavior for given inputs. In analogy with control systems; a multi-body system can be thought as a **_system_** subjected to some **_inputs_** producing some **_outputs_**. These three parts of the problem are dependent on the analyst end goal of the analysis and simulation. 
-
-#### How is the system physics abstracted mathematically?
-
-An unconstrained body in space is normally defined using 6 generalized coordinates defining its location and orientation. For example, a system of 10 bodies requires 60 generalized coordinates to be fully defined, which in turn requires 60 *independent equations* to be solved for these  _unknown_ generalized coordinates.
-
-The way we achieve a solution for the system is dependent on the type of study we are performing. Mainly we have **four types** of analysis that are of interest for a given multi-body system. These are:
-
-- **Kinematic Analysis**</br>
-  *"How does the whole system move if we moved this particular body ?"*
-- **Inverse Dynamic Analysis**</br>
-  *"What are the forces needed to achieve this motion we just did ?"*
-- **Equilibrium Analysis**</br>
-  *"How does the system look if we did nothing ?"*
-- **Dynamic Analysis**</br>
-  *"Now we gave it a force, how does it behave ?"*
-
-Each analysis type -or question- can be modeled by a set of algebraic and/or differential equations that can be solved for the system generalized states (positions, velocities and accelerations). A more detailed discussion of each analysis type will be provided in another documentation.
-
 ---
-
-## The Modeling and Simulation Process
-
-![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
 
 ## References
 
