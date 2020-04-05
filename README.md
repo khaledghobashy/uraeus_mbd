@@ -105,11 +105,11 @@ Using [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd), the topo
 1. A natural way to create and represent the topology of a given multi-body system.
 2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
 
-This is achieved by making heavy use the [NetworkX](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [SymPy](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
+This is achieved by making heavy use the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
 
 The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
 
-#### Code Generation and Model Simulation
+#### Code Generation and Numerical Simulation
 
 The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the developed model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
 
@@ -140,7 +140,7 @@ Several benefits of the adopted approach can be stated here, but the major theme
 
 ## The Modeling and Simulation Process
 
-
+![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
 
 ## References
 
