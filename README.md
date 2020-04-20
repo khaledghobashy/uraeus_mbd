@@ -56,7 +56,7 @@ The philosophy of the framework is to *isolate the model creation process form t
 
 #### Framework Structure
 
-To achieve this goal, the framework is structured as a "Layered Application", containing three main categories of sub-packages. Each category focuses on a specific aspect of the problem, and can be developed independently, with minimum dependency on the other packages.
+To achieve this goal, the framework is structured as a "Layered Application", containing three main layers of sub-packages. Each layer focuses on a specific aspect of the problem, and can be developed independently, with minimum dependency on the other packages.
 
 These framework layers are as follows:
 
@@ -64,7 +64,7 @@ These framework layers are as follows:
 2. **Numerical Simulation Environments Layer**
 3. **3D Visualization Environments Layer**
 
-The high-level structure of the framework is represented below as a **Model Diagram**, that illustrates these categories and their corresponding sub-packages.
+The high-level structure of the framework is represented below as a **Model Diagram**, that illustrates these layers and their corresponding sub-packages.
 
 ![structure](_readme_materials/high_level_structure.png)
 
@@ -89,7 +89,7 @@ The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use
 
 #### Numerical Simulation Environments Layer
 
-The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the developed model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
+The process of performing actual simulations on the created model requires the generation of a valid numerical and computational code of the model. This is done by taking in the symbolic model and create a valid code base written in the desired programming language with the desired programming paradigm and structure.
 
 Each numerical environment is responsible for the translation of the developed symbolic models into valid numerical code, and for the features it aims to provide for the users.
 
@@ -117,10 +117,6 @@ Several benefits of the adopted approach can be stated here, but the major theme
 - The distinction between the topology design phase and the configuration assignment phase, which gives proper focus for each at its' own.
 - Natural adoption of the template-based modeling theme that emerges from the use of network-graphs to represent the system, which allows convenient assemblage of several graphs to form a new system. 
 - Uncoupled simulation environment, where the symbolic equations generated form the designed topology is free to be written in any programming language with any desired numerical libraries.
-
-The figure below shows a high-level activity diagram of the usage of the framework, where we have three swim-lanes representing the main three layers of the framework .... *t.b.c*
-
-![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
 
 ---
 
@@ -158,6 +154,20 @@ The [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) is a python
 **Blender**
 
 *under development ...*
+
+---
+
+## Example
+
+The figure below shows a high-level activity diagram of a typical usage flow of the framework, where we have three swim-lanes representing the main three layers of the framework.
+
+We start at the symbolic environment lane, where we create our symbolic model, which is represented by the "Symbolic Model Creation" activity. This activity outputs two main objects.
+
+![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
+
+---
+
+
 
 ---
 
