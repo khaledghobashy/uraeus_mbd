@@ -454,16 +454,16 @@ class topology(object):
 
         a0 = self.Pd_ground
         a1 = self.Pd_rbs_rocker_1
-        a2 = self.Mbar_ground_jcs_rev_1[:,0:1]
-        a3 = self.P_ground
-        a4 = A(a3).T
-        a5 = self.Mbar_rbs_rocker_1_jcs_rev_1[:,2:3]
-        a6 = B(a1,a5)
-        a7 = a5.T
-        a8 = self.P_rbs_rocker_1
-        a9 = A(a8).T
+        a2 = self.Mbar_rbs_rocker_1_jcs_rev_1[:,2:3]
+        a3 = a2.T
+        a4 = self.P_rbs_rocker_1
+        a5 = A(a4).T
+        a6 = self.Mbar_ground_jcs_rev_1[:,0:1]
+        a7 = self.P_ground
+        a8 = A(a7).T
+        a9 = B(a1,a2)
         a10 = a0.T
-        a11 = B(a8,a5)
+        a11 = B(a4,a2)
         a12 = self.Mbar_ground_jcs_rev_1[:,1:2]
         a13 = I1
         a14 = self.Mbar_rbs_rocker_1_jcs_rev_1[:,0:1]
@@ -514,14 +514,14 @@ class topology(object):
         a59 = B(a56,a53)
         a60 = self.Mbar_rbs_rocker_2_jcs_bottom_rev_2[:,1:2]
         a61 = self.Pd_rbs_link_3
-        a62 = self.Mbar_rbs_link_3_jcs_bottom_rev_3[:,2:3]
-        a63 = a62.T
-        a64 = self.P_rbs_link_3
-        a65 = A(a64).T
-        a66 = self.Mbar_rbs_rocker_3_jcs_bottom_rev_3[:,0:1]
-        a67 = B(a61,a62)
+        a62 = self.Mbar_rbs_rocker_3_jcs_bottom_rev_3[:,0:1]
+        a63 = self.Mbar_rbs_link_3_jcs_bottom_rev_3[:,2:3]
+        a64 = B(a61,a63)
+        a65 = a63.T
+        a66 = self.P_rbs_link_3
+        a67 = A(a66).T
         a68 = a29.T
-        a69 = B(a64,a62)
+        a69 = B(a66,a63)
         a70 = self.Mbar_rbs_rocker_3_jcs_bottom_rev_3[:,1:2]
         a71 = self.Pd_rbs_table
         a72 = self.Pd_rbs_strut_lower
@@ -550,43 +550,43 @@ class topology(object):
         a95 = (multi_dot([B(a72,a93),a72]) + (-1) * multi_dot([B(a80,a94),a80]))
         a96 = (self.Rd_rbs_strut_lower + (-1) * self.Rd_rbs_strut_upper + multi_dot([B(a75,a93),a72]) + (-1) * multi_dot([B(a84,a94),a80]))
         a97 = (self.R_rbs_strut_lower.T + (-1) * self.R_rbs_strut_upper.T + multi_dot([a93.T,a76]) + (-1) * multi_dot([a94.T,a85]))
-        a98 = self.Mbar_rbs_strut_upper_jcs_strut_upper[:,0:1]
-        a99 = self.Mbar_rbs_table_jcs_strut_upper[:,0:1]
-        a100 = self.P_rbs_table
+        a98 = self.Mbar_rbs_table_jcs_strut_upper[:,0:1]
+        a99 = self.P_rbs_table
+        a100 = self.Mbar_rbs_strut_upper_jcs_strut_upper[:,0:1]
         a101 = a80.T
 
         self.acc_eq_blocks = ((multi_dot([B(a0,self.ubar_ground_jcs_rev_1),a0]) + (-1) * multi_dot([B(a1,self.ubar_rbs_rocker_1_jcs_rev_1),a1])),
-        (multi_dot([a2.T,a4,a6,a1]) + multi_dot([a7,a9,B(a0,a2),a0]) + (2) * multi_dot([a10,B(a3,a2).T,a11,a1])),
-        (multi_dot([a12.T,a4,a6,a1]) + multi_dot([a7,a9,B(a0,a12),a0]) + (2) * multi_dot([a10,B(a3,a12).T,a11,a1])),
-        ((-1 * derivative(config.UF_mcs_act_1, t, 0.1, 2)) * a13 + multi_dot([a14.T,a9,(cos(config.UF_mcs_act_1(t)) * B(a0,a15) + (-1 * sin(config.UF_mcs_act_1(t))) * B(a0,a16)),a0]) + multi_dot([(cos(config.UF_mcs_act_1(t)) * multi_dot([a15.T,a4]) + (-1 * sin(config.UF_mcs_act_1(t))) * multi_dot([a16.T,a4])),B(a1,a14),a1]) + (2) * multi_dot([(cos(config.UF_mcs_act_1(t)) * multi_dot([a10,B(a3,a15).T]) + (-1 * sin(config.UF_mcs_act_1(t))) * multi_dot([a10,B(a3,a16).T])),B(a8,a14),a1])),
+        (multi_dot([a3,a5,B(a0,a6),a0]) + multi_dot([a6.T,a8,a9,a1]) + (2) * multi_dot([a10,B(a7,a6).T,a11,a1])),
+        (multi_dot([a3,a5,B(a0,a12),a0]) + multi_dot([a12.T,a8,a9,a1]) + (2) * multi_dot([a10,B(a7,a12).T,a11,a1])),
+        ((-1 * derivative(config.UF_mcs_act_1, t, 0.1, 2)) * a13 + multi_dot([a14.T,a5,(cos(config.UF_mcs_act_1(t)) * B(a0,a15) + (-1 * sin(config.UF_mcs_act_1(t))) * B(a0,a16)),a0]) + multi_dot([(cos(config.UF_mcs_act_1(t)) * multi_dot([a15.T,a8]) + (-1 * sin(config.UF_mcs_act_1(t))) * multi_dot([a16.T,a8])),B(a1,a14),a1]) + (2) * multi_dot([(cos(config.UF_mcs_act_1(t)) * multi_dot([a10,B(a7,a15).T]) + (-1 * sin(config.UF_mcs_act_1(t))) * multi_dot([a10,B(a7,a16).T])),B(a4,a14),a1])),
         (multi_dot([B(a0,self.ubar_ground_jcs_rev_2),a0]) + (-1) * multi_dot([B(a17,self.ubar_rbs_rocker_2_jcs_rev_2),a17])),
-        (multi_dot([a18.T,a4,a20,a17]) + multi_dot([a21,a23,B(a0,a18),a0]) + (2) * multi_dot([a10,B(a3,a18).T,a24,a17])),
-        (multi_dot([a25.T,a4,a20,a17]) + multi_dot([a21,a23,B(a0,a25),a0]) + (2) * multi_dot([a10,B(a3,a25).T,a24,a17])),
-        ((-1 * derivative(config.UF_mcs_act_2, t, 0.1, 2)) * a13 + multi_dot([a26.T,a23,(cos(config.UF_mcs_act_2(t)) * B(a0,a27) + (-1 * sin(config.UF_mcs_act_2(t))) * B(a0,a28)),a0]) + multi_dot([(cos(config.UF_mcs_act_2(t)) * multi_dot([a27.T,a4]) + (-1 * sin(config.UF_mcs_act_2(t))) * multi_dot([a28.T,a4])),B(a17,a26),a17]) + (2) * multi_dot([(cos(config.UF_mcs_act_2(t)) * multi_dot([a10,B(a3,a27).T]) + (-1 * sin(config.UF_mcs_act_2(t))) * multi_dot([a10,B(a3,a28).T])),B(a22,a26),a17])),
+        (multi_dot([a18.T,a8,a20,a17]) + multi_dot([a21,a23,B(a0,a18),a0]) + (2) * multi_dot([a10,B(a7,a18).T,a24,a17])),
+        (multi_dot([a25.T,a8,a20,a17]) + multi_dot([a21,a23,B(a0,a25),a0]) + (2) * multi_dot([a10,B(a7,a25).T,a24,a17])),
+        ((-1 * derivative(config.UF_mcs_act_2, t, 0.1, 2)) * a13 + multi_dot([a26.T,a23,(cos(config.UF_mcs_act_2(t)) * B(a0,a27) + (-1 * sin(config.UF_mcs_act_2(t))) * B(a0,a28)),a0]) + multi_dot([(cos(config.UF_mcs_act_2(t)) * multi_dot([a27.T,a8]) + (-1 * sin(config.UF_mcs_act_2(t))) * multi_dot([a28.T,a8])),B(a17,a26),a17]) + (2) * multi_dot([(cos(config.UF_mcs_act_2(t)) * multi_dot([a10,B(a7,a27).T]) + (-1 * sin(config.UF_mcs_act_2(t))) * multi_dot([a10,B(a7,a28).T])),B(a22,a26),a17])),
         (multi_dot([B(a0,self.ubar_ground_jcs_rev_3),a0]) + (-1) * multi_dot([B(a29,self.ubar_rbs_rocker_3_jcs_rev_3),a29])),
-        (multi_dot([a30.T,a4,a32,a29]) + multi_dot([a33,a35,B(a0,a30),a0]) + (2) * multi_dot([a10,B(a3,a30).T,a36,a29])),
-        (multi_dot([a37.T,a4,a32,a29]) + multi_dot([a33,a35,B(a0,a37),a0]) + (2) * multi_dot([a10,B(a3,a37).T,a36,a29])),
-        ((-1 * derivative(config.UF_mcs_act_3, t, 0.1, 2)) * a13 + multi_dot([a38.T,a35,(cos(config.UF_mcs_act_3(t)) * B(a0,a39) + (-1 * sin(config.UF_mcs_act_3(t))) * B(a0,a40)),a0]) + multi_dot([(cos(config.UF_mcs_act_3(t)) * multi_dot([a39.T,a4]) + (-1 * sin(config.UF_mcs_act_3(t))) * multi_dot([a40.T,a4])),B(a29,a38),a29]) + (2) * multi_dot([(cos(config.UF_mcs_act_3(t)) * multi_dot([a10,B(a3,a39).T]) + (-1 * sin(config.UF_mcs_act_3(t))) * multi_dot([a10,B(a3,a40).T])),B(a34,a38),a29])),
+        (multi_dot([a30.T,a8,a32,a29]) + multi_dot([a33,a35,B(a0,a30),a0]) + (2) * multi_dot([a10,B(a7,a30).T,a36,a29])),
+        (multi_dot([a37.T,a8,a32,a29]) + multi_dot([a33,a35,B(a0,a37),a0]) + (2) * multi_dot([a10,B(a7,a37).T,a36,a29])),
+        ((-1 * derivative(config.UF_mcs_act_3, t, 0.1, 2)) * a13 + multi_dot([a38.T,a35,(cos(config.UF_mcs_act_3(t)) * B(a0,a39) + (-1 * sin(config.UF_mcs_act_3(t))) * B(a0,a40)),a0]) + multi_dot([(cos(config.UF_mcs_act_3(t)) * multi_dot([a39.T,a8]) + (-1 * sin(config.UF_mcs_act_3(t))) * multi_dot([a40.T,a8])),B(a29,a38),a29]) + (2) * multi_dot([(cos(config.UF_mcs_act_3(t)) * multi_dot([a10,B(a7,a39).T]) + (-1 * sin(config.UF_mcs_act_3(t))) * multi_dot([a10,B(a7,a40).T])),B(a34,a38),a29])),
         (multi_dot([B(a1,self.ubar_rbs_rocker_1_jcs_bottom_rev_1),a1]) + (-1) * multi_dot([B(a41,self.ubar_rbs_link_1_jcs_bottom_rev_1),a41])),
-        (multi_dot([a42.T,a9,a44,a41]) + multi_dot([a45,a47,B(a1,a42),a1]) + (2) * multi_dot([a48,B(a8,a42).T,a49,a41])),
-        (multi_dot([a50.T,a9,a44,a41]) + multi_dot([a45,a47,B(a1,a50),a1]) + (2) * multi_dot([a48,B(a8,a50).T,a49,a41])),
+        (multi_dot([a42.T,a5,a44,a41]) + multi_dot([a45,a47,B(a1,a42),a1]) + (2) * multi_dot([a48,B(a4,a42).T,a49,a41])),
+        (multi_dot([a50.T,a5,a44,a41]) + multi_dot([a45,a47,B(a1,a50),a1]) + (2) * multi_dot([a48,B(a4,a50).T,a49,a41])),
         (multi_dot([B(a17,self.ubar_rbs_rocker_2_jcs_bottom_rev_2),a17]) + (-1) * multi_dot([B(a51,self.ubar_rbs_link_2_jcs_bottom_rev_2),a51])),
         (multi_dot([a52.T,a23,a54,a51]) + multi_dot([a55,a57,B(a17,a52),a17]) + (2) * multi_dot([a58,B(a22,a52).T,a59,a51])),
         (multi_dot([a60.T,a23,a54,a51]) + multi_dot([a55,a57,B(a17,a60),a17]) + (2) * multi_dot([a58,B(a22,a60).T,a59,a51])),
         (multi_dot([B(a29,self.ubar_rbs_rocker_3_jcs_bottom_rev_3),a29]) + (-1) * multi_dot([B(a61,self.ubar_rbs_link_3_jcs_bottom_rev_3),a61])),
-        (multi_dot([a63,a65,B(a29,a66),a29]) + multi_dot([a66.T,a35,a67,a61]) + (2) * multi_dot([a68,B(a34,a66).T,a69,a61])),
-        (multi_dot([a63,a65,B(a29,a70),a29]) + multi_dot([a70.T,a35,a67,a61]) + (2) * multi_dot([a68,B(a34,a70).T,a69,a61])),
+        (multi_dot([a62.T,a35,a64,a61]) + multi_dot([a65,a67,B(a29,a62),a29]) + (2) * multi_dot([a68,B(a34,a62).T,a69,a61])),
+        (multi_dot([a70.T,a35,a64,a61]) + multi_dot([a65,a67,B(a29,a70),a29]) + (2) * multi_dot([a68,B(a34,a70).T,a69,a61])),
         (multi_dot([B(a41,self.ubar_rbs_link_1_jcs_upper_sph_1),a41]) + (-1) * multi_dot([B(a71,self.ubar_rbs_table_jcs_upper_sph_1),a71])),
         (multi_dot([B(a51,self.ubar_rbs_link_2_jcs_upper_sph_2),a51]) + (-1) * multi_dot([B(a71,self.ubar_rbs_table_jcs_upper_sph_2),a71])),
         (multi_dot([B(a61,self.ubar_rbs_link_3_jcs_upper_sph_3),a61]) + (-1) * multi_dot([B(a71,self.ubar_rbs_table_jcs_upper_sph_3),a71])),
         (multi_dot([B(a72,self.ubar_rbs_strut_lower_jcs_strut_lower),a72]) + (-1) * multi_dot([B(a0,self.ubar_ground_jcs_strut_lower),a0])),
-        (multi_dot([a73.T,a4,B(a72,a74),a72]) + multi_dot([a74.T,a76,B(a0,a73),a0]) + (2) * multi_dot([a77,B(a75,a74).T,B(a3,a73),a0])),
+        (multi_dot([a73.T,a8,B(a72,a74),a72]) + multi_dot([a74.T,a76,B(a0,a73),a0]) + (2) * multi_dot([a77,B(a75,a74).T,B(a7,a73),a0])),
         (multi_dot([a79,a76,a82,a80]) + multi_dot([a83,a85,a86,a72]) + (2) * multi_dot([a77,a87,a88,a80])),
         (multi_dot([a90,a76,a82,a80]) + multi_dot([a83,a85,a91,a72]) + (2) * multi_dot([a77,a92,a88,a80])),
         (multi_dot([a79,a76,a95]) + (2) * multi_dot([a77,a87,a96]) + multi_dot([a97,a86,a72])),
         (multi_dot([a90,a76,a95]) + (2) * multi_dot([a77,a92,a96]) + multi_dot([a97,a91,a72])),
         (multi_dot([B(a80,self.ubar_rbs_strut_upper_jcs_strut_upper),a80]) + (-1) * multi_dot([B(a71,self.ubar_rbs_table_jcs_strut_upper),a71])),
-        (multi_dot([a98.T,a85,B(a71,a99),a71]) + multi_dot([a99.T,A(a100).T,B(a80,a98),a80]) + (2) * multi_dot([a101,B(a84,a98).T,B(a100,a99),a71])),
+        (multi_dot([a98.T,A(a99).T,B(a80,a100),a80]) + multi_dot([a100.T,a85,B(a71,a98),a71]) + (2) * multi_dot([a101,B(a84,a100).T,B(a99,a98),a71])),
         Z3x1,
         Z4x1,
         (2) * multi_dot([a48,a1]),

@@ -1,0 +1,1519 @@
+{
+    "information": {
+        "topology_name": "double_wishbone_direct_acting",
+        "configuration_name": "double_wishbone_direct_acting_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "pt1_far_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "pt2_far_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "UF_far_strut_Fs": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "UF_far_strut_Fd": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "far_strut_FL": 1.0,
+        "UF_far_tire_F": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "UF_far_tire_T": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
+        "pt1_far_tire": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_uca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_uca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_uca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_uca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_lca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_lca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_lca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_lca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_upright": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_upright": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_upright": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_upright": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_upper_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_upper_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_upper_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_upper_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_lower_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_lower_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_lower_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_lower_strut": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_tie_rod": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_tie_rod": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_tie_rod": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_tie_rod": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbr_hub": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbr_hub": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbr_hub": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbr_hub": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_ucaf": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_ucar": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_ucao": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_lcaf": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_lcar": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_lcao": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_tro": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_tri": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_strut_chassis": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_strut_lca": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_wc": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_wc1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hpr_wc2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_x": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_y": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_z": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "s_links_ro": 1.0,
+        "s_strut_outer": 1.0,
+        "s_strut_inner": 1.0,
+        "s_thickness": 1.0,
+        "s_hub_radius": 1.0,
+        "s_tire_radius": 1.0
+    },
+    "evaluations": {
+        "hpl_ucar": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_ucar"
+            ]
+        },
+        "hpl_ucaf": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_ucaf"
+            ]
+        },
+        "hpl_ucao": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_ucao"
+            ]
+        },
+        "hpl_lcar": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_lcar"
+            ]
+        },
+        "hpl_lcaf": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_lcaf"
+            ]
+        },
+        "hpl_lcao": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_lcao"
+            ]
+        },
+        "hpl_wc": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_wc"
+            ]
+        },
+        "hpl_strut_lca": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_strut_lca"
+            ]
+        },
+        "hpl_strut_chassis": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_strut_chassis"
+            ]
+        },
+        "hpr_strut_mid": {
+            "constructor": "Centered",
+            "args": [
+                "hpr_strut_chassis",
+                "hpr_strut_lca"
+            ]
+        },
+        "hpl_strut_mid": {
+            "constructor": "Centered",
+            "args": [
+                "hpl_strut_chassis",
+                "hpl_strut_lca"
+            ]
+        },
+        "hpl_tro": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_tro"
+            ]
+        },
+        "hpl_tri": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_tri"
+            ]
+        },
+        "gmr_uca_c2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_ucar",
+                "hpr_ucao",
+                "s_links_ro"
+            ]
+        },
+        "gmr_uca_c1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_ucaf",
+                "hpr_ucao",
+                "s_links_ro"
+            ]
+        },
+        "gmr_uca": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gmr_uca_c1",
+                "gmr_uca_c2"
+            ]
+        },
+        "gml_uca_c2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_ucar",
+                "hpl_ucao",
+                "s_links_ro"
+            ]
+        },
+        "gml_uca_c1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_ucaf",
+                "hpl_ucao",
+                "s_links_ro"
+            ]
+        },
+        "gml_uca": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gml_uca_c1",
+                "gml_uca_c2"
+            ]
+        },
+        "gmr_lca_c2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_lcar",
+                "hpr_lcao",
+                "s_links_ro"
+            ]
+        },
+        "gmr_lca_c1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_lcaf",
+                "hpr_lcao",
+                "s_links_ro"
+            ]
+        },
+        "gmr_lca": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gmr_lca_c1",
+                "gmr_lca_c2"
+            ]
+        },
+        "gml_lca_c2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_lcar",
+                "hpl_lcao",
+                "s_links_ro"
+            ]
+        },
+        "gml_lca_c1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_lcaf",
+                "hpl_lcao",
+                "s_links_ro"
+            ]
+        },
+        "gml_lca": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gml_lca_c1",
+                "gml_lca_c2"
+            ]
+        },
+        "gmr_upright": {
+            "constructor": "Triangular_Prism",
+            "args": [
+                "hpr_ucao",
+                "hpr_wc",
+                "hpr_lcao",
+                "s_thickness"
+            ]
+        },
+        "gml_upright": {
+            "constructor": "Triangular_Prism",
+            "args": [
+                "hpl_ucao",
+                "hpl_wc",
+                "hpl_lcao",
+                "s_thickness"
+            ]
+        },
+        "gmr_upper_strut": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_strut_chassis",
+                "hpr_strut_mid",
+                "s_strut_outer"
+            ]
+        },
+        "gml_upper_strut": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_strut_chassis",
+                "hpl_strut_mid",
+                "s_strut_outer"
+            ]
+        },
+        "gmr_lower_strut": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_strut_mid",
+                "hpr_strut_lca",
+                "s_strut_inner"
+            ]
+        },
+        "gml_lower_strut": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_strut_mid",
+                "hpl_strut_lca",
+                "s_strut_inner"
+            ]
+        },
+        "gmr_tie_rod": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_tri",
+                "hpr_tro",
+                "s_links_ro"
+            ]
+        },
+        "gml_tie_rod": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_tri",
+                "hpl_tro",
+                "s_links_ro"
+            ]
+        },
+        "gmr_tire": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_wc1",
+                "hpr_wc",
+                "s_tire_radius"
+            ]
+        },
+        "gmr_hub_cyl": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpr_wc2",
+                "hpr_wc",
+                "s_hub_radius"
+            ]
+        },
+        "gmr_hub": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gmr_hub_cyl",
+                "gmr_tire"
+            ]
+        },
+        "hpl_wc1": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_wc1"
+            ]
+        },
+        "hpl_wc2": {
+            "constructor": "Mirrored",
+            "args": [
+                "hpr_wc2"
+            ]
+        },
+        "gml_tire": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_wc1",
+                "hpl_wc",
+                "s_tire_radius"
+            ]
+        },
+        "gml_hub_cyl": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hpl_wc2",
+                "hpl_wc",
+                "s_hub_radius"
+            ]
+        },
+        "gml_hub": {
+            "constructor": "Composite_Geometry",
+            "args": [
+                "gml_hub_cyl",
+                "gml_tire"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcr_uca_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_ucaf",
+                "hpr_ucar"
+            ]
+        },
+        "ax1_jcl_uca_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_ucaf",
+                "hpl_ucar"
+            ]
+        },
+        "pt1_jcr_uca_chassis": {
+            "constructor": "Centered",
+            "args": [
+                "hpr_ucaf",
+                "hpr_ucar"
+            ]
+        },
+        "pt1_jcl_uca_chassis": {
+            "constructor": "Centered",
+            "args": [
+                "hpl_ucaf",
+                "hpl_ucar"
+            ]
+        },
+        "ax1_jcr_uca_upright": "vcs_z",
+        "ax1_jcl_uca_upright": "vcs_z",
+        "pt1_jcr_uca_upright": "hpr_ucao",
+        "pt1_jcl_uca_upright": "hpl_ucao",
+        "ax1_jcr_lca_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_lcaf",
+                "hpr_lcar"
+            ]
+        },
+        "ax1_jcl_lca_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_lcaf",
+                "hpl_lcar"
+            ]
+        },
+        "pt1_jcr_lca_chassis": {
+            "constructor": "Centered",
+            "args": [
+                "hpr_lcaf",
+                "hpr_lcar"
+            ]
+        },
+        "pt1_jcl_lca_chassis": {
+            "constructor": "Centered",
+            "args": [
+                "hpl_lcaf",
+                "hpl_lcar"
+            ]
+        },
+        "ax1_jcr_lca_upright": "vcs_z",
+        "ax1_jcl_lca_upright": "vcs_z",
+        "pt1_jcr_lca_upright": "hpr_lcao",
+        "pt1_jcl_lca_upright": "hpl_lcao",
+        "ax1_jcr_hub_bearing": "vcs_y",
+        "ax1_jcl_hub_bearing": "vcs_y",
+        "pt1_jcr_hub_bearing": "hpr_wc",
+        "pt1_jcl_hub_bearing": "hpl_wc",
+        "ax1_jcr_strut_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_strut_chassis",
+                "hpr_strut_lca"
+            ]
+        },
+        "ax1_jcl_strut_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_strut_chassis",
+                "hpl_strut_lca"
+            ]
+        },
+        "ax2_jcr_strut_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_strut_lca",
+                "hpr_strut_chassis"
+            ]
+        },
+        "ax2_jcl_strut_chassis": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_strut_lca",
+                "hpl_strut_chassis"
+            ]
+        },
+        "pt1_jcr_strut_chassis": "hpr_strut_chassis",
+        "pt1_jcl_strut_chassis": "hpl_strut_chassis",
+        "ax1_jcr_strut": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_strut_lca",
+                "hpr_strut_chassis"
+            ]
+        },
+        "ax1_jcl_strut": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_strut_lca",
+                "hpl_strut_chassis"
+            ]
+        },
+        "pt1_jcr_strut": "hpr_strut_mid",
+        "pt1_jcl_strut": "hpl_strut_mid",
+        "pt1_fal_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "pt1_far_strut"
+            ]
+        },
+        "pt2_fal_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "pt2_far_strut"
+            ]
+        },
+        "UF_fal_strut_Fs": "UF_far_strut_Fs",
+        "UF_fal_strut_Fd": "UF_far_strut_Fd",
+        "fal_strut_FL": "far_strut_FL",
+        "ax1_jcr_strut_lca": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_strut_chassis",
+                "hpr_strut_lca"
+            ]
+        },
+        "ax1_jcl_strut_lca": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_strut_chassis",
+                "hpl_strut_lca"
+            ]
+        },
+        "ax2_jcr_strut_lca": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_strut_lca",
+                "hpr_strut_chassis"
+            ]
+        },
+        "ax2_jcl_strut_lca": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_strut_lca",
+                "hpl_strut_chassis"
+            ]
+        },
+        "pt1_jcr_strut_lca": "hpr_strut_lca",
+        "pt1_jcl_strut_lca": "hpl_strut_lca",
+        "ax1_jcr_tie_steering": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_tri",
+                "hpr_tro"
+            ]
+        },
+        "ax1_jcl_tie_steering": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_tri",
+                "hpl_tro"
+            ]
+        },
+        "ax2_jcr_tie_steering": {
+            "constructor": "Oriented",
+            "args": [
+                "hpr_tro",
+                "hpr_tri"
+            ]
+        },
+        "ax2_jcl_tie_steering": {
+            "constructor": "Oriented",
+            "args": [
+                "hpl_tro",
+                "hpl_tri"
+            ]
+        },
+        "pt1_jcr_tie_steering": "hpr_tri",
+        "pt1_jcl_tie_steering": "hpl_tri",
+        "ax1_jcr_tie_upright": "vcs_z",
+        "ax1_jcl_tie_upright": "vcs_z",
+        "pt1_jcr_tie_upright": "hpr_tro",
+        "pt1_jcl_tie_upright": "hpl_tro",
+        "UF_fal_tire_F": "UF_far_tire_F",
+        "UF_fal_tire_T": "UF_far_tire_T",
+        "pt1_fal_tire": {
+            "constructor": "Mirrored",
+            "args": [
+                "pt1_far_tire"
+            ]
+        },
+        "R_rbr_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_uca",
+                "R"
+            ]
+        },
+        "R_rbl_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_uca",
+                "R"
+            ]
+        },
+        "P_rbr_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_uca",
+                "P"
+            ]
+        },
+        "P_rbl_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_uca",
+                "P"
+            ]
+        },
+        "Rd_rbl_uca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_uca"
+            ]
+        },
+        "Pd_rbl_uca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_uca"
+            ]
+        },
+        "Rdd_rbl_uca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_uca"
+            ]
+        },
+        "Pdd_rbl_uca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_uca"
+            ]
+        },
+        "m_rbr_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_uca",
+                "m"
+            ]
+        },
+        "m_rbl_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_uca",
+                "m"
+            ]
+        },
+        "Jbar_rbr_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_uca",
+                "J"
+            ]
+        },
+        "Jbar_rbl_uca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_uca",
+                "J"
+            ]
+        },
+        "R_rbr_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lca",
+                "R"
+            ]
+        },
+        "R_rbl_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lca",
+                "R"
+            ]
+        },
+        "P_rbr_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lca",
+                "P"
+            ]
+        },
+        "P_rbl_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lca",
+                "P"
+            ]
+        },
+        "Rd_rbl_lca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_lca"
+            ]
+        },
+        "Pd_rbl_lca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_lca"
+            ]
+        },
+        "Rdd_rbl_lca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_lca"
+            ]
+        },
+        "Pdd_rbl_lca": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_lca"
+            ]
+        },
+        "m_rbr_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lca",
+                "m"
+            ]
+        },
+        "m_rbl_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lca",
+                "m"
+            ]
+        },
+        "Jbar_rbr_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lca",
+                "J"
+            ]
+        },
+        "Jbar_rbl_lca": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lca",
+                "J"
+            ]
+        },
+        "R_rbr_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upright",
+                "R"
+            ]
+        },
+        "R_rbl_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upright",
+                "R"
+            ]
+        },
+        "P_rbr_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upright",
+                "P"
+            ]
+        },
+        "P_rbl_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upright",
+                "P"
+            ]
+        },
+        "Rd_rbl_upright": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_upright"
+            ]
+        },
+        "Pd_rbl_upright": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_upright"
+            ]
+        },
+        "Rdd_rbl_upright": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_upright"
+            ]
+        },
+        "Pdd_rbl_upright": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_upright"
+            ]
+        },
+        "m_rbr_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upright",
+                "m"
+            ]
+        },
+        "m_rbl_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upright",
+                "m"
+            ]
+        },
+        "Jbar_rbr_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upright",
+                "J"
+            ]
+        },
+        "Jbar_rbl_upright": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upright",
+                "J"
+            ]
+        },
+        "R_rbr_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upper_strut",
+                "R"
+            ]
+        },
+        "R_rbl_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upper_strut",
+                "R"
+            ]
+        },
+        "P_rbr_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upper_strut",
+                "P"
+            ]
+        },
+        "P_rbl_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upper_strut",
+                "P"
+            ]
+        },
+        "Rd_rbl_upper_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_upper_strut"
+            ]
+        },
+        "Pd_rbl_upper_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_upper_strut"
+            ]
+        },
+        "Rdd_rbl_upper_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_upper_strut"
+            ]
+        },
+        "Pdd_rbl_upper_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_upper_strut"
+            ]
+        },
+        "m_rbr_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upper_strut",
+                "m"
+            ]
+        },
+        "m_rbl_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upper_strut",
+                "m"
+            ]
+        },
+        "Jbar_rbr_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_upper_strut",
+                "J"
+            ]
+        },
+        "Jbar_rbl_upper_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_upper_strut",
+                "J"
+            ]
+        },
+        "R_rbr_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lower_strut",
+                "R"
+            ]
+        },
+        "R_rbl_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lower_strut",
+                "R"
+            ]
+        },
+        "P_rbr_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lower_strut",
+                "P"
+            ]
+        },
+        "P_rbl_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lower_strut",
+                "P"
+            ]
+        },
+        "Rd_rbl_lower_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_lower_strut"
+            ]
+        },
+        "Pd_rbl_lower_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_lower_strut"
+            ]
+        },
+        "Rdd_rbl_lower_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_lower_strut"
+            ]
+        },
+        "Pdd_rbl_lower_strut": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_lower_strut"
+            ]
+        },
+        "m_rbr_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lower_strut",
+                "m"
+            ]
+        },
+        "m_rbl_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lower_strut",
+                "m"
+            ]
+        },
+        "Jbar_rbr_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_lower_strut",
+                "J"
+            ]
+        },
+        "Jbar_rbl_lower_strut": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_lower_strut",
+                "J"
+            ]
+        },
+        "R_rbr_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_tie_rod",
+                "R"
+            ]
+        },
+        "R_rbl_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_tie_rod",
+                "R"
+            ]
+        },
+        "P_rbr_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_tie_rod",
+                "P"
+            ]
+        },
+        "P_rbl_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_tie_rod",
+                "P"
+            ]
+        },
+        "Rd_rbl_tie_rod": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_tie_rod"
+            ]
+        },
+        "Pd_rbl_tie_rod": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_tie_rod"
+            ]
+        },
+        "Rdd_rbl_tie_rod": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_tie_rod"
+            ]
+        },
+        "Pdd_rbl_tie_rod": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_tie_rod"
+            ]
+        },
+        "m_rbr_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_tie_rod",
+                "m"
+            ]
+        },
+        "m_rbl_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_tie_rod",
+                "m"
+            ]
+        },
+        "Jbar_rbr_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_tie_rod",
+                "J"
+            ]
+        },
+        "Jbar_rbl_tie_rod": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_tie_rod",
+                "J"
+            ]
+        },
+        "R_rbr_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_hub",
+                "R"
+            ]
+        },
+        "R_rbl_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_hub",
+                "R"
+            ]
+        },
+        "P_rbr_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_hub",
+                "P"
+            ]
+        },
+        "P_rbl_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_hub",
+                "P"
+            ]
+        },
+        "Rd_rbl_hub": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rd_rbr_hub"
+            ]
+        },
+        "Pd_rbl_hub": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pd_rbr_hub"
+            ]
+        },
+        "Rdd_rbl_hub": {
+            "constructor": "Mirrored",
+            "args": [
+                "Rdd_rbr_hub"
+            ]
+        },
+        "Pdd_rbl_hub": {
+            "constructor": "Mirrored",
+            "args": [
+                "Pdd_rbr_hub"
+            ]
+        },
+        "m_rbr_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_hub",
+                "m"
+            ]
+        },
+        "m_rbl_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_hub",
+                "m"
+            ]
+        },
+        "Jbar_rbr_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gmr_hub",
+                "J"
+            ]
+        },
+        "Jbar_rbl_hub": {
+            "constructor": "getattribute",
+            "args": [
+                "gml_hub",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gmr_uca": "rbr_uca",
+        "gml_uca": "rbl_uca",
+        "gmr_lca": "rbr_lca",
+        "gml_lca": "rbl_lca",
+        "gmr_upright": "rbr_upright",
+        "gml_upright": "rbl_upright",
+        "gmr_upper_strut": "rbr_upper_strut",
+        "gml_upper_strut": "rbl_upper_strut",
+        "gmr_lower_strut": "rbr_lower_strut",
+        "gml_lower_strut": "rbl_lower_strut",
+        "gmr_tie_rod": "rbr_tie_rod",
+        "gml_tie_rod": "rbl_tie_rod",
+        "gmr_hub": "rbr_hub",
+        "gml_hub": "rbl_hub"
+    }
+}
