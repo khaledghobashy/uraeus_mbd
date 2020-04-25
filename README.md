@@ -52,7 +52,7 @@ Each analysis type -or question- can be modeled by a set of algebraic and/or dif
 
 ### The Approach
 
-The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, which will be used in the numerical simulation process. This is done through the ideas of **symbolic computing** and **code-generation** as well be shown below.
+The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, which will be used in the numerical simulation process. This is done through the concepts of **symbolic computing** and **code-generation** as well be shown below.
 
 #### Framework Structure
 
@@ -81,7 +81,7 @@ Using the [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) pytho
 1. A natural way to create and represent the topology of a given multi-body system.
 2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
 
-This is achieved by making heavy use the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
+This is achieved by making use of the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
 
 The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
 
@@ -107,6 +107,8 @@ _**Note**: The development of such environments will be discussed in a separate 
 ---
 
 #### Visualization Environments Layer
+
+*t.b.c*
 
 ---
 
@@ -159,11 +161,28 @@ The [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) is a python
 
 ## Example
 
-The figure below shows a high-level activity diagram of a typical usage flow of the framework, where we have three swim-lanes representing the main three layers of the framework.
+The figure below shows a high-level activity diagram of a typical usage flow of the framework, where we have three swim-lanes representing the main three activity layers of the framework.
+
+
+![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
+
+
 
 We start at the symbolic environment lane, where we create our symbolic model, which is represented by the "Symbolic Model Creation" activity. This activity outputs two main objects.
 
-![activity](_readme_materials/uraeus_activity_diagram-Swimlane.png)
+1. **Symbolic Model**
+   This is the symbolic model instance that contains the topological data of the multi-body system. This instance can be used directly to generate the numerical code through the code-generators provided, or can be saved as a binary `.stpl` file that can be used later.
+2. **Configuration File**
+   This is a `.json` file that contains the numerical inputs needed to be provided by the user at the "Configuration Assignment" activity. This file is used to define how the system in configured in 3D space, which is used by the numerical simulation engine for the numerical simulation, and used by the visualization engines as well to construct a 3D visualization of the model.
+
+The "Symbolic Mode"l is then passed to the "Numerical Code Generation" activity, which creates the "Source Files" needed for the "Numerical Model Creation" activity along with the numerical configuration from the "Configuration Assignment" activity.
+This numerical model is then used by "Numerical Simulations" activity to run the desired simulations. For dynamic and kinematic simulations, the results can be stored as `.csv` files that can be used by the visualization engines to animate the constructed 3D model.
+
+
+
+### Simple Pendulum Example
+
+*t.b.c*
 
 ---
 
