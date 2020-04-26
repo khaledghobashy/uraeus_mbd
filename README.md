@@ -2,7 +2,15 @@
 
 ***An open-source framework for the modeling, simulation and visualization of constrained multi-body systems.***
 
-A multi-body system is hereby defined as *a finite number of material bodies connected in an arbitrary fashion by mechanical joints that limit the relative motion between pairs of bodies*. Practitioners of multi-body dynamics study the generation and solution of the equations governing the motion of such systems [1].
+---
+
+### Multi-Body Systems
+
+In modern literature, multi-body systems refer to modern mechanical systems that are often very complex and consist of many components interconnected by joints and force elements such as springs, dampers, and actuators. Examples of multi-body systems are machines, mechanisms, robotics, vehicles, space structures, and bio-mechanical systems. The dynamics of such systems are often governed by complex relationships resulting from the relative motion and joint forces between the components of the system. [1]
+
+Therefore, a multi-body system is hereby defined as *a finite number of material bodies connected in an arbitrary fashion by mechanical joints that limit the relative motion between pairs of bodies*. 
+
+Practitioners of multi-body dynamics study the generation and solution of the equations governing the motion of such systems [2].
 
 ---
 
@@ -29,11 +37,11 @@ Fields of application include any domain that deals with the study of interconne
 
 #### What is the problem to be solved?
 
-The primary interest in multi-body dynamics is to analyze the system behavior for given inputs. In analogy with control systems; a multi-body system can be thought as a **_system_** subjected to some **_inputs_** producing some **_outputs_**. These three parts of the problem are dependent on the analyst end goal of the analysis and simulation. 
+One of the primary interests in multi-body dynamics is to analyze the behavior of a given multi-body system under the effect of some inputs. In analogy with control systems; a multi-body system can be thought as a **_system_** subjected to some **_inputs_** producing some **_outputs_**. These three parts of the problem are dependent on the analyst end goal of the analysis and simulation. 
 
 #### How is the system physics abstracted mathematically?
 
-An unconstrained body in space is normally defined using 6 generalized coordinates defining its location and orientation. For example, a system of 10 bodies requires 60 generalized coordinates to be fully defined, which in turn requires 60 *independent equations* to be solved for these  _unknown_ generalized coordinates.
+An unconstrained body in space is normally defined using 6 generalized coordinates defining its location and orientation in space. For example, a system of 10 bodies requires 60 generalized coordinates to be fully defined, which in turn requires 60 *independent equations* to be solved for these  _unknown_ generalized coordinates.
 
 The way we achieve a solution for the system is dependent on the type of study we are performing. Mainly we have **four types** of analysis that are of interest for a given multi-body system. These are:
 
@@ -52,11 +60,32 @@ Each analysis type -or question- can be modeled by a set of algebraic and/or dif
 
 ### The Approach
 
-The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, which will be used in the numerical simulation process. This is done through the concepts of **symbolic computing** and **code-generation** as well be shown below.
+The philosophy of the framework is to *isolate the model creation process form the actual numerical and computational representation of the system*, that will be used in the numerical simulation process. This is done through the concepts of **symbolic computing** and **code-generation** as well be shown below.
+
+The tool decomposes the problem into three main steps:
+
+**1- Symbolic Model/Topology Creation.**
+
+The System Topology is a description of the connectivity relationships between the bodies in a given multi-body system. These relationships represent the system constraints that control the relative motion between the system bodies and produce the desired kinematic behavior.
+
+The tool abstracts the topology of the system as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. The tool does not take any numerical inputs at that step, it only focuses on the validity of the topological design of the system, and not how it is configured in space.
+
+**2- Numerical Code Generation.**
+
+The process of performing actual simulations on the created model requires the generation of a valid numerical and computational representation of the model. This is done by taking in the symbolic model and generate valid code files written in the desired programming language with the desired programming paradigm and structure. The tool provides two numerical environments, one in python and another one in C++ (under development).
+
+**3- Numerical Simulation.**
+
+The final main step is to perform the desired simulations on the generated model. This is where we start giving our model the needed numerical inputs that defines the system configuration in space -bodies' and joints' locations and orientations-, as well as the needed actuation functions for the prescribed motions and forces -if exists-.
+After the simulation step, we can do any sort of post-processing on the results. 
+
+The tool also provide visualization libraries that can be used to visualize and animate the given model.
+
+---
 
 #### Framework Structure
 
-To achieve this goal, the framework is structured as a "Layered Application", containing three main layers of sub-packages. Each layer focuses on a specific aspect of the problem, and can be developed independently, with minimum dependency on the other packages.
+The framework is structured as a "Layered Application", containing three main layers of sub-packages. Each layer focuses on a specific aspect of the problem, and can be developed independently, with minimum dependency on the other packages.
 
 These framework layers are as follows:
 
@@ -76,14 +105,7 @@ The high-level structure of the framework is represented below as a **Model Diag
 
 #### Symbolic Environment Layer
 
-Using the [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) python package, the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. This serves mainly two aspects:
-
-1. A natural way to create and represent the topology of a given multi-body system.
-2. A convenient way to abstract the system programmatically, where all the topological data of the system are stored in a graph.
-
-This is achieved by making use of the [**NetworkX**](https://networkx.github.io/documentation/stable/index.html) python package to create topology graphs and to construct the governing equations of the system. The equations themselves are represented symbolically using [**SymPy**](https://www.sympy.org/en/index.html), which is a Python library for symbolic mathematics.
-
-The combination of both, NetworkX and SymPy, provides a very simple, easy-to-use and convenient interface for the process of model creation and topology design, where the user only focuses on the validity of the system topology in hand, as he thinks only in terms of the topological components - bodies, joints, actuators and forces-, without the burden of frequent numerical inputs for each component, or how the actual system is configured in space. In short, the tool divide the typical model creation process in halves, the system topology design and the system configuration assignment.
+Using the [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) python package, the topology of a given multi-body system is represented as a multi-directed graph, where each node represents a body and each edge represents a connection between the end nodes, where this connection may represents a joint, actuator or a force element. More details can be found at the [**uraeus.smbd**](https://github.com/khaledghobashy/uraeus-smbd) github repository.
 
 ---
 
@@ -93,7 +115,7 @@ The process of performing actual simulations on the created model requires the g
 
 Each numerical environment is responsible for the translation of the developed symbolic models into valid numerical code, and for the features it aims to provide for the users.
 
-The development of such environments in different languages requires a good grasp of several aspects such as :
+The development of such environments in different languages requires a good grasp of several aspects, such as :
 
 - Good knowledge of the **uraeus.smbd** symbolic models' interfaces and structure.
 - Good knowledge of the target language.
@@ -192,7 +214,9 @@ This numerical model is then used by "Numerical Simulations" activity to run the
 
 ## References
 
-[1] : McPhee, J.J. Nonlinear Dyn (1996) 9: 73. https://doi.org/10.1007/BF01833294
+**[1]** Shabana, A.A., *Computational Dynamics*, Wiley, New York, 2010.
+
+**[2]** : McPhee, J.J. Nonlinear Dyn (1996) 9: 73. https://doi.org/10.1007/BF01833294
 
 
 
