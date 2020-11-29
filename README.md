@@ -31,15 +31,7 @@ Fields of application include any domain that deals with the study of interconne
 
 ----
 
-<<<<<<< HEAD
-![](_readme_materials/iso_dlc_fsae.mp4)
-
-<video width="320" height="240" controls>
-  <source src="_readme_materials/iso_dlc_fsae.mp4" type="video/mp4">
-</video>
-=======
 ![](_readme_materials/iso_dlc_fsae.gif)
->>>>>>> 097c1aa5fba509600af84dd4947e4c0a1d06dc3b
 
 ----
 
