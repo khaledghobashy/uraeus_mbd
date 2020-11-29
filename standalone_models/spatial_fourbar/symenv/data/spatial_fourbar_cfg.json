@@ -1,0 +1,306 @@
+{
+    "information": {
+        "topology_name": "spatial_fourbar",
+        "configuration_name": "spatial_fourbar_cfg",
+        "subsystem_name": ""
+    },
+    "user_inputs": {
+        "Rd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l1": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l2": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Rdd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "Pdd_rbs_l3": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_a": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_b": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_c": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "hps_d": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_x": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_y": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "vcs_z": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "s_links_ro": 1.0
+    },
+    "evaluations": {
+        "gms_l1": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_a",
+                "hps_b",
+                "s_links_ro"
+            ]
+        },
+        "gms_l2": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_b",
+                "hps_c",
+                "s_links_ro"
+            ]
+        },
+        "gms_l3": {
+            "constructor": "Cylinder_Geometry",
+            "args": [
+                "hps_c",
+                "hps_d",
+                "s_links_ro"
+            ]
+        }
+    },
+    "outputs": {
+        "ax1_jcs_a": "vcs_x",
+        "pt1_jcs_a": "hps_a",
+        "ax1_jcs_b": "vcs_z",
+        "pt1_jcs_b": "hps_b",
+        "ax1_jcs_c": {
+            "constructor": "Oriented",
+            "args": [
+                "hps_b",
+                "hps_c"
+            ]
+        },
+        "ax2_jcs_c": {
+            "constructor": "Oriented",
+            "args": [
+                "hps_c",
+                "hps_b"
+            ]
+        },
+        "pt1_jcs_c": "hps_c",
+        "ax1_jcs_d": "vcs_y",
+        "pt1_jcs_d": "hps_d",
+        "R_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "R"
+            ]
+        },
+        "P_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "P"
+            ]
+        },
+        "m_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l1": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l1",
+                "J"
+            ]
+        },
+        "R_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "R"
+            ]
+        },
+        "P_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "P"
+            ]
+        },
+        "m_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l2": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l2",
+                "J"
+            ]
+        },
+        "R_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "R"
+            ]
+        },
+        "P_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "P"
+            ]
+        },
+        "m_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "m"
+            ]
+        },
+        "Jbar_rbs_l3": {
+            "constructor": "getattribute",
+            "args": [
+                "gms_l3",
+                "J"
+            ]
+        }
+    },
+    "geometries_map": {
+        "gms_l1": "rbs_l1",
+        "gms_l2": "rbs_l2",
+        "gms_l3": "rbs_l3"
+    }
+}

@@ -33,7 +33,7 @@ sym_model.add_joint.revolute('d','rbs_l3','ground')
 
 # Adding Actuators
 # ================
-sym_model.add_actuator.rotational_actuator('act', 'jcs_a')
+#sym_model.add_actuator.rotational_actuator('act', 'jcs_a')
 
 # Assembling and Saving model
 sym_model.assemble()
@@ -106,6 +106,16 @@ sym_config.export_JSON_file(data_dir)
 # ============================================================= #
 
 from uraeus.nmbd.python import standalone_project
+project = standalone_project()
+project.create_dirs()
+
+project.write_topology_code(sym_model)
+
+# ============================================================= #
+#                     Code Generation
+# ============================================================= #
+
+from uraeus.nmbd.cpp.codegen import standalone_project
 project = standalone_project()
 project.create_dirs()
 

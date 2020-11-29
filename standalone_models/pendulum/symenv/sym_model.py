@@ -75,3 +75,13 @@ project = standalone_project()
 project.create_dirs()
 
 project.write_topology_code(sym_model)
+
+# ============================================================= #
+#                     Code Generation
+# ============================================================= #
+
+from uraeus.nmbd.cpp.codegen import standalone_project
+project = standalone_project()
+project.create_dirs()
+
+project.write_topology_code(sym_model)

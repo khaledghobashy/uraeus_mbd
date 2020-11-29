@@ -46,6 +46,8 @@ sym_model.add_joint.cylinderical('strut', 'rbr_upper_strut', 'rbr_lower_strut', 
 
 # Adding Actuators
 # ================
+sym_model.add_actuator.rotational_actuator('wheel_lock', 'jcr_hub_bearing', mirror=True)
+sym_model.add_actuator.absolute_locator('wheel_travel', 'rbr_hub', 'ground', 'z', mirror=True)
 
 # Adding Forces
 # =============
@@ -175,6 +177,8 @@ sym_config.add_relation.Oriented('ax2_jcr_tie_steering', ('hpr_tro','hpr_tri'), 
 sym_config.add_relation.Equal_to('pt1_jcr_strut', ('hpr_strut_mid',), mirror=True)
 sym_config.add_relation.Oriented('ax1_jcr_strut', ('hpr_strut_lca','hpr_strut_chassis'), mirror=True)
 
+sym_config.add_relation.Equal_to('pt1_mcr_wheel_travel', ('hpr_wc',), mirror=True)
+
 
 sym_config.add_scalar.UserInput('links_ro')
 sym_config.add_scalar.UserInput('strut_outer')
@@ -234,6 +238,16 @@ sym_config.export_JSON_file(data_dir)
 # ============================================================= #
 
 from uraeus.nmbd.python import standalone_project
+project = standalone_project()
+project.create_dirs()
+
+project.write_topology_code(sym_model)
+
+# ============================================================= #
+#                     Code Generation
+# ============================================================= #
+
+from uraeus.nmbd.cpp.codegen import standalone_project
 project = standalone_project()
 project.create_dirs()
 

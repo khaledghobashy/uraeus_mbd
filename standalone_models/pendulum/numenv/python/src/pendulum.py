@@ -97,6 +97,8 @@ class topology(object):
         self.Jbar_ground = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]], dtype=np.float64)
         self.F_rbs_body_gravity = np.array([[0], [0], [-9810.0*config.m_rbs_body]], dtype=np.float64)
 
+        self.M_ground = self.m_ground * I3
+        self.M_rbs_body = config.m_rbs_body * I3
         self.Mbar_ground_jcs_a = multi_dot([A(self.P_ground).T,triad(config.ax1_jcs_a)])
         self.Mbar_rbs_body_jcs_a = multi_dot([A(config.P_rbs_body).T,triad(config.ax1_jcs_a)])
         self.ubar_ground_jcs_a = (multi_dot([A(self.P_ground).T,config.pt1_jcs_a]) + (-1) * multi_dot([A(self.P_ground).T,self.R_ground]))
@@ -173,21 +175,21 @@ class topology(object):
 
         a0 = self.Pd_ground
         a1 = self.Pd_rbs_body
-        a2 = self.Mbar_ground_jcs_a[:,0:1]
-        a3 = self.P_ground
-        a4 = A(a3).T
-        a5 = self.Mbar_rbs_body_jcs_a[:,2:3]
-        a6 = B(a1,a5)
-        a7 = a5.T
-        a8 = self.P_rbs_body
-        a9 = A(a8).T
+        a2 = self.Mbar_rbs_body_jcs_a[:,2:3]
+        a3 = a2.T
+        a4 = self.P_rbs_body
+        a5 = A(a4).T
+        a6 = self.Mbar_ground_jcs_a[:,0:1]
+        a7 = self.P_ground
+        a8 = A(a7).T
+        a9 = B(a1,a2)
         a10 = a0.T
-        a11 = B(a8,a5)
+        a11 = B(a4,a2)
         a12 = self.Mbar_ground_jcs_a[:,1:2]
 
         self.acc_eq_blocks = ((multi_dot([B(a0,self.ubar_ground_jcs_a),a0]) + (-1) * multi_dot([B(a1,self.ubar_rbs_body_jcs_a),a1])),
-        (multi_dot([a2.T,a4,a6,a1]) + multi_dot([a7,a9,B(a0,a2),a0]) + (2) * multi_dot([a10,B(a3,a2).T,a11,a1])),
-        (multi_dot([a12.T,a4,a6,a1]) + multi_dot([a7,a9,B(a0,a12),a0]) + (2) * multi_dot([a10,B(a3,a12).T,a11,a1])),
+        (multi_dot([a3,a5,B(a0,a6),a0]) + multi_dot([a6.T,a8,a9,a1]) + (2) * multi_dot([a10,B(a7,a6).T,a11,a1])),
+        (multi_dot([a3,a5,B(a0,a12),a0]) + multi_dot([a12.T,a8,a9,a1]) + (2) * multi_dot([a10,B(a7,a12).T,a11,a1])),
         Z3x1,
         Z4x1,
         (2) * multi_dot([a1.T,a1]),)
@@ -233,14 +235,13 @@ class topology(object):
         config = self.config
         t = self.t
 
-        m0 = I3
-        m1 = G(self.P_ground)
-        m2 = G(self.P_rbs_body)
+        m0 = G(self.P_ground)
+        m1 = G(self.P_rbs_body)
 
-        self.mass_eq_blocks = (self.m_ground * m0,
-        (4) * multi_dot([m1.T,self.Jbar_ground,m1]),
-        config.m_rbs_body * m0,
-        (4) * multi_dot([m2.T,config.Jbar_rbs_body,m2]),)
+        self.mass_eq_blocks = (self.M_ground,
+        (4) * multi_dot([m0.T,self.Jbar_ground,m0]),
+        self.M_rbs_body,
+        (4) * multi_dot([m1.T,config.Jbar_rbs_body,m1]),)
 
     
     def eval_frc_eq(self):

@@ -103,7 +103,17 @@ num_config.s_thickness   = 35
 num_config.assemble()
 num_config.export_json()
 
-wheel_inertia =  np.array([[1*1e4, 0,      0 ],
+print(num_config.gml_hub_cyl.R)
+print(num_config.gml_hub_cyl.P)
+print(num_config.gml_hub_cyl.m)
+print(num_config.gml_hub_cyl.J)
+print('\n')
+print(num_config.gml_hub.R)
+print(num_config.gml_hub.P)
+print(num_config.gml_hub.m)
+print(num_config.gml_hub.J)
+
+""" wheel_inertia =  np.array([[1*1e4, 0,      0 ],
                            [0    , 50*1e9, 0 ],
                            [0    , 0, 1*1e4  ]])
 
@@ -112,53 +122,40 @@ num_config.Jbar_rbr_hub = wheel_inertia
 num_config.Jbar_rbl_hub = wheel_inertia
 
 num_config.m_rbr_hub = 200*1e3
-num_config.m_rbl_hub = 200*1e3
+num_config.m_rbl_hub = 200*1e3 """
 
 
 def strut_spring(x):
     x = float(x)
-    print('defflection = %s'%x)
+    #print('defflection = %s'%x)
     k = 550*1e6
-    force = k * x if x >0 else 20*1e3*1e6
-    return force
+    force = k * x if x > 0 else 0
+    return 0
 
 def strut_damping(v):
     v = float(v)
-    print('velocity = %s'%v)
+    #print('velocity = %s'%v)
     force = 40*1e6 * v
-    return force
-
-def input_force(P_hub, factor, t):
-    if t<0.1:
-        normal_load = (2375*9.81)*1e6
-        logitudinal_load = 0
-    elif t>=0.1 and t<=0.35:
-        normal_load = (2375*9.81)*1e6 + (2375*9.81)*1e6*((t-0.1)/0.25)
-        logitudinal_load = normal_load
-    elif t>0.35:
-        normal_load = 2 * (2375*9.81)*1e6
-        logitudinal_load = normal_load
-    
-    load_vector = np.array([[logitudinal_load],
-                             [0],
-                             [normal_load]])
-    return load_vector
-
-
-def fr_tire_force(t):
-    force = input_force(num_model.topology.P_rbr_hub, 1, t)
-    return force
-
-def fl_tire_force(t):
-    force = input_force(num_model.topology.P_rbl_hub, 1, t)
-    return force
+    return 0
 
 def zero_func(t):
     return np.zeros((3,1), dtype=np.float64)
 
+def wheel_lock(t, *args):
+    return 0
 
-num_config.UF_far_tire_F = fr_tire_force
-num_config.UF_fal_tire_F = fr_tire_force
+def wheel_travel(t, *args):
+    travel = 546 + 170*np.sin(t)
+    return travel
+
+num_config.UF_mcr_wheel_travel = lambda t: 546 + 170*np.sin(t)
+num_config.UF_mcl_wheel_travel = lambda t: 546 + 170*np.sin(t)
+
+num_config.UF_mcr_wheel_lock = wheel_lock
+num_config.UF_mcl_wheel_lock = wheel_lock
+
+num_config.UF_far_tire_F = zero_func
+num_config.UF_fal_tire_F = zero_func
 
 num_config.UF_far_tire_T = zero_func
 num_config.UF_fal_tire_T = zero_func
@@ -173,17 +170,23 @@ num_config.UF_fal_strut_Fd = strut_damping
 # ================================================================== #
 #                   Creating the Simulation Instance
 # ================================================================== #
-sim = simulation('sim', num_model, 'dds')
+sim = simulation('sim', num_model, 'kds')
 
 # setting the simulation time grid
-sim.set_time_array(3, 5e-3)
+sim.set_time_array(2*np.pi, 5e-3)
 
 # Starting the simulation
 sim.solve()
 
 # Saving the results in the /results directory as csv and npz
-sim.save_as_csv(results_dir, 'test_1')
-sim.save_as_npz(results_dir, 'test_1')
+sim.save_as_csv(results_dir, 'py_pos', 'pos')
+sim.save_as_csv(results_dir, 'py_vel', 'vel')
+sim.save_as_csv(results_dir, 'py_acc', 'acc')
+
+sim.save_as_npz(results_dir, 'test_2')
+
+sim.eval_reactions()
+sim.soln.reactions_dataframe.to_csv(os.path.join(results_dir, 'rct_py.csv'))
 
 # ================================================================== #
 #                   Plotting the Simulation Results

@@ -61,7 +61,7 @@ num_config.vcs_z.flat[:] = 0, 0, 1
 
 num_config.s_radius = 20
 
-num_config.UF_mcs_act = lambda t : -np.deg2rad(360)*t
+num_config.UF_mcs_act = lambda t : np.deg2rad(360)*t
 
 # Assembling the configuration and exporting a .json file that
 # holds these numerical values
@@ -71,17 +71,23 @@ num_config.export_json()
 # ================================================================== #
 #                   Creating the Simulation Instance
 # ================================================================== #
-sim = simulation('sim', num_model, 'kds')
+sim = simulation('sim', num_model, 'dds')
 
 # setting the simulation time grid
-sim.set_time_array(5, 5e-3)
+sim.set_time_array(2*np.pi, 5e-3)
 
 # Starting the simulation
 sim.solve()
 
 # Saving the results in the /results directory as csv and npz
-sim.save_as_csv(results_dir, 'test_1')
+sim.save_as_csv(results_dir, 'py_pos', 'pos')
+sim.save_as_csv(results_dir, 'py_vel', 'vel')
+sim.save_as_csv(results_dir, 'py_acc', 'acc')
+
 sim.save_as_npz(results_dir, 'test_1')
+
+sim.eval_reactions()
+sim.soln.reactions_dataframe.to_csv(os.path.join(results_dir, 'py_rct.csv'))
 
 # ================================================================== #
 #                   Plotting the Simulation Results

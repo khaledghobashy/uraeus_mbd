@@ -5,6 +5,15 @@
         "subsystem_name": ""
     },
     "user_inputs": {
+        "UF_mcr_wheel_lock": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
         "pt1_far_strut": {
             "constructor": "array",
             "args": [
@@ -40,6 +49,23 @@
             ]
         },
         "far_strut_FL": 1.0,
+        "pt2_mcr_wheel_travel": {
+            "constructor": "array",
+            "args": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "UF_mcr_wheel_travel": {
+            "constructor": "Lambda",
+            "args": [
+                [
+                    "t"
+                ],
+                0.0
+            ]
+        },
         "UF_far_tire_F": {
             "constructor": "Lambda",
             "args": [
@@ -806,6 +832,7 @@
         "ax1_jcl_hub_bearing": "vcs_y",
         "pt1_jcr_hub_bearing": "hpr_wc",
         "pt1_jcl_hub_bearing": "hpl_wc",
+        "UF_mcl_wheel_lock": "UF_mcr_wheel_lock",
         "ax1_jcr_strut_chassis": {
             "constructor": "Oriented",
             "args": [
@@ -931,6 +958,15 @@
         "ax1_jcl_tie_upright": "vcs_z",
         "pt1_jcr_tie_upright": "hpr_tro",
         "pt1_jcl_tie_upright": "hpl_tro",
+        "pt1_mcr_wheel_travel": "hpr_wc",
+        "pt1_mcl_wheel_travel": "hpl_wc",
+        "pt2_mcl_wheel_travel": {
+            "constructor": "Mirrored",
+            "args": [
+                "pt2_mcr_wheel_travel"
+            ]
+        },
+        "UF_mcl_wheel_travel": "UF_mcr_wheel_travel",
         "UF_fal_tire_F": "UF_far_tire_F",
         "UF_fal_tire_T": "UF_far_tire_T",
         "pt1_fal_tire": {

@@ -32,12 +32,12 @@ class topology(object):
         self.indicies_map = {'ground': 0, 'rbr_uca': 1, 'rbl_uca': 2, 'rbr_lca': 3, 'rbl_lca': 4, 'rbr_upright': 5, 'rbl_upright': 6, 'rbr_upper_strut': 7, 'rbl_upper_strut': 8, 'rbr_lower_strut': 9, 'rbl_lower_strut': 10, 'rbr_tie_rod': 11, 'rbl_tie_rod': 12, 'rbr_hub': 13, 'rbl_hub': 14}
 
         self.n  = 105
-        self.nc = 101
-        self.nrows = 60
+        self.nc = 105
+        self.nrows = 64
         self.ncols = 2*15
         self.rows = np.arange(self.nrows, dtype=np.intc)
 
-        reactions_indicies = ['F_rbr_uca_jcr_uca_chassis', 'T_rbr_uca_jcr_uca_chassis', 'F_rbr_uca_jcr_uca_upright', 'T_rbr_uca_jcr_uca_upright', 'F_rbl_uca_jcl_uca_chassis', 'T_rbl_uca_jcl_uca_chassis', 'F_rbl_uca_jcl_uca_upright', 'T_rbl_uca_jcl_uca_upright', 'F_rbr_lca_jcr_lca_chassis', 'T_rbr_lca_jcr_lca_chassis', 'F_rbr_lca_jcr_lca_upright', 'T_rbr_lca_jcr_lca_upright', 'F_rbl_lca_jcl_lca_chassis', 'T_rbl_lca_jcl_lca_chassis', 'F_rbl_lca_jcl_lca_upright', 'T_rbl_lca_jcl_lca_upright', 'F_rbr_upright_jcr_hub_bearing', 'T_rbr_upright_jcr_hub_bearing', 'F_rbl_upright_jcl_hub_bearing', 'T_rbl_upright_jcl_hub_bearing', 'F_rbr_upper_strut_jcr_strut_chassis', 'T_rbr_upper_strut_jcr_strut_chassis', 'F_rbr_upper_strut_jcr_strut', 'T_rbr_upper_strut_jcr_strut', 'F_rbr_upper_strut_far_strut', 'T_rbr_upper_strut_far_strut', 'F_rbl_upper_strut_jcl_strut_chassis', 'T_rbl_upper_strut_jcl_strut_chassis', 'F_rbl_upper_strut_jcl_strut', 'T_rbl_upper_strut_jcl_strut', 'F_rbl_upper_strut_fal_strut', 'T_rbl_upper_strut_fal_strut', 'F_rbr_lower_strut_jcr_strut_lca', 'T_rbr_lower_strut_jcr_strut_lca', 'F_rbl_lower_strut_jcl_strut_lca', 'T_rbl_lower_strut_jcl_strut_lca', 'F_rbr_tie_rod_jcr_tie_steering', 'T_rbr_tie_rod_jcr_tie_steering', 'F_rbr_tie_rod_jcr_tie_upright', 'T_rbr_tie_rod_jcr_tie_upright', 'F_rbl_tie_rod_jcl_tie_steering', 'T_rbl_tie_rod_jcl_tie_steering', 'F_rbl_tie_rod_jcl_tie_upright', 'T_rbl_tie_rod_jcl_tie_upright']
+        reactions_indicies = ['F_rbr_uca_jcr_uca_chassis', 'T_rbr_uca_jcr_uca_chassis', 'F_rbr_uca_jcr_uca_upright', 'T_rbr_uca_jcr_uca_upright', 'F_rbl_uca_jcl_uca_chassis', 'T_rbl_uca_jcl_uca_chassis', 'F_rbl_uca_jcl_uca_upright', 'T_rbl_uca_jcl_uca_upright', 'F_rbr_lca_jcr_lca_chassis', 'T_rbr_lca_jcr_lca_chassis', 'F_rbr_lca_jcr_lca_upright', 'T_rbr_lca_jcr_lca_upright', 'F_rbl_lca_jcl_lca_chassis', 'T_rbl_lca_jcl_lca_chassis', 'F_rbl_lca_jcl_lca_upright', 'T_rbl_lca_jcl_lca_upright', 'F_rbr_upright_jcr_hub_bearing', 'T_rbr_upright_jcr_hub_bearing', 'F_rbr_upright_mcr_wheel_lock', 'T_rbr_upright_mcr_wheel_lock', 'F_rbl_upright_jcl_hub_bearing', 'T_rbl_upright_jcl_hub_bearing', 'F_rbl_upright_mcl_wheel_lock', 'T_rbl_upright_mcl_wheel_lock', 'F_rbr_upper_strut_jcr_strut_chassis', 'T_rbr_upper_strut_jcr_strut_chassis', 'F_rbr_upper_strut_jcr_strut', 'T_rbr_upper_strut_jcr_strut', 'F_rbr_upper_strut_far_strut', 'T_rbr_upper_strut_far_strut', 'F_rbl_upper_strut_jcl_strut_chassis', 'T_rbl_upper_strut_jcl_strut_chassis', 'F_rbl_upper_strut_jcl_strut', 'T_rbl_upper_strut_jcl_strut', 'F_rbl_upper_strut_fal_strut', 'T_rbl_upper_strut_fal_strut', 'F_rbr_lower_strut_jcr_strut_lca', 'T_rbr_lower_strut_jcr_strut_lca', 'F_rbl_lower_strut_jcl_strut_lca', 'T_rbl_lower_strut_jcl_strut_lca', 'F_rbr_tie_rod_jcr_tie_steering', 'T_rbr_tie_rod_jcr_tie_steering', 'F_rbr_tie_rod_jcr_tie_upright', 'T_rbr_tie_rod_jcr_tie_upright', 'F_rbl_tie_rod_jcl_tie_steering', 'T_rbl_tie_rod_jcl_tie_steering', 'F_rbl_tie_rod_jcl_tie_upright', 'T_rbl_tie_rod_jcl_tie_upright', 'F_rbr_hub_mcr_wheel_travel', 'T_rbr_hub_mcr_wheel_travel', 'F_rbl_hub_mcl_wheel_travel', 'T_rbl_hub_mcl_wheel_travel']
         self.reactions_indicies = ['%s%s'%(self.prefix,i) for i in reactions_indicies]
 
     
@@ -53,9 +53,9 @@ class topology(object):
         self.rows_offset = rows_offset
         self._set_mapping(indicies_map, interface_map)
         self.rows += self.rows_offset
-        self.jac_rows = np.array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 23, 23, 23, 23, 24, 24, 24, 24, 25, 25, 25, 25, 26, 26, 26, 26, 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 29, 29, 30, 30, 30, 30, 31, 31, 31, 31, 32, 32, 32, 32, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 40, 40, 40, 40, 41, 41, 41, 41, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 45, 45, 46, 46, 47, 47, 48, 48, 49, 49, 50, 50, 51, 51, 52, 52, 53, 53, 54, 54, 55, 55, 56, 56, 57, 57, 58, 58, 59, 59], dtype=np.intc)
+        self.jac_rows = np.array([0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11, 12, 12, 12, 12, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 20, 20, 20, 20, 21, 21, 21, 21, 22, 22, 22, 22, 23, 23, 23, 23, 24, 24, 24, 24, 25, 25, 25, 25, 26, 26, 26, 26, 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 29, 29, 30, 30, 30, 30, 31, 31, 31, 31, 32, 32, 32, 32, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 40, 40, 40, 40, 41, 41, 41, 41, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 44, 44, 45, 45, 45, 45, 46, 46, 46, 46, 47, 47, 47, 47, 48, 48, 49, 49, 50, 50, 51, 51, 52, 52, 53, 53, 54, 54, 55, 55, 56, 56, 57, 57, 58, 58, 59, 59, 60, 60, 61, 61, 62, 62, 63, 63], dtype=np.intc)
         self.jac_rows += self.rows_offset
-        self.jac_cols = np.array([self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.ground*2, self.ground*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.ground*2, self.ground*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.ground*2, self.ground*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.ground*2, self.ground*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.ground*2, self.ground*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.ground*2, self.ground*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbl_hub*2, self.rbl_hub*2+1], dtype=np.intc)
+        self.jac_cols = np.array([self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.ground*2, self.ground*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.ground*2, self.ground*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.ground*2, self.ground*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.ground*2, self.ground*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.ground*2, self.ground*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.ground*2, self.ground*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.ground*2, self.ground*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.ground*2, self.ground*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.ground*2, self.ground*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.ground*2, self.ground*2+1, self.rbl_hub*2, self.rbl_hub*2+1, self.ground*2, self.ground*2+1, self.ground*2, self.ground*2+1, self.rbr_uca*2, self.rbr_uca*2+1, self.rbl_uca*2, self.rbl_uca*2+1, self.rbr_lca*2, self.rbr_lca*2+1, self.rbl_lca*2, self.rbl_lca*2+1, self.rbr_upright*2, self.rbr_upright*2+1, self.rbl_upright*2, self.rbl_upright*2+1, self.rbr_upper_strut*2, self.rbr_upper_strut*2+1, self.rbl_upper_strut*2, self.rbl_upper_strut*2+1, self.rbr_lower_strut*2, self.rbr_lower_strut*2+1, self.rbl_lower_strut*2, self.rbl_lower_strut*2+1, self.rbr_tie_rod*2, self.rbr_tie_rod*2+1, self.rbl_tie_rod*2, self.rbl_tie_rod*2+1, self.rbr_hub*2, self.rbr_hub*2+1, self.rbl_hub*2, self.rbl_hub*2+1], dtype=np.intc)
 
     def _set_states_arrays(self, q, qd, qdd, lgr):
         self._q = q
@@ -179,6 +179,21 @@ class topology(object):
         self.F_rbr_hub_gravity = np.array([[0], [0], [-9810.0*config.m_rbr_hub]], dtype=np.float64)
         self.F_rbl_hub_gravity = np.array([[0], [0], [-9810.0*config.m_rbl_hub]], dtype=np.float64)
 
+        self.M_ground = self.m_ground * I3
+        self.M_rbr_uca = config.m_rbr_uca * I3
+        self.M_rbl_uca = config.m_rbl_uca * I3
+        self.M_rbr_lca = config.m_rbr_lca * I3
+        self.M_rbl_lca = config.m_rbl_lca * I3
+        self.M_rbr_upright = config.m_rbr_upright * I3
+        self.M_rbl_upright = config.m_rbl_upright * I3
+        self.M_rbr_upper_strut = config.m_rbr_upper_strut * I3
+        self.M_rbl_upper_strut = config.m_rbl_upper_strut * I3
+        self.M_rbr_lower_strut = config.m_rbr_lower_strut * I3
+        self.M_rbl_lower_strut = config.m_rbl_lower_strut * I3
+        self.M_rbr_tie_rod = config.m_rbr_tie_rod * I3
+        self.M_rbl_tie_rod = config.m_rbl_tie_rod * I3
+        self.M_rbr_hub = config.m_rbr_hub * I3
+        self.M_rbl_hub = config.m_rbl_hub * I3
         self.Mbar_rbr_uca_jcr_uca_chassis = multi_dot([A(config.P_rbr_uca).T,triad(config.ax1_jcr_uca_chassis)])
         self.Mbar_ground_jcr_uca_chassis = multi_dot([A(self.P_ground).T,triad(config.ax1_jcr_uca_chassis)])
         self.ubar_rbr_uca_jcr_uca_chassis = (multi_dot([A(config.P_rbr_uca).T,config.pt1_jcr_uca_chassis]) + (-1) * multi_dot([A(config.P_rbr_uca).T,config.R_rbr_uca]))
@@ -215,10 +230,14 @@ class topology(object):
         self.Mbar_rbr_hub_jcr_hub_bearing = multi_dot([A(config.P_rbr_hub).T,triad(config.ax1_jcr_hub_bearing)])
         self.ubar_rbr_upright_jcr_hub_bearing = (multi_dot([A(config.P_rbr_upright).T,config.pt1_jcr_hub_bearing]) + (-1) * multi_dot([A(config.P_rbr_upright).T,config.R_rbr_upright]))
         self.ubar_rbr_hub_jcr_hub_bearing = (multi_dot([A(config.P_rbr_hub).T,config.pt1_jcr_hub_bearing]) + (-1) * multi_dot([A(config.P_rbr_hub).T,config.R_rbr_hub]))
+        self.Mbar_rbr_upright_jcr_hub_bearing = multi_dot([A(config.P_rbr_upright).T,triad(config.ax1_jcr_hub_bearing)])
+        self.Mbar_rbr_hub_jcr_hub_bearing = multi_dot([A(config.P_rbr_hub).T,triad(config.ax1_jcr_hub_bearing)])
         self.Mbar_rbl_upright_jcl_hub_bearing = multi_dot([A(config.P_rbl_upright).T,triad(config.ax1_jcl_hub_bearing)])
         self.Mbar_rbl_hub_jcl_hub_bearing = multi_dot([A(config.P_rbl_hub).T,triad(config.ax1_jcl_hub_bearing)])
         self.ubar_rbl_upright_jcl_hub_bearing = (multi_dot([A(config.P_rbl_upright).T,config.pt1_jcl_hub_bearing]) + (-1) * multi_dot([A(config.P_rbl_upright).T,config.R_rbl_upright]))
         self.ubar_rbl_hub_jcl_hub_bearing = (multi_dot([A(config.P_rbl_hub).T,config.pt1_jcl_hub_bearing]) + (-1) * multi_dot([A(config.P_rbl_hub).T,config.R_rbl_hub]))
+        self.Mbar_rbl_upright_jcl_hub_bearing = multi_dot([A(config.P_rbl_upright).T,triad(config.ax1_jcl_hub_bearing)])
+        self.Mbar_rbl_hub_jcl_hub_bearing = multi_dot([A(config.P_rbl_hub).T,triad(config.ax1_jcl_hub_bearing)])
         self.Mbar_rbr_upper_strut_jcr_strut_chassis = multi_dot([A(config.P_rbr_upper_strut).T,triad(config.ax1_jcr_strut_chassis)])
         self.Mbar_ground_jcr_strut_chassis = multi_dot([A(self.P_ground).T,triad(config.ax2_jcr_strut_chassis,triad(config.ax1_jcr_strut_chassis)[0:3,1:2])])
         self.ubar_rbr_upper_strut_jcr_strut_chassis = (multi_dot([A(config.P_rbr_upper_strut).T,config.pt1_jcr_strut_chassis]) + (-1) * multi_dot([A(config.P_rbr_upper_strut).T,config.R_rbr_upper_strut]))
@@ -263,8 +282,12 @@ class topology(object):
         self.Mbar_rbl_upright_jcl_tie_upright = multi_dot([A(config.P_rbl_upright).T,triad(config.ax1_jcl_tie_upright)])
         self.ubar_rbl_tie_rod_jcl_tie_upright = (multi_dot([A(config.P_rbl_tie_rod).T,config.pt1_jcl_tie_upright]) + (-1) * multi_dot([A(config.P_rbl_tie_rod).T,config.R_rbl_tie_rod]))
         self.ubar_rbl_upright_jcl_tie_upright = (multi_dot([A(config.P_rbl_upright).T,config.pt1_jcl_tie_upright]) + (-1) * multi_dot([A(config.P_rbl_upright).T,config.R_rbl_upright]))
+        self.ubar_rbr_hub_mcr_wheel_travel = (multi_dot([A(config.P_rbr_hub).T,config.pt1_mcr_wheel_travel]) + (-1) * multi_dot([A(config.P_rbr_hub).T,config.R_rbr_hub]))
+        self.ubar_ground_mcr_wheel_travel = (multi_dot([A(self.P_ground).T,config.pt2_mcr_wheel_travel]) + (-1) * multi_dot([A(self.P_ground).T,self.R_ground]))
         self.ubar_rbr_hub_far_tire = (multi_dot([A(config.P_rbr_hub).T,config.pt1_far_tire]) + (-1) * multi_dot([A(config.P_rbr_hub).T,config.R_rbr_hub]))
         self.ubar_ground_far_tire = (multi_dot([A(self.P_ground).T,config.pt1_far_tire]) + (-1) * multi_dot([A(self.P_ground).T,self.R_ground]))
+        self.ubar_rbl_hub_mcl_wheel_travel = (multi_dot([A(config.P_rbl_hub).T,config.pt1_mcl_wheel_travel]) + (-1) * multi_dot([A(config.P_rbl_hub).T,config.R_rbl_hub]))
+        self.ubar_ground_mcl_wheel_travel = (multi_dot([A(self.P_ground).T,config.pt2_mcl_wheel_travel]) + (-1) * multi_dot([A(self.P_ground).T,self.R_ground]))
         self.ubar_rbl_hub_fal_tire = (multi_dot([A(config.P_rbl_hub).T,config.pt1_fal_tire]) + (-1) * multi_dot([A(config.P_rbl_hub).T,config.R_rbl_hub]))
         self.ubar_ground_fal_tire = (multi_dot([A(self.P_ground).T,config.pt1_fal_tire]) + (-1) * multi_dot([A(self.P_ground).T,self.R_ground]))
 
@@ -382,17 +405,21 @@ class topology(object):
         self.L_jcl_lca_chassis = Lambda[24:29]
         self.L_jcl_lca_upright = Lambda[29:32]
         self.L_jcr_hub_bearing = Lambda[32:37]
-        self.L_jcl_hub_bearing = Lambda[37:42]
-        self.L_jcr_strut_chassis = Lambda[42:46]
-        self.L_jcr_strut = Lambda[46:50]
-        self.L_jcl_strut_chassis = Lambda[50:54]
-        self.L_jcl_strut = Lambda[54:58]
-        self.L_jcr_strut_lca = Lambda[58:62]
-        self.L_jcl_strut_lca = Lambda[62:66]
-        self.L_jcr_tie_steering = Lambda[66:70]
-        self.L_jcr_tie_upright = Lambda[70:73]
-        self.L_jcl_tie_steering = Lambda[73:77]
-        self.L_jcl_tie_upright = Lambda[77:80]
+        self.L_mcr_wheel_lock = Lambda[37:38]
+        self.L_jcl_hub_bearing = Lambda[38:43]
+        self.L_mcl_wheel_lock = Lambda[43:44]
+        self.L_jcr_strut_chassis = Lambda[44:48]
+        self.L_jcr_strut = Lambda[48:52]
+        self.L_jcl_strut_chassis = Lambda[52:56]
+        self.L_jcl_strut = Lambda[56:60]
+        self.L_jcr_strut_lca = Lambda[60:64]
+        self.L_jcl_strut_lca = Lambda[64:68]
+        self.L_jcr_tie_steering = Lambda[68:72]
+        self.L_jcr_tie_upright = Lambda[72:75]
+        self.L_jcl_tie_steering = Lambda[75:79]
+        self.L_jcl_tie_upright = Lambda[79:82]
+        self.L_mcr_wheel_travel = Lambda[82:83]
+        self.L_mcl_wheel_travel = Lambda[83:84]
 
     
     def eval_pos_eq(self):
@@ -431,43 +458,52 @@ class topology(object):
         x29 = A(x28)
         x30 = x29.T
         x31 = self.Mbar_ground_jcl_lca_chassis[:,2:3]
-        x32 = self.P_rbr_hub
-        x33 = A(x32)
-        x34 = x12.T
-        x35 = self.Mbar_rbr_hub_jcr_hub_bearing[:,2:3]
-        x36 = self.P_rbl_hub
-        x37 = A(x36)
-        x38 = x21.T
-        x39 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
-        x40 = self.R_rbr_upper_strut
-        x41 = self.P_rbr_upper_strut
+        x32 = self.R_rbr_hub
+        x33 = self.P_rbr_hub
+        x34 = A(x33)
+        x35 = x12.T
+        x36 = self.Mbar_rbr_hub_jcr_hub_bearing[:,2:3]
+        x37 = t
+        x38 = config.UF_mcr_wheel_lock(x37)
+        x39 = self.Mbar_rbr_hub_jcr_hub_bearing[:,0:1]
+        x40 = self.R_rbl_hub
+        x41 = self.P_rbl_hub
         x42 = A(x41)
-        x43 = x42.T
-        x44 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1].T
-        x45 = self.P_rbr_lower_strut
-        x46 = A(x45)
-        x47 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
-        x48 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2].T
-        x49 = self.R_rbr_lower_strut
-        x50 = (x40 + (-1) * x49 + multi_dot([x42,self.ubar_rbr_upper_strut_jcr_strut]) + (-1) * multi_dot([x46,self.ubar_rbr_lower_strut_jcr_strut]))
-        x51 = self.R_rbl_upper_strut
-        x52 = self.P_rbl_upper_strut
+        x43 = x21.T
+        x44 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
+        x45 = config.UF_mcl_wheel_lock(x37)
+        x46 = self.Mbar_rbl_hub_jcl_hub_bearing[:,0:1]
+        x47 = self.R_rbr_upper_strut
+        x48 = self.P_rbr_upper_strut
+        x49 = A(x48)
+        x50 = x49.T
+        x51 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1].T
+        x52 = self.P_rbr_lower_strut
         x53 = A(x52)
-        x54 = x53.T
-        x55 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1].T
-        x56 = self.P_rbl_lower_strut
-        x57 = A(x56)
-        x58 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
-        x59 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2].T
-        x60 = self.R_rbl_lower_strut
-        x61 = (x51 + (-1) * x60 + multi_dot([x53,self.ubar_rbl_upper_strut_jcl_strut]) + (-1) * multi_dot([x57,self.ubar_rbl_lower_strut_jcl_strut]))
-        x62 = self.R_rbr_tie_rod
-        x63 = self.P_rbr_tie_rod
+        x54 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
+        x55 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2].T
+        x56 = self.R_rbr_lower_strut
+        x57 = (x47 + (-1) * x56 + multi_dot([x49,self.ubar_rbr_upper_strut_jcr_strut]) + (-1) * multi_dot([x53,self.ubar_rbr_lower_strut_jcr_strut]))
+        x58 = self.R_rbl_upper_strut
+        x59 = self.P_rbl_upper_strut
+        x60 = A(x59)
+        x61 = x60.T
+        x62 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1].T
+        x63 = self.P_rbl_lower_strut
         x64 = A(x63)
-        x65 = self.R_rbl_tie_rod
-        x66 = self.P_rbl_tie_rod
-        x67 = A(x66)
-        x68 = (-1) * I1
+        x65 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
+        x66 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2].T
+        x67 = self.R_rbl_lower_strut
+        x68 = (x58 + (-1) * x67 + multi_dot([x60,self.ubar_rbl_upper_strut_jcl_strut]) + (-1) * multi_dot([x64,self.ubar_rbl_lower_strut_jcl_strut]))
+        x69 = self.R_rbr_tie_rod
+        x70 = self.P_rbr_tie_rod
+        x71 = A(x70)
+        x72 = self.R_rbl_tie_rod
+        x73 = self.P_rbl_tie_rod
+        x74 = A(x73)
+        x75 = I1
+        x76 = x75
+        x77 = (-1) * x75
 
         self.pos_eq_blocks = ((x0 + x2 + multi_dot([x4,self.ubar_rbr_uca_jcr_uca_chassis]) + (-1) * multi_dot([x6,self.ubar_ground_jcr_uca_chassis])),
         multi_dot([self.Mbar_rbr_uca_jcr_uca_chassis[:,0:1].T,x7,x6,x8]),
@@ -485,50 +521,54 @@ class topology(object):
         multi_dot([self.Mbar_rbl_lca_jcl_lca_chassis[:,0:1].T,x30,x6,x31]),
         multi_dot([self.Mbar_rbl_lca_jcl_lca_chassis[:,1:2].T,x30,x6,x31]),
         (x27 + x19 + multi_dot([x29,self.ubar_rbl_lca_jcl_lca_upright]) + (-1) * multi_dot([x21,self.ubar_rbl_upright_jcl_lca_upright])),
-        (x9 + (-1) * self.R_rbr_hub + multi_dot([x12,self.ubar_rbr_upright_jcr_hub_bearing]) + (-1) * multi_dot([x33,self.ubar_rbr_hub_jcr_hub_bearing])),
-        multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1].T,x34,x33,x35]),
-        multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2].T,x34,x33,x35]),
-        (x18 + (-1) * self.R_rbl_hub + multi_dot([x21,self.ubar_rbl_upright_jcl_hub_bearing]) + (-1) * multi_dot([x37,self.ubar_rbl_hub_jcl_hub_bearing])),
-        multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1].T,x38,x37,x39]),
-        multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2].T,x38,x37,x39]),
-        (x40 + x2 + multi_dot([x42,self.ubar_rbr_upper_strut_jcr_strut_chassis]) + (-1) * multi_dot([x6,self.ubar_ground_jcr_strut_chassis])),
-        multi_dot([self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1].T,x43,x6,self.Mbar_ground_jcr_strut_chassis[:,0:1]]),
-        multi_dot([x44,x43,x46,x47]),
-        multi_dot([x48,x43,x46,x47]),
-        multi_dot([x44,x43,x50]),
-        multi_dot([x48,x43,x50]),
-        (x51 + x2 + multi_dot([x53,self.ubar_rbl_upper_strut_jcl_strut_chassis]) + (-1) * multi_dot([x6,self.ubar_ground_jcl_strut_chassis])),
-        multi_dot([self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1].T,x54,x6,self.Mbar_ground_jcl_strut_chassis[:,0:1]]),
-        multi_dot([x55,x54,x57,x58]),
-        multi_dot([x59,x54,x57,x58]),
-        multi_dot([x55,x54,x61]),
-        multi_dot([x59,x54,x61]),
-        (x49 + (-1) * x22 + multi_dot([x46,self.ubar_rbr_lower_strut_jcr_strut_lca]) + (-1) * multi_dot([x24,self.ubar_rbr_lca_jcr_strut_lca])),
-        multi_dot([self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1].T,x46.T,x24,self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]]),
-        (x60 + (-1) * x27 + multi_dot([x57,self.ubar_rbl_lower_strut_jcl_strut_lca]) + (-1) * multi_dot([x29,self.ubar_rbl_lca_jcl_strut_lca])),
-        multi_dot([self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1].T,x57.T,x29,self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]]),
-        (x62 + x2 + multi_dot([x64,self.ubar_rbr_tie_rod_jcr_tie_steering]) + (-1) * multi_dot([x6,self.ubar_ground_jcr_tie_steering])),
-        multi_dot([self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1].T,x64.T,x6,self.Mbar_ground_jcr_tie_steering[:,0:1]]),
-        (x62 + x10 + multi_dot([x64,self.ubar_rbr_tie_rod_jcr_tie_upright]) + (-1) * multi_dot([x12,self.ubar_rbr_upright_jcr_tie_upright])),
-        (x65 + x2 + multi_dot([x67,self.ubar_rbl_tie_rod_jcl_tie_steering]) + (-1) * multi_dot([x6,self.ubar_ground_jcl_tie_steering])),
-        multi_dot([self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1].T,x67.T,x6,self.Mbar_ground_jcl_tie_steering[:,0:1]]),
-        (x65 + x19 + multi_dot([x67,self.ubar_rbl_tie_rod_jcl_tie_upright]) + (-1) * multi_dot([x21,self.ubar_rbl_upright_jcl_tie_upright])),
+        (x9 + (-1) * x32 + multi_dot([x12,self.ubar_rbr_upright_jcr_hub_bearing]) + (-1) * multi_dot([x34,self.ubar_rbr_hub_jcr_hub_bearing])),
+        multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1].T,x35,x34,x36]),
+        multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2].T,x35,x34,x36]),
+        (cos(x38) * multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2].T,x35,x34,x39]) + (-1 * sin(x38)) * multi_dot([self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1].T,x35,x34,x39])),
+        (x18 + (-1) * x40 + multi_dot([x21,self.ubar_rbl_upright_jcl_hub_bearing]) + (-1) * multi_dot([x42,self.ubar_rbl_hub_jcl_hub_bearing])),
+        multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1].T,x43,x42,x44]),
+        multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2].T,x43,x42,x44]),
+        (cos(x45) * multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2].T,x43,x42,x46]) + (-1 * sin(x45)) * multi_dot([self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1].T,x43,x42,x46])),
+        (x47 + x2 + multi_dot([x49,self.ubar_rbr_upper_strut_jcr_strut_chassis]) + (-1) * multi_dot([x6,self.ubar_ground_jcr_strut_chassis])),
+        multi_dot([self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1].T,x50,x6,self.Mbar_ground_jcr_strut_chassis[:,0:1]]),
+        multi_dot([x51,x50,x53,x54]),
+        multi_dot([x55,x50,x53,x54]),
+        multi_dot([x51,x50,x57]),
+        multi_dot([x55,x50,x57]),
+        (x58 + x2 + multi_dot([x60,self.ubar_rbl_upper_strut_jcl_strut_chassis]) + (-1) * multi_dot([x6,self.ubar_ground_jcl_strut_chassis])),
+        multi_dot([self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1].T,x61,x6,self.Mbar_ground_jcl_strut_chassis[:,0:1]]),
+        multi_dot([x62,x61,x64,x65]),
+        multi_dot([x66,x61,x64,x65]),
+        multi_dot([x62,x61,x68]),
+        multi_dot([x66,x61,x68]),
+        (x56 + (-1) * x22 + multi_dot([x53,self.ubar_rbr_lower_strut_jcr_strut_lca]) + (-1) * multi_dot([x24,self.ubar_rbr_lca_jcr_strut_lca])),
+        multi_dot([self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1].T,x53.T,x24,self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]]),
+        (x67 + (-1) * x27 + multi_dot([x64,self.ubar_rbl_lower_strut_jcl_strut_lca]) + (-1) * multi_dot([x29,self.ubar_rbl_lca_jcl_strut_lca])),
+        multi_dot([self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1].T,x64.T,x29,self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]]),
+        (x69 + x2 + multi_dot([x71,self.ubar_rbr_tie_rod_jcr_tie_steering]) + (-1) * multi_dot([x6,self.ubar_ground_jcr_tie_steering])),
+        multi_dot([self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1].T,x71.T,x6,self.Mbar_ground_jcr_tie_steering[:,0:1]]),
+        (x69 + x10 + multi_dot([x71,self.ubar_rbr_tie_rod_jcr_tie_upright]) + (-1) * multi_dot([x12,self.ubar_rbr_upright_jcr_tie_upright])),
+        (x72 + x2 + multi_dot([x74,self.ubar_rbl_tie_rod_jcl_tie_steering]) + (-1) * multi_dot([x6,self.ubar_ground_jcl_tie_steering])),
+        multi_dot([self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1].T,x74.T,x6,self.Mbar_ground_jcl_tie_steering[:,0:1]]),
+        (x72 + x19 + multi_dot([x74,self.ubar_rbl_tie_rod_jcl_tie_upright]) + (-1) * multi_dot([x21,self.ubar_rbl_upright_jcl_tie_upright])),
+        ((-1 * config.UF_mcr_wheel_travel(t)) * x76 + (x32 + multi_dot([x34,self.ubar_rbr_hub_mcr_wheel_travel]))[2:3] + (-1) * (x1 + multi_dot([x6,self.ubar_ground_mcr_wheel_travel]))[2:3]),
+        ((-1 * config.UF_mcl_wheel_travel(t)) * x76 + (x40 + multi_dot([x42,self.ubar_rbl_hub_mcl_wheel_travel]))[2:3] + (-1) * (x1 + multi_dot([x6,self.ubar_ground_mcl_wheel_travel]))[2:3]),
         x1,
         (x5 + (-1) * self.Pg_ground),
-        (x68 + multi_dot([x3.T,x3])),
-        (x68 + multi_dot([x14.T,x14])),
-        (x68 + multi_dot([x23.T,x23])),
-        (x68 + multi_dot([x28.T,x28])),
-        (x68 + multi_dot([x11.T,x11])),
-        (x68 + multi_dot([x20.T,x20])),
-        (x68 + multi_dot([x41.T,x41])),
-        (x68 + multi_dot([x52.T,x52])),
-        (x68 + multi_dot([x45.T,x45])),
-        (x68 + multi_dot([x56.T,x56])),
-        (x68 + multi_dot([x63.T,x63])),
-        (x68 + multi_dot([x66.T,x66])),
-        (x68 + multi_dot([x32.T,x32])),
-        (x68 + multi_dot([x36.T,x36])),)
+        (x77 + multi_dot([x3.T,x3])),
+        (x77 + multi_dot([x14.T,x14])),
+        (x77 + multi_dot([x23.T,x23])),
+        (x77 + multi_dot([x28.T,x28])),
+        (x77 + multi_dot([x11.T,x11])),
+        (x77 + multi_dot([x20.T,x20])),
+        (x77 + multi_dot([x48.T,x48])),
+        (x77 + multi_dot([x59.T,x59])),
+        (x77 + multi_dot([x52.T,x52])),
+        (x77 + multi_dot([x63.T,x63])),
+        (x77 + multi_dot([x70.T,x70])),
+        (x77 + multi_dot([x73.T,x73])),
+        (x77 + multi_dot([x33.T,x33])),
+        (x77 + multi_dot([x41.T,x41])),)
 
     
     def eval_vel_eq(self):
@@ -537,6 +577,7 @@ class topology(object):
 
         v0 = Z3x1
         v1 = Z1x1
+        v2 = I1
 
         self.vel_eq_blocks = (v0,
         v1,
@@ -557,15 +598,11 @@ class topology(object):
         v0,
         v1,
         v1,
+        (v1 + (-1 * derivative(config.UF_mcr_wheel_lock, t, 0.1, 1)) * v2),
         v0,
         v1,
         v1,
-        v0,
-        v1,
-        v1,
-        v1,
-        v1,
-        v1,
+        (v1 + (-1 * derivative(config.UF_mcl_wheel_lock, t, 0.1, 1)) * v2),
         v0,
         v1,
         v1,
@@ -574,6 +611,12 @@ class topology(object):
         v1,
         v0,
         v1,
+        v1,
+        v1,
+        v1,
+        v1,
+        v0,
+        v1,
         v0,
         v1,
         v0,
@@ -582,6 +625,8 @@ class topology(object):
         v0,
         v1,
         v0,
+        (v1 + (-1 * derivative(config.UF_mcr_wheel_travel, t, 0.1, 1)) * v2),
+        (v1 + (-1 * derivative(config.UF_mcl_wheel_travel, t, 0.1, 1)) * v2),
         v0,
         Z4x1,
         v1,
@@ -661,86 +706,100 @@ class topology(object):
         a54 = a13.T
         a55 = B(a52,a49)
         a56 = self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2]
-        a57 = self.Pd_rbl_hub
-        a58 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
-        a59 = self.P_rbl_upright
-        a60 = A(a59).T
-        a61 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
-        a62 = B(a57,a61)
-        a63 = a61.T
-        a64 = self.P_rbl_hub
-        a65 = A(a64).T
-        a66 = a24.T
-        a67 = B(a64,a61)
-        a68 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
-        a69 = self.Pd_rbr_upper_strut
-        a70 = self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1]
-        a71 = self.P_rbr_upper_strut
-        a72 = A(a71).T
-        a73 = self.Mbar_ground_jcr_strut_chassis[:,0:1]
-        a74 = a69.T
-        a75 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1]
-        a76 = a75.T
-        a77 = self.Pd_rbr_lower_strut
-        a78 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
-        a79 = B(a77,a78)
-        a80 = a78.T
-        a81 = self.P_rbr_lower_strut
-        a82 = A(a81).T
-        a83 = B(a69,a75)
-        a84 = B(a71,a75).T
-        a85 = B(a81,a78)
-        a86 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2]
-        a87 = a86.T
-        a88 = B(a69,a86)
-        a89 = B(a71,a86).T
-        a90 = self.ubar_rbr_upper_strut_jcr_strut
-        a91 = self.ubar_rbr_lower_strut_jcr_strut
-        a92 = (multi_dot([B(a69,a90),a69]) + (-1) * multi_dot([B(a77,a91),a77]))
-        a93 = (self.Rd_rbr_upper_strut + (-1) * self.Rd_rbr_lower_strut + multi_dot([B(a71,a90),a69]) + (-1) * multi_dot([B(a81,a91),a77]))
-        a94 = (self.R_rbr_upper_strut.T + (-1) * self.R_rbr_lower_strut.T + multi_dot([a90.T,a72]) + (-1) * multi_dot([a91.T,a82]))
-        a95 = self.Pd_rbl_upper_strut
-        a96 = self.Mbar_ground_jcl_strut_chassis[:,0:1]
-        a97 = self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1]
-        a98 = self.P_rbl_upper_strut
-        a99 = A(a98).T
-        a100 = a95.T
-        a101 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1]
-        a102 = a101.T
-        a103 = self.Pd_rbl_lower_strut
-        a104 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
-        a105 = B(a103,a104)
-        a106 = a104.T
-        a107 = self.P_rbl_lower_strut
-        a108 = A(a107).T
-        a109 = B(a95,a101)
-        a110 = B(a98,a101).T
-        a111 = B(a107,a104)
-        a112 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2]
-        a113 = a112.T
-        a114 = B(a95,a112)
-        a115 = B(a98,a112).T
-        a116 = self.ubar_rbl_upper_strut_jcl_strut
-        a117 = self.ubar_rbl_lower_strut_jcl_strut
-        a118 = (multi_dot([B(a95,a116),a95]) + (-1) * multi_dot([B(a103,a117),a103]))
-        a119 = (self.Rd_rbl_upper_strut + (-1) * self.Rd_rbl_lower_strut + multi_dot([B(a98,a116),a95]) + (-1) * multi_dot([B(a107,a117),a103]))
-        a120 = (self.R_rbl_upper_strut.T + (-1) * self.R_rbl_lower_strut.T + multi_dot([a116.T,a99]) + (-1) * multi_dot([a117.T,a108]))
-        a121 = self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1]
-        a122 = self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]
-        a123 = a77.T
-        a124 = self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1]
-        a125 = self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]
-        a126 = a103.T
-        a127 = self.Pd_rbr_tie_rod
-        a128 = self.Mbar_ground_jcr_tie_steering[:,0:1]
-        a129 = self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1]
-        a130 = self.P_rbr_tie_rod
-        a131 = a127.T
-        a132 = self.Pd_rbl_tie_rod
-        a133 = self.Mbar_ground_jcl_tie_steering[:,0:1]
-        a134 = self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1]
-        a135 = self.P_rbl_tie_rod
-        a136 = a132.T
+        a57 = I1
+        a58 = self.Mbar_rbr_hub_jcr_hub_bearing[:,0:1]
+        a59 = t
+        a60 = config.UF_mcr_wheel_lock(a59)
+        a61 = cos(a60)
+        a62 = self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2]
+        a63 = sin(a60)
+        a64 = self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1]
+        a65 = self.Pd_rbl_hub
+        a66 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
+        a67 = self.P_rbl_upright
+        a68 = A(a67).T
+        a69 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
+        a70 = B(a65,a69)
+        a71 = a69.T
+        a72 = self.P_rbl_hub
+        a73 = A(a72).T
+        a74 = a24.T
+        a75 = B(a72,a69)
+        a76 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
+        a77 = self.Mbar_rbl_hub_jcl_hub_bearing[:,0:1]
+        a78 = config.UF_mcl_wheel_lock(a59)
+        a79 = cos(a78)
+        a80 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
+        a81 = sin(a78)
+        a82 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
+        a83 = self.Pd_rbr_upper_strut
+        a84 = self.Mbar_ground_jcr_strut_chassis[:,0:1]
+        a85 = self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1]
+        a86 = self.P_rbr_upper_strut
+        a87 = A(a86).T
+        a88 = a83.T
+        a89 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1]
+        a90 = a89.T
+        a91 = self.Pd_rbr_lower_strut
+        a92 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
+        a93 = B(a91,a92)
+        a94 = a92.T
+        a95 = self.P_rbr_lower_strut
+        a96 = A(a95).T
+        a97 = B(a83,a89)
+        a98 = B(a86,a89).T
+        a99 = B(a95,a92)
+        a100 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2]
+        a101 = a100.T
+        a102 = B(a83,a100)
+        a103 = B(a86,a100).T
+        a104 = self.ubar_rbr_upper_strut_jcr_strut
+        a105 = self.ubar_rbr_lower_strut_jcr_strut
+        a106 = (multi_dot([B(a83,a104),a83]) + (-1) * multi_dot([B(a91,a105),a91]))
+        a107 = (self.Rd_rbr_upper_strut + (-1) * self.Rd_rbr_lower_strut + multi_dot([B(a86,a104),a83]) + (-1) * multi_dot([B(a95,a105),a91]))
+        a108 = (self.R_rbr_upper_strut.T + (-1) * self.R_rbr_lower_strut.T + multi_dot([a104.T,a87]) + (-1) * multi_dot([a105.T,a96]))
+        a109 = self.Pd_rbl_upper_strut
+        a110 = self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1]
+        a111 = self.P_rbl_upper_strut
+        a112 = A(a111).T
+        a113 = self.Mbar_ground_jcl_strut_chassis[:,0:1]
+        a114 = a109.T
+        a115 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
+        a116 = a115.T
+        a117 = self.P_rbl_lower_strut
+        a118 = A(a117).T
+        a119 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1]
+        a120 = B(a109,a119)
+        a121 = a119.T
+        a122 = self.Pd_rbl_lower_strut
+        a123 = B(a122,a115)
+        a124 = B(a111,a119).T
+        a125 = B(a117,a115)
+        a126 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2]
+        a127 = B(a109,a126)
+        a128 = a126.T
+        a129 = B(a111,a126).T
+        a130 = self.ubar_rbl_upper_strut_jcl_strut
+        a131 = self.ubar_rbl_lower_strut_jcl_strut
+        a132 = (multi_dot([B(a109,a130),a109]) + (-1) * multi_dot([B(a122,a131),a122]))
+        a133 = (self.Rd_rbl_upper_strut + (-1) * self.Rd_rbl_lower_strut + multi_dot([B(a111,a130),a109]) + (-1) * multi_dot([B(a117,a131),a122]))
+        a134 = (self.R_rbl_upper_strut.T + (-1) * self.R_rbl_lower_strut.T + multi_dot([a130.T,a112]) + (-1) * multi_dot([a131.T,a118]))
+        a135 = self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]
+        a136 = self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1]
+        a137 = a91.T
+        a138 = self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1]
+        a139 = self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]
+        a140 = a122.T
+        a141 = self.Pd_rbr_tie_rod
+        a142 = self.Mbar_ground_jcr_tie_steering[:,0:1]
+        a143 = self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1]
+        a144 = self.P_rbr_tie_rod
+        a145 = a141.T
+        a146 = self.Pd_rbl_tie_rod
+        a147 = self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1]
+        a148 = self.P_rbl_tie_rod
+        a149 = self.Mbar_ground_jcl_tie_steering[:,0:1]
+        a150 = a146.T
 
         self.acc_eq_blocks = ((multi_dot([B(a0,self.ubar_rbr_uca_jcr_uca_chassis),a0]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcr_uca_chassis),a1])),
         (multi_dot([a2.T,a4,a6,a1]) + multi_dot([a7,a9,B(a0,a2),a0]) + (2) * multi_dot([a10,B(a3,a2).T,a11,a1])),
@@ -761,31 +820,35 @@ class topology(object):
         (multi_dot([B(a13,self.ubar_rbr_upright_jcr_hub_bearing),a13]) + (-1) * multi_dot([B(a45,self.ubar_rbr_hub_jcr_hub_bearing),a45])),
         (multi_dot([a46.T,a48,a50,a45]) + multi_dot([a51,a53,B(a13,a46),a13]) + (2) * multi_dot([a54,B(a47,a46).T,a55,a45])),
         (multi_dot([a56.T,a48,a50,a45]) + multi_dot([a51,a53,B(a13,a56),a13]) + (2) * multi_dot([a54,B(a47,a56).T,a55,a45])),
-        (multi_dot([B(a24,self.ubar_rbl_upright_jcl_hub_bearing),a24]) + (-1) * multi_dot([B(a57,self.ubar_rbl_hub_jcl_hub_bearing),a57])),
-        (multi_dot([a58.T,a60,a62,a57]) + multi_dot([a63,a65,B(a24,a58),a24]) + (2) * multi_dot([a66,B(a59,a58).T,a67,a57])),
-        (multi_dot([a68.T,a60,a62,a57]) + multi_dot([a63,a65,B(a24,a68),a24]) + (2) * multi_dot([a66,B(a59,a68).T,a67,a57])),
-        (multi_dot([B(a69,self.ubar_rbr_upper_strut_jcr_strut_chassis),a69]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcr_strut_chassis),a1])),
-        (multi_dot([a70.T,a72,B(a1,a73),a1]) + multi_dot([a73.T,a9,B(a69,a70),a69]) + (2) * multi_dot([a74,B(a71,a70).T,B(a8,a73),a1])),
-        (multi_dot([a76,a72,a79,a77]) + multi_dot([a80,a82,a83,a69]) + (2) * multi_dot([a74,a84,a85,a77])),
-        (multi_dot([a87,a72,a79,a77]) + multi_dot([a80,a82,a88,a69]) + (2) * multi_dot([a74,a89,a85,a77])),
-        (multi_dot([a76,a72,a92]) + (2) * multi_dot([a74,a84,a93]) + multi_dot([a94,a83,a69])),
-        (multi_dot([a87,a72,a92]) + (2) * multi_dot([a74,a89,a93]) + multi_dot([a94,a88,a69])),
-        (multi_dot([B(a95,self.ubar_rbl_upper_strut_jcl_strut_chassis),a95]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcl_strut_chassis),a1])),
-        (multi_dot([a96.T,a9,B(a95,a97),a95]) + multi_dot([a97.T,a99,B(a1,a96),a1]) + (2) * multi_dot([a100,B(a98,a97).T,B(a8,a96),a1])),
-        (multi_dot([a102,a99,a105,a103]) + multi_dot([a106,a108,a109,a95]) + (2) * multi_dot([a100,a110,a111,a103])),
-        (multi_dot([a113,a99,a105,a103]) + multi_dot([a106,a108,a114,a95]) + (2) * multi_dot([a100,a115,a111,a103])),
-        (multi_dot([a102,a99,a118]) + (2) * multi_dot([a100,a110,a119]) + multi_dot([a120,a109,a95])),
-        (multi_dot([a113,a99,a118]) + (2) * multi_dot([a100,a115,a119]) + multi_dot([a120,a114,a95])),
-        (multi_dot([B(a77,self.ubar_rbr_lower_strut_jcr_strut_lca),a77]) + (-1) * multi_dot([B(a25,self.ubar_rbr_lca_jcr_strut_lca),a25])),
-        (multi_dot([a121.T,a82,B(a25,a122),a25]) + multi_dot([a122.T,a28,B(a77,a121),a77]) + (2) * multi_dot([a123,B(a81,a121).T,B(a27,a122),a25])),
-        (multi_dot([B(a103,self.ubar_rbl_lower_strut_jcl_strut_lca),a103]) + (-1) * multi_dot([B(a35,self.ubar_rbl_lca_jcl_strut_lca),a35])),
-        (multi_dot([a124.T,a108,B(a35,a125),a35]) + multi_dot([a125.T,a38,B(a103,a124),a103]) + (2) * multi_dot([a126,B(a107,a124).T,B(a37,a125),a35])),
-        (multi_dot([B(a127,self.ubar_rbr_tie_rod_jcr_tie_steering),a127]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcr_tie_steering),a1])),
-        (multi_dot([a128.T,a9,B(a127,a129),a127]) + multi_dot([a129.T,A(a130).T,B(a1,a128),a1]) + (2) * multi_dot([a131,B(a130,a129).T,B(a8,a128),a1])),
-        (multi_dot([B(a127,self.ubar_rbr_tie_rod_jcr_tie_upright),a127]) + (-1) * multi_dot([B(a13,self.ubar_rbr_upright_jcr_tie_upright),a13])),
-        (multi_dot([B(a132,self.ubar_rbl_tie_rod_jcl_tie_steering),a132]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcl_tie_steering),a1])),
-        (multi_dot([a133.T,a9,B(a132,a134),a132]) + multi_dot([a134.T,A(a135).T,B(a1,a133),a1]) + (2) * multi_dot([a136,B(a135,a134).T,B(a8,a133),a1])),
-        (multi_dot([B(a132,self.ubar_rbl_tie_rod_jcl_tie_upright),a132]) + (-1) * multi_dot([B(a24,self.ubar_rbl_upright_jcl_tie_upright),a24])),
+        ((-1 * derivative(config.UF_mcr_wheel_lock, t, 0.1, 2)) * a57 + multi_dot([a58.T,a53,(a61 * B(a13,a62) + (-1 * a63) * B(a13,a64)),a13]) + multi_dot([(a61 * multi_dot([a62.T,a48]) + (-1 * a63) * multi_dot([a64.T,a48])),B(a45,a58),a45]) + (2) * multi_dot([(a61 * multi_dot([a54,B(a47,a62).T]) + (-1 * a63) * multi_dot([a54,B(a47,a64).T])),B(a52,a58),a45])),
+        (multi_dot([B(a24,self.ubar_rbl_upright_jcl_hub_bearing),a24]) + (-1) * multi_dot([B(a65,self.ubar_rbl_hub_jcl_hub_bearing),a65])),
+        (multi_dot([a66.T,a68,a70,a65]) + multi_dot([a71,a73,B(a24,a66),a24]) + (2) * multi_dot([a74,B(a67,a66).T,a75,a65])),
+        (multi_dot([a76.T,a68,a70,a65]) + multi_dot([a71,a73,B(a24,a76),a24]) + (2) * multi_dot([a74,B(a67,a76).T,a75,a65])),
+        ((-1 * derivative(config.UF_mcl_wheel_lock, t, 0.1, 2)) * a57 + multi_dot([a77.T,a73,(a79 * B(a24,a80) + (-1 * a81) * B(a24,a82)),a24]) + multi_dot([(a79 * multi_dot([a80.T,a68]) + (-1 * a81) * multi_dot([a82.T,a68])),B(a65,a77),a65]) + (2) * multi_dot([(a79 * multi_dot([a74,B(a67,a80).T]) + (-1 * a81) * multi_dot([a74,B(a67,a82).T])),B(a72,a77),a65])),
+        (multi_dot([B(a83,self.ubar_rbr_upper_strut_jcr_strut_chassis),a83]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcr_strut_chassis),a1])),
+        (multi_dot([a84.T,a9,B(a83,a85),a83]) + multi_dot([a85.T,a87,B(a1,a84),a1]) + (2) * multi_dot([a88,B(a86,a85).T,B(a8,a84),a1])),
+        (multi_dot([a90,a87,a93,a91]) + multi_dot([a94,a96,a97,a83]) + (2) * multi_dot([a88,a98,a99,a91])),
+        (multi_dot([a101,a87,a93,a91]) + multi_dot([a94,a96,a102,a83]) + (2) * multi_dot([a88,a103,a99,a91])),
+        (multi_dot([a90,a87,a106]) + (2) * multi_dot([a88,a98,a107]) + multi_dot([a108,a97,a83])),
+        (multi_dot([a101,a87,a106]) + (2) * multi_dot([a88,a103,a107]) + multi_dot([a108,a102,a83])),
+        (multi_dot([B(a109,self.ubar_rbl_upper_strut_jcl_strut_chassis),a109]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcl_strut_chassis),a1])),
+        (multi_dot([a110.T,a112,B(a1,a113),a1]) + multi_dot([a113.T,a9,B(a109,a110),a109]) + (2) * multi_dot([a114,B(a111,a110).T,B(a8,a113),a1])),
+        (multi_dot([a116,a118,a120,a109]) + multi_dot([a121,a112,a123,a122]) + (2) * multi_dot([a114,a124,a125,a122])),
+        (multi_dot([a116,a118,a127,a109]) + multi_dot([a128,a112,a123,a122]) + (2) * multi_dot([a114,a129,a125,a122])),
+        (multi_dot([a121,a112,a132]) + (2) * multi_dot([a114,a124,a133]) + multi_dot([a134,a120,a109])),
+        (multi_dot([a128,a112,a132]) + (2) * multi_dot([a114,a129,a133]) + multi_dot([a134,a127,a109])),
+        (multi_dot([B(a91,self.ubar_rbr_lower_strut_jcr_strut_lca),a91]) + (-1) * multi_dot([B(a25,self.ubar_rbr_lca_jcr_strut_lca),a25])),
+        (multi_dot([a135.T,a28,B(a91,a136),a91]) + multi_dot([a136.T,a96,B(a25,a135),a25]) + (2) * multi_dot([a137,B(a95,a136).T,B(a27,a135),a25])),
+        (multi_dot([B(a122,self.ubar_rbl_lower_strut_jcl_strut_lca),a122]) + (-1) * multi_dot([B(a35,self.ubar_rbl_lca_jcl_strut_lca),a35])),
+        (multi_dot([a138.T,a118,B(a35,a139),a35]) + multi_dot([a139.T,a38,B(a122,a138),a122]) + (2) * multi_dot([a140,B(a117,a138).T,B(a37,a139),a35])),
+        (multi_dot([B(a141,self.ubar_rbr_tie_rod_jcr_tie_steering),a141]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcr_tie_steering),a1])),
+        (multi_dot([a142.T,a9,B(a141,a143),a141]) + multi_dot([a143.T,A(a144).T,B(a1,a142),a1]) + (2) * multi_dot([a145,B(a144,a143).T,B(a8,a142),a1])),
+        (multi_dot([B(a141,self.ubar_rbr_tie_rod_jcr_tie_upright),a141]) + (-1) * multi_dot([B(a13,self.ubar_rbr_upright_jcr_tie_upright),a13])),
+        (multi_dot([B(a146,self.ubar_rbl_tie_rod_jcl_tie_steering),a146]) + (-1) * multi_dot([B(a1,self.ubar_ground_jcl_tie_steering),a1])),
+        (multi_dot([a147.T,A(a148).T,B(a1,a149),a1]) + multi_dot([a149.T,a9,B(a146,a147),a146]) + (2) * multi_dot([a150,B(a148,a147).T,B(a8,a149),a1])),
+        (multi_dot([B(a146,self.ubar_rbl_tie_rod_jcl_tie_upright),a146]) + (-1) * multi_dot([B(a24,self.ubar_rbl_upright_jcl_tie_upright),a24])),
+        ((-1 * derivative(config.UF_mcr_wheel_travel, t, 0.1, 2)) * a57 + (multi_dot([B(a45,self.ubar_rbr_hub_mcr_wheel_travel),a45]) + (-1) * multi_dot([B(a1,self.ubar_ground_mcr_wheel_travel),a1]))[2:3]),
+        ((-1 * derivative(config.UF_mcl_wheel_travel, t, 0.1, 2)) * a57 + (multi_dot([B(a65,self.ubar_rbl_hub_mcl_wheel_travel),a65]) + (-1) * multi_dot([B(a1,self.ubar_ground_mcl_wheel_travel),a1]))[2:3]),
         Z3x1,
         Z4x1,
         (2) * multi_dot([a10,a0]),
@@ -793,15 +856,15 @@ class topology(object):
         (2) * multi_dot([a32,a25]),
         (2) * multi_dot([a42,a35]),
         (2) * multi_dot([a54,a13]),
-        (2) * multi_dot([a66,a24]),
-        (2) * multi_dot([a74,a69]),
-        (2) * multi_dot([a100,a95]),
-        (2) * multi_dot([a123,a77]),
-        (2) * multi_dot([a126,a103]),
-        (2) * multi_dot([a131,a127]),
-        (2) * multi_dot([a136,a132]),
+        (2) * multi_dot([a74,a24]),
+        (2) * multi_dot([a88,a83]),
+        (2) * multi_dot([a114,a109]),
+        (2) * multi_dot([a137,a91]),
+        (2) * multi_dot([a140,a122]),
+        (2) * multi_dot([a145,a141]),
+        (2) * multi_dot([a150,a146]),
         (2) * multi_dot([a45.T,a45]),
-        (2) * multi_dot([a57.T,a57]),)
+        (2) * multi_dot([a65.T,a65]),)
 
     
     def eval_jac_eq(self):
@@ -851,68 +914,83 @@ class topology(object):
         j40 = self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2]
         j41 = A(j12).T
         j42 = B(j37,j35)
-        j43 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
-        j44 = j43.T
-        j45 = self.P_rbl_hub
-        j46 = A(j45).T
-        j47 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
-        j48 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
-        j49 = A(j20).T
-        j50 = B(j45,j43)
-        j51 = self.P_rbr_upper_strut
-        j52 = self.Mbar_ground_jcr_strut_chassis[:,0:1]
-        j53 = self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1]
-        j54 = A(j51).T
-        j55 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
-        j56 = j55.T
-        j57 = self.P_rbr_lower_strut
-        j58 = A(j57).T
-        j59 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1]
-        j60 = B(j51,j59)
-        j61 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2]
-        j62 = B(j51,j61)
-        j63 = j59.T
-        j64 = multi_dot([j63,j54])
-        j65 = self.ubar_rbr_upper_strut_jcr_strut
-        j66 = B(j51,j65)
-        j67 = self.ubar_rbr_lower_strut_jcr_strut
-        j68 = (self.R_rbr_upper_strut.T + (-1) * self.R_rbr_lower_strut.T + multi_dot([j65.T,j54]) + (-1) * multi_dot([j67.T,j58]))
-        j69 = j61.T
-        j70 = multi_dot([j69,j54])
-        j71 = B(j57,j55)
-        j72 = B(j57,j67)
-        j73 = self.P_rbl_upper_strut
-        j74 = self.Mbar_ground_jcl_strut_chassis[:,0:1]
-        j75 = self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1]
-        j76 = A(j73).T
-        j77 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
-        j78 = j77.T
-        j79 = self.P_rbl_lower_strut
-        j80 = A(j79).T
-        j81 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1]
-        j82 = B(j73,j81)
-        j83 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2]
-        j84 = B(j73,j83)
-        j85 = j81.T
-        j86 = multi_dot([j85,j76])
-        j87 = self.ubar_rbl_upper_strut_jcl_strut
-        j88 = B(j73,j87)
-        j89 = self.ubar_rbl_lower_strut_jcl_strut
-        j90 = (self.R_rbl_upper_strut.T + (-1) * self.R_rbl_lower_strut.T + multi_dot([j87.T,j76]) + (-1) * multi_dot([j89.T,j80]))
-        j91 = j83.T
-        j92 = multi_dot([j91,j76])
-        j93 = B(j79,j77)
-        j94 = B(j79,j89)
-        j95 = self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]
-        j96 = self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1]
-        j97 = self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]
-        j98 = self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1]
-        j99 = self.P_rbr_tie_rod
-        j100 = self.Mbar_ground_jcr_tie_steering[:,0:1]
-        j101 = self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1]
-        j102 = self.P_rbl_tie_rod
-        j103 = self.Mbar_ground_jcl_tie_steering[:,0:1]
-        j104 = self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1]
+        j43 = self.Mbar_rbr_hub_jcr_hub_bearing[:,0:1]
+        j44 = t
+        j45 = config.UF_mcr_wheel_lock(j44)
+        j46 = cos(j45)
+        j47 = self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2]
+        j48 = sin(j45)
+        j49 = self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1]
+        j50 = self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]
+        j51 = j50.T
+        j52 = self.P_rbl_hub
+        j53 = A(j52).T
+        j54 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
+        j55 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
+        j56 = A(j20).T
+        j57 = B(j52,j50)
+        j58 = self.Mbar_rbl_hub_jcl_hub_bearing[:,0:1]
+        j59 = config.UF_mcl_wheel_lock(j44)
+        j60 = cos(j59)
+        j61 = self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]
+        j62 = sin(j59)
+        j63 = self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]
+        j64 = self.P_rbr_upper_strut
+        j65 = self.Mbar_ground_jcr_strut_chassis[:,0:1]
+        j66 = self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1]
+        j67 = A(j64).T
+        j68 = self.Mbar_rbr_lower_strut_jcr_strut[:,2:3]
+        j69 = j68.T
+        j70 = self.P_rbr_lower_strut
+        j71 = A(j70).T
+        j72 = self.Mbar_rbr_upper_strut_jcr_strut[:,0:1]
+        j73 = B(j64,j72)
+        j74 = self.Mbar_rbr_upper_strut_jcr_strut[:,1:2]
+        j75 = B(j64,j74)
+        j76 = j72.T
+        j77 = multi_dot([j76,j67])
+        j78 = self.ubar_rbr_upper_strut_jcr_strut
+        j79 = B(j64,j78)
+        j80 = self.ubar_rbr_lower_strut_jcr_strut
+        j81 = (self.R_rbr_upper_strut.T + (-1) * self.R_rbr_lower_strut.T + multi_dot([j78.T,j67]) + (-1) * multi_dot([j80.T,j71]))
+        j82 = j74.T
+        j83 = multi_dot([j82,j67])
+        j84 = B(j70,j68)
+        j85 = B(j70,j80)
+        j86 = self.P_rbl_upper_strut
+        j87 = self.Mbar_ground_jcl_strut_chassis[:,0:1]
+        j88 = self.Mbar_rbl_upper_strut_jcl_strut_chassis[:,0:1]
+        j89 = A(j86).T
+        j90 = self.Mbar_rbl_lower_strut_jcl_strut[:,2:3]
+        j91 = j90.T
+        j92 = self.P_rbl_lower_strut
+        j93 = A(j92).T
+        j94 = self.Mbar_rbl_upper_strut_jcl_strut[:,0:1]
+        j95 = B(j86,j94)
+        j96 = self.Mbar_rbl_upper_strut_jcl_strut[:,1:2]
+        j97 = B(j86,j96)
+        j98 = j94.T
+        j99 = multi_dot([j98,j89])
+        j100 = self.ubar_rbl_upper_strut_jcl_strut
+        j101 = B(j86,j100)
+        j102 = self.ubar_rbl_lower_strut_jcl_strut
+        j103 = (self.R_rbl_upper_strut.T + (-1) * self.R_rbl_lower_strut.T + multi_dot([j100.T,j89]) + (-1) * multi_dot([j102.T,j93]))
+        j104 = j96.T
+        j105 = multi_dot([j104,j89])
+        j106 = B(j92,j90)
+        j107 = B(j92,j102)
+        j108 = self.Mbar_rbr_lca_jcr_strut_lca[:,0:1]
+        j109 = self.Mbar_rbr_lower_strut_jcr_strut_lca[:,0:1]
+        j110 = self.Mbar_rbl_lca_jcl_strut_lca[:,0:1]
+        j111 = self.Mbar_rbl_lower_strut_jcl_strut_lca[:,0:1]
+        j112 = self.P_rbr_tie_rod
+        j113 = self.Mbar_ground_jcr_tie_steering[:,0:1]
+        j114 = self.Mbar_rbr_tie_rod_jcr_tie_steering[:,0:1]
+        j115 = self.P_rbl_tie_rod
+        j116 = self.Mbar_ground_jcl_tie_steering[:,0:1]
+        j117 = self.Mbar_rbl_tie_rod_jcl_tie_steering[:,0:1]
+        j118 = j0[2:3,0:3]
+        j119 = (-1) * j118
 
         self.jac_eq_blocks = (j9,
         (-1) * B(j5,self.ubar_ground_jcr_uca_chassis),
@@ -990,106 +1068,122 @@ class topology(object):
         multi_dot([j36,j38,B(j12,j40)]),
         j2,
         multi_dot([j40.T,j41,j42]),
+        j2,
+        multi_dot([j43.T,j38,(j46 * B(j12,j47) + (-1 * j48) * B(j12,j49))]),
+        j2,
+        multi_dot([(j46 * multi_dot([j47.T,j41]) + (-1 * j48) * multi_dot([j49.T,j41])),B(j37,j43)]),
         j0,
         B(j20,self.ubar_rbl_upright_jcl_hub_bearing),
         j9,
-        (-1) * B(j45,self.ubar_rbl_hub_jcl_hub_bearing),
+        (-1) * B(j52,self.ubar_rbl_hub_jcl_hub_bearing),
         j2,
-        multi_dot([j44,j46,B(j20,j47)]),
+        multi_dot([j51,j53,B(j20,j54)]),
         j2,
-        multi_dot([j47.T,j49,j50]),
+        multi_dot([j54.T,j56,j57]),
         j2,
-        multi_dot([j44,j46,B(j20,j48)]),
+        multi_dot([j51,j53,B(j20,j55)]),
         j2,
-        multi_dot([j48.T,j49,j50]),
+        multi_dot([j55.T,j56,j57]),
+        j2,
+        multi_dot([j58.T,j53,(j60 * B(j20,j61) + (-1 * j62) * B(j20,j63))]),
+        j2,
+        multi_dot([(j60 * multi_dot([j61.T,j56]) + (-1 * j62) * multi_dot([j63.T,j56])),B(j52,j58)]),
         j9,
         (-1) * B(j5,self.ubar_ground_jcr_strut_chassis),
         j0,
-        B(j51,self.ubar_rbr_upper_strut_jcr_strut_chassis),
+        B(j64,self.ubar_rbr_upper_strut_jcr_strut_chassis),
         j2,
-        multi_dot([j53.T,j54,B(j5,j52)]),
+        multi_dot([j66.T,j67,B(j5,j65)]),
         j2,
-        multi_dot([j52.T,j6,B(j51,j53)]),
+        multi_dot([j65.T,j6,B(j64,j66)]),
         j2,
-        multi_dot([j56,j58,j60]),
+        multi_dot([j69,j71,j73]),
         j2,
-        multi_dot([j63,j54,j71]),
+        multi_dot([j76,j67,j84]),
         j2,
-        multi_dot([j56,j58,j62]),
+        multi_dot([j69,j71,j75]),
         j2,
-        multi_dot([j69,j54,j71]),
-        j64,
-        (multi_dot([j63,j54,j66]) + multi_dot([j68,j60])),
-        (-1) * j64,
-        (-1) * multi_dot([j63,j54,j72]),
-        j70,
-        (multi_dot([j69,j54,j66]) + multi_dot([j68,j62])),
-        (-1) * j70,
-        (-1) * multi_dot([j69,j54,j72]),
+        multi_dot([j82,j67,j84]),
+        j77,
+        (multi_dot([j76,j67,j79]) + multi_dot([j81,j73])),
+        (-1) * j77,
+        (-1) * multi_dot([j76,j67,j85]),
+        j83,
+        (multi_dot([j82,j67,j79]) + multi_dot([j81,j75])),
+        (-1) * j83,
+        (-1) * multi_dot([j82,j67,j85]),
         j9,
         (-1) * B(j5,self.ubar_ground_jcl_strut_chassis),
         j0,
-        B(j73,self.ubar_rbl_upper_strut_jcl_strut_chassis),
+        B(j86,self.ubar_rbl_upper_strut_jcl_strut_chassis),
         j2,
-        multi_dot([j75.T,j76,B(j5,j74)]),
+        multi_dot([j88.T,j89,B(j5,j87)]),
         j2,
-        multi_dot([j74.T,j6,B(j73,j75)]),
+        multi_dot([j87.T,j6,B(j86,j88)]),
         j2,
-        multi_dot([j78,j80,j82]),
+        multi_dot([j91,j93,j95]),
         j2,
-        multi_dot([j85,j76,j93]),
+        multi_dot([j98,j89,j106]),
         j2,
-        multi_dot([j78,j80,j84]),
+        multi_dot([j91,j93,j97]),
         j2,
-        multi_dot([j91,j76,j93]),
-        j86,
-        (multi_dot([j85,j76,j88]) + multi_dot([j90,j82])),
-        (-1) * j86,
-        (-1) * multi_dot([j85,j76,j94]),
-        j92,
-        (multi_dot([j91,j76,j88]) + multi_dot([j90,j84])),
-        (-1) * j92,
-        (-1) * multi_dot([j91,j76,j94]),
+        multi_dot([j104,j89,j106]),
+        j99,
+        (multi_dot([j98,j89,j101]) + multi_dot([j103,j95])),
+        (-1) * j99,
+        (-1) * multi_dot([j98,j89,j107]),
+        j105,
+        (multi_dot([j104,j89,j101]) + multi_dot([j103,j97])),
+        (-1) * j105,
+        (-1) * multi_dot([j104,j89,j107]),
         j9,
         (-1) * B(j21,self.ubar_rbr_lca_jcr_strut_lca),
         j0,
-        B(j57,self.ubar_rbr_lower_strut_jcr_strut_lca),
+        B(j70,self.ubar_rbr_lower_strut_jcr_strut_lca),
         j2,
-        multi_dot([j96.T,j58,B(j21,j95)]),
+        multi_dot([j109.T,j71,B(j21,j108)]),
         j2,
-        multi_dot([j95.T,j26,B(j57,j96)]),
+        multi_dot([j108.T,j26,B(j70,j109)]),
         j9,
         (-1) * B(j28,self.ubar_rbl_lca_jcl_strut_lca),
         j0,
-        B(j79,self.ubar_rbl_lower_strut_jcl_strut_lca),
+        B(j92,self.ubar_rbl_lower_strut_jcl_strut_lca),
         j2,
-        multi_dot([j98.T,j80,B(j28,j97)]),
+        multi_dot([j111.T,j93,B(j28,j110)]),
         j2,
-        multi_dot([j97.T,j33,B(j79,j98)]),
+        multi_dot([j110.T,j33,B(j92,j111)]),
         j9,
         (-1) * B(j5,self.ubar_ground_jcr_tie_steering),
         j0,
-        B(j99,self.ubar_rbr_tie_rod_jcr_tie_steering),
+        B(j112,self.ubar_rbr_tie_rod_jcr_tie_steering),
         j2,
-        multi_dot([j101.T,A(j99).T,B(j5,j100)]),
+        multi_dot([j114.T,A(j112).T,B(j5,j113)]),
         j2,
-        multi_dot([j100.T,j6,B(j99,j101)]),
+        multi_dot([j113.T,j6,B(j112,j114)]),
         j9,
         (-1) * B(j12,self.ubar_rbr_upright_jcr_tie_upright),
         j0,
-        B(j99,self.ubar_rbr_tie_rod_jcr_tie_upright),
+        B(j112,self.ubar_rbr_tie_rod_jcr_tie_upright),
         j9,
         (-1) * B(j5,self.ubar_ground_jcl_tie_steering),
         j0,
-        B(j102,self.ubar_rbl_tie_rod_jcl_tie_steering),
+        B(j115,self.ubar_rbl_tie_rod_jcl_tie_steering),
         j2,
-        multi_dot([j104.T,A(j102).T,B(j5,j103)]),
+        multi_dot([j117.T,A(j115).T,B(j5,j116)]),
         j2,
-        multi_dot([j103.T,j6,B(j102,j104)]),
+        multi_dot([j116.T,j6,B(j115,j117)]),
         j9,
         (-1) * B(j20,self.ubar_rbl_upright_jcl_tie_upright),
         j0,
-        B(j102,self.ubar_rbl_tie_rod_jcl_tie_upright),
+        B(j115,self.ubar_rbl_tie_rod_jcl_tie_upright),
+        j119,
+        (-1) * B(j5,self.ubar_ground_mcr_wheel_travel)[2:3,0:4],
+        j118,
+        B(j37,self.ubar_rbr_hub_mcr_wheel_travel)[2:3,0:4],
+        j119,
+        (-1) * B(j5,self.ubar_ground_mcl_wheel_travel)[2:3,0:4],
+        j118,
+        B(j52,self.ubar_rbl_hub_mcl_wheel_travel)[2:3,0:4],
         j0,
         Z3x4,
         Z4x3,
@@ -1107,74 +1201,73 @@ class topology(object):
         j2,
         (2) * j20.T,
         j2,
-        (2) * j51.T,
+        (2) * j64.T,
         j2,
-        (2) * j73.T,
+        (2) * j86.T,
         j2,
-        (2) * j57.T,
+        (2) * j70.T,
         j2,
-        (2) * j79.T,
+        (2) * j92.T,
         j2,
-        (2) * j99.T,
+        (2) * j112.T,
         j2,
-        (2) * j102.T,
+        (2) * j115.T,
         j2,
         (2) * j37.T,
         j2,
-        (2) * j45.T,)
+        (2) * j52.T,)
 
     
     def eval_mass_eq(self):
         config = self.config
         t = self.t
 
-        m0 = I3
-        m1 = G(self.P_ground)
-        m2 = G(self.P_rbr_uca)
-        m3 = G(self.P_rbl_uca)
-        m4 = G(self.P_rbr_lca)
-        m5 = G(self.P_rbl_lca)
-        m6 = G(self.P_rbr_upright)
-        m7 = G(self.P_rbl_upright)
-        m8 = G(self.P_rbr_upper_strut)
-        m9 = G(self.P_rbl_upper_strut)
-        m10 = G(self.P_rbr_lower_strut)
-        m11 = G(self.P_rbl_lower_strut)
-        m12 = G(self.P_rbr_tie_rod)
-        m13 = G(self.P_rbl_tie_rod)
-        m14 = G(self.P_rbr_hub)
-        m15 = G(self.P_rbl_hub)
+        m0 = G(self.P_ground)
+        m1 = G(self.P_rbr_uca)
+        m2 = G(self.P_rbl_uca)
+        m3 = G(self.P_rbr_lca)
+        m4 = G(self.P_rbl_lca)
+        m5 = G(self.P_rbr_upright)
+        m6 = G(self.P_rbl_upright)
+        m7 = G(self.P_rbr_upper_strut)
+        m8 = G(self.P_rbl_upper_strut)
+        m9 = G(self.P_rbr_lower_strut)
+        m10 = G(self.P_rbl_lower_strut)
+        m11 = G(self.P_rbr_tie_rod)
+        m12 = G(self.P_rbl_tie_rod)
+        m13 = G(self.P_rbr_hub)
+        m14 = G(self.P_rbl_hub)
 
-        self.mass_eq_blocks = (self.m_ground * m0,
-        (4) * multi_dot([m1.T,self.Jbar_ground,m1]),
-        config.m_rbr_uca * m0,
-        (4) * multi_dot([m2.T,config.Jbar_rbr_uca,m2]),
-        config.m_rbl_uca * m0,
-        (4) * multi_dot([m3.T,config.Jbar_rbl_uca,m3]),
-        config.m_rbr_lca * m0,
-        (4) * multi_dot([m4.T,config.Jbar_rbr_lca,m4]),
-        config.m_rbl_lca * m0,
-        (4) * multi_dot([m5.T,config.Jbar_rbl_lca,m5]),
-        config.m_rbr_upright * m0,
-        (4) * multi_dot([m6.T,config.Jbar_rbr_upright,m6]),
-        config.m_rbl_upright * m0,
-        (4) * multi_dot([m7.T,config.Jbar_rbl_upright,m7]),
-        config.m_rbr_upper_strut * m0,
-        (4) * multi_dot([m8.T,config.Jbar_rbr_upper_strut,m8]),
-        config.m_rbl_upper_strut * m0,
-        (4) * multi_dot([m9.T,config.Jbar_rbl_upper_strut,m9]),
-        config.m_rbr_lower_strut * m0,
-        (4) * multi_dot([m10.T,config.Jbar_rbr_lower_strut,m10]),
-        config.m_rbl_lower_strut * m0,
-        (4) * multi_dot([m11.T,config.Jbar_rbl_lower_strut,m11]),
-        config.m_rbr_tie_rod * m0,
-        (4) * multi_dot([m12.T,config.Jbar_rbr_tie_rod,m12]),
-        config.m_rbl_tie_rod * m0,
-        (4) * multi_dot([m13.T,config.Jbar_rbl_tie_rod,m13]),
-        config.m_rbr_hub * m0,
-        (4) * multi_dot([m14.T,config.Jbar_rbr_hub,m14]),
-        config.m_rbl_hub * m0,
-        (4) * multi_dot([m15.T,config.Jbar_rbl_hub,m15]),)
+        self.mass_eq_blocks = (self.M_ground,
+        (4) * multi_dot([m0.T,self.Jbar_ground,m0]),
+        self.M_rbr_uca,
+        (4) * multi_dot([m1.T,config.Jbar_rbr_uca,m1]),
+        self.M_rbl_uca,
+        (4) * multi_dot([m2.T,config.Jbar_rbl_uca,m2]),
+        self.M_rbr_lca,
+        (4) * multi_dot([m3.T,config.Jbar_rbr_lca,m3]),
+        self.M_rbl_lca,
+        (4) * multi_dot([m4.T,config.Jbar_rbl_lca,m4]),
+        self.M_rbr_upright,
+        (4) * multi_dot([m5.T,config.Jbar_rbr_upright,m5]),
+        self.M_rbl_upright,
+        (4) * multi_dot([m6.T,config.Jbar_rbl_upright,m6]),
+        self.M_rbr_upper_strut,
+        (4) * multi_dot([m7.T,config.Jbar_rbr_upper_strut,m7]),
+        self.M_rbl_upper_strut,
+        (4) * multi_dot([m8.T,config.Jbar_rbl_upper_strut,m8]),
+        self.M_rbr_lower_strut,
+        (4) * multi_dot([m9.T,config.Jbar_rbr_lower_strut,m9]),
+        self.M_rbl_lower_strut,
+        (4) * multi_dot([m10.T,config.Jbar_rbl_lower_strut,m10]),
+        self.M_rbr_tie_rod,
+        (4) * multi_dot([m11.T,config.Jbar_rbr_tie_rod,m11]),
+        self.M_rbl_tie_rod,
+        (4) * multi_dot([m12.T,config.Jbar_rbl_tie_rod,m12]),
+        self.M_rbr_hub,
+        (4) * multi_dot([m13.T,config.Jbar_rbr_hub,m13]),
+        self.M_rbl_hub,
+        (4) * multi_dot([m14.T,config.Jbar_rbl_hub,m14]),)
 
     
     def eval_frc_eq(self):
@@ -1317,10 +1410,18 @@ class topology(object):
         self.F_rbr_upright_jcr_hub_bearing = Q_rbr_upright_jcr_hub_bearing[0:3]
         Te_rbr_upright_jcr_hub_bearing = Q_rbr_upright_jcr_hub_bearing[3:7]
         self.T_rbr_upright_jcr_hub_bearing = ((-1) * multi_dot([skew(multi_dot([A(self.P_rbr_upright),self.ubar_rbr_upright_jcr_hub_bearing])),self.F_rbr_upright_jcr_hub_bearing]) + (0.5) * multi_dot([E(self.P_rbr_upright),Te_rbr_upright_jcr_hub_bearing]))
+        Q_rbr_upright_mcr_wheel_lock = (-1) * multi_dot([np.bmat([[Z1x3.T],[multi_dot([((-1 * sin(config.UF_mcr_wheel_lock(t))) * B(self.P_rbr_upright,self.Mbar_rbr_upright_jcr_hub_bearing[:,0:1]).T + cos(config.UF_mcr_wheel_lock(t)) * B(self.P_rbr_upright,self.Mbar_rbr_upright_jcr_hub_bearing[:,1:2]).T),A(self.P_rbr_hub),self.Mbar_rbr_hub_jcr_hub_bearing[:,0:1]])]]),self.L_mcr_wheel_lock])
+        self.F_rbr_upright_mcr_wheel_lock = Q_rbr_upright_mcr_wheel_lock[0:3]
+        Te_rbr_upright_mcr_wheel_lock = Q_rbr_upright_mcr_wheel_lock[3:7]
+        self.T_rbr_upright_mcr_wheel_lock = (0.5) * multi_dot([E(self.P_rbr_upright),Te_rbr_upright_mcr_wheel_lock])
         Q_rbl_upright_jcl_hub_bearing = (-1) * multi_dot([np.bmat([[I3,Z1x3.T,Z1x3.T],[B(self.P_rbl_upright,self.ubar_rbl_upright_jcl_hub_bearing).T,multi_dot([B(self.P_rbl_upright,self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]).T,A(self.P_rbl_hub),self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]]),multi_dot([B(self.P_rbl_upright,self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]).T,A(self.P_rbl_hub),self.Mbar_rbl_hub_jcl_hub_bearing[:,2:3]])]]),self.L_jcl_hub_bearing])
         self.F_rbl_upright_jcl_hub_bearing = Q_rbl_upright_jcl_hub_bearing[0:3]
         Te_rbl_upright_jcl_hub_bearing = Q_rbl_upright_jcl_hub_bearing[3:7]
         self.T_rbl_upright_jcl_hub_bearing = ((-1) * multi_dot([skew(multi_dot([A(self.P_rbl_upright),self.ubar_rbl_upright_jcl_hub_bearing])),self.F_rbl_upright_jcl_hub_bearing]) + (0.5) * multi_dot([E(self.P_rbl_upright),Te_rbl_upright_jcl_hub_bearing]))
+        Q_rbl_upright_mcl_wheel_lock = (-1) * multi_dot([np.bmat([[Z1x3.T],[multi_dot([((-1 * sin(config.UF_mcl_wheel_lock(t))) * B(self.P_rbl_upright,self.Mbar_rbl_upright_jcl_hub_bearing[:,0:1]).T + cos(config.UF_mcl_wheel_lock(t)) * B(self.P_rbl_upright,self.Mbar_rbl_upright_jcl_hub_bearing[:,1:2]).T),A(self.P_rbl_hub),self.Mbar_rbl_hub_jcl_hub_bearing[:,0:1]])]]),self.L_mcl_wheel_lock])
+        self.F_rbl_upright_mcl_wheel_lock = Q_rbl_upright_mcl_wheel_lock[0:3]
+        Te_rbl_upright_mcl_wheel_lock = Q_rbl_upright_mcl_wheel_lock[3:7]
+        self.T_rbl_upright_mcl_wheel_lock = (0.5) * multi_dot([E(self.P_rbl_upright),Te_rbl_upright_mcl_wheel_lock])
         Q_rbr_upper_strut_jcr_strut_chassis = (-1) * multi_dot([np.bmat([[I3,Z1x3.T],[B(self.P_rbr_upper_strut,self.ubar_rbr_upper_strut_jcr_strut_chassis).T,multi_dot([B(self.P_rbr_upper_strut,self.Mbar_rbr_upper_strut_jcr_strut_chassis[:,0:1]).T,A(self.P_ground),self.Mbar_ground_jcr_strut_chassis[:,0:1]])]]),self.L_jcr_strut_chassis])
         self.F_rbr_upper_strut_jcr_strut_chassis = Q_rbr_upper_strut_jcr_strut_chassis[0:3]
         Te_rbr_upper_strut_jcr_strut_chassis = Q_rbr_upper_strut_jcr_strut_chassis[3:7]
@@ -1365,6 +1466,14 @@ class topology(object):
         self.F_rbl_tie_rod_jcl_tie_upright = Q_rbl_tie_rod_jcl_tie_upright[0:3]
         Te_rbl_tie_rod_jcl_tie_upright = Q_rbl_tie_rod_jcl_tie_upright[3:7]
         self.T_rbl_tie_rod_jcl_tie_upright = ((-1) * multi_dot([skew(multi_dot([A(self.P_rbl_tie_rod),self.ubar_rbl_tie_rod_jcl_tie_upright])),self.F_rbl_tie_rod_jcl_tie_upright]) + (0.5) * multi_dot([E(self.P_rbl_tie_rod),Te_rbl_tie_rod_jcl_tie_upright]))
+        Q_rbr_hub_mcr_wheel_travel = (-1) * multi_dot([np.bmat([[I3[2:3,0:3].T],[B(self.P_rbr_hub,self.ubar_rbr_hub_mcr_wheel_travel)[2:3,0:4].T]]),self.L_mcr_wheel_travel])
+        self.F_rbr_hub_mcr_wheel_travel = Q_rbr_hub_mcr_wheel_travel[0:3]
+        Te_rbr_hub_mcr_wheel_travel = Q_rbr_hub_mcr_wheel_travel[3:7]
+        self.T_rbr_hub_mcr_wheel_travel = ((-1) * multi_dot([skew(multi_dot([A(self.P_rbr_hub),self.ubar_rbr_hub_mcr_wheel_travel])),self.F_rbr_hub_mcr_wheel_travel]) + (0.5) * multi_dot([E(self.P_rbr_hub),Te_rbr_hub_mcr_wheel_travel]))
+        Q_rbl_hub_mcl_wheel_travel = (-1) * multi_dot([np.bmat([[I3[2:3,0:3].T],[B(self.P_rbl_hub,self.ubar_rbl_hub_mcl_wheel_travel)[2:3,0:4].T]]),self.L_mcl_wheel_travel])
+        self.F_rbl_hub_mcl_wheel_travel = Q_rbl_hub_mcl_wheel_travel[0:3]
+        Te_rbl_hub_mcl_wheel_travel = Q_rbl_hub_mcl_wheel_travel[3:7]
+        self.T_rbl_hub_mcl_wheel_travel = ((-1) * multi_dot([skew(multi_dot([A(self.P_rbl_hub),self.ubar_rbl_hub_mcl_wheel_travel])),self.F_rbl_hub_mcl_wheel_travel]) + (0.5) * multi_dot([E(self.P_rbl_hub),Te_rbl_hub_mcl_wheel_travel]))
 
         self.reactions = {'F_rbr_uca_jcr_uca_chassis' : self.F_rbr_uca_jcr_uca_chassis,
                         'T_rbr_uca_jcr_uca_chassis' : self.T_rbr_uca_jcr_uca_chassis,
@@ -1384,8 +1493,12 @@ class topology(object):
                         'T_rbl_lca_jcl_lca_upright' : self.T_rbl_lca_jcl_lca_upright,
                         'F_rbr_upright_jcr_hub_bearing' : self.F_rbr_upright_jcr_hub_bearing,
                         'T_rbr_upright_jcr_hub_bearing' : self.T_rbr_upright_jcr_hub_bearing,
+                        'F_rbr_upright_mcr_wheel_lock' : self.F_rbr_upright_mcr_wheel_lock,
+                        'T_rbr_upright_mcr_wheel_lock' : self.T_rbr_upright_mcr_wheel_lock,
                         'F_rbl_upright_jcl_hub_bearing' : self.F_rbl_upright_jcl_hub_bearing,
                         'T_rbl_upright_jcl_hub_bearing' : self.T_rbl_upright_jcl_hub_bearing,
+                        'F_rbl_upright_mcl_wheel_lock' : self.F_rbl_upright_mcl_wheel_lock,
+                        'T_rbl_upright_mcl_wheel_lock' : self.T_rbl_upright_mcl_wheel_lock,
                         'F_rbr_upper_strut_jcr_strut_chassis' : self.F_rbr_upper_strut_jcr_strut_chassis,
                         'T_rbr_upper_strut_jcr_strut_chassis' : self.T_rbr_upper_strut_jcr_strut_chassis,
                         'F_rbr_upper_strut_jcr_strut' : self.F_rbr_upper_strut_jcr_strut,
@@ -1409,5 +1522,9 @@ class topology(object):
                         'F_rbl_tie_rod_jcl_tie_steering' : self.F_rbl_tie_rod_jcl_tie_steering,
                         'T_rbl_tie_rod_jcl_tie_steering' : self.T_rbl_tie_rod_jcl_tie_steering,
                         'F_rbl_tie_rod_jcl_tie_upright' : self.F_rbl_tie_rod_jcl_tie_upright,
-                        'T_rbl_tie_rod_jcl_tie_upright' : self.T_rbl_tie_rod_jcl_tie_upright}
+                        'T_rbl_tie_rod_jcl_tie_upright' : self.T_rbl_tie_rod_jcl_tie_upright,
+                        'F_rbr_hub_mcr_wheel_travel' : self.F_rbr_hub_mcr_wheel_travel,
+                        'T_rbr_hub_mcr_wheel_travel' : self.T_rbr_hub_mcr_wheel_travel,
+                        'F_rbl_hub_mcl_wheel_travel' : self.F_rbl_hub_mcl_wheel_travel,
+                        'T_rbl_hub_mcl_wheel_travel' : self.T_rbl_hub_mcl_wheel_travel}
 
