@@ -12,3 +12,4 @@
 **/visualization
 **/results/*.csv
 **/results/*.npz
+/standalone_models/**/numenv
